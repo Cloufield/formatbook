@@ -1,7 +1,7 @@
 {
-"meta_data":{"_format_name":"",
-            "_format_source":"",  
-            "_format_version":"20220726"
+"meta_data":{"format_name":"",
+            "format_source":"",  
+            "format_version":"20220726"
             },
 "format_dict":{"":"SNPID",
                  "":"rsID",

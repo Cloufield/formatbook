@@ -1,12 +1,17 @@
 {
-"_name":"metal",
-"_source":"#https://genome.sph.umich.edu/wiki/METAL_Documentation",
-"MarkerName":"SNPID",
-"Allele1":"EA",
-"Allele2":"NEA",
-"Freq1":"EAF",
-"Effect":"BETA",
-"StdErr":"SE",
-"P-value":"P",
-"Direction": "DIRECTION"
+"meta_data":{"format_name":"metal",
+            "format_source":"https://genome.sph.umich.edu/wiki/METAL_Documentation",
+            "format_version":"20220726"
+            },
+"format_dict":{
+            "MarkerName":"SNPID",
+            "Allele1":"EA",
+            "Allele2":"NEA",
+            "Freq1":"EAF",
+            "Effect":"BETA",
+            "StdErr":"SE",
+            "P-value":"P",
+            "Direction": "DIRECTION"
+            }
 }
+
