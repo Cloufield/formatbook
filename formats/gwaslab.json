@@ -1,0 +1,26 @@
+{
+"meta_data":{"format_name":"gwaslab",
+            "format_source":"https://cloufield.github.io/gwaslab/",  
+            "format_version":"20220729_v3"
+            },
+"format_dict":{"SNPID":"SNPID",
+                 "rsID":"rsID",
+                 "CHR":"CHR",
+                 "POS":"POS",
+                 "NEA":"NEA",
+                "EA":"EA",
+                "N":"N",
+                "BETA":"BETA",
+                "SE":"SE",
+                "P":"P",
+                "INFO":"INFO",
+                "OR":"OR",
+                "OR_95L":"OR_95L",
+                "OR_95U":"OR_95U",
+                "MLOG10":"MLOG10",
+                "CHISQ":"CHISQ",
+                "Z":"Z",
+                "DIRECTION":"DIRECTION",
+                "STATUS":"STATUS"
+            }
+}
