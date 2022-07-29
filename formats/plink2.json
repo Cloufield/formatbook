@@ -1,7 +1,7 @@
 {
-"meta_data":{"format_name":"",
-            "format_source":"",  
-            "format_version":"20220726"
+"meta_data":{"format_name":".glm.firth, .glm.logistic,.glm.linear",
+         "format_source":"https://www.cog-genomics.org/plink/2.0/formats",  
+         "format_version":"Alpha 3.3 final (3 Jun)"
             },
 "format_dict":{"":"SNPID",
                  "":"rsID",

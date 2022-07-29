@@ -1,21 +1,21 @@
 {
-"meta_data":{"format_name":"",
-            "format_source":"",  
-            "format_version":"20220726"
+"meta_data":{"format_name":".assoc.linear, .assoc.logistic, .assoc.dosage",
+         "format_source":"https://www.cog-genomics.org/plink/1.9/",  
+         "format_version":"Stable (beta 6.26, 2 Apr)"
             },
-"format_dict":{"":"SNPID",
-                 "":"rsID",
-                 "":"CHR",
-                 "":"POS",
-                 "":"NEA",
-                "":"EA",
-                "":"N",
-                "":"BETA",
-                "":"SE",
-                "":"P",
-                "":"INFO",
-                "":"OR",
-                "":"OR_95L",
-                "":"OR_95U"
+"format_dict":{"SNP":"rsID",
+          "CHR":"CHR",
+          "BP":"POS",
+          "A2":"NEA",
+          "A1":"EA",
+          "BETA":"BETA",
+          "OR":"OR",
+          "SE":"SE",
+          "P":"P",
+          "INFO":"INFO",
+          "L95":"OR_95L",
+          "H95":"OR_95U",
+          "STAT":"Z",
+          "NMISS":"N"
             }
 }
