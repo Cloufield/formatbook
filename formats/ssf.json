@@ -1,6 +1,7 @@
 {
     "meta_data":{
     "format_name":"ssf",
+    "format_source":"https://www.biorxiv.org/content/10.1101/2022.07.15.500230v1.full",  
     "format_version":20220726
              },
 "format_dict":{"variant_id":"SNPID",

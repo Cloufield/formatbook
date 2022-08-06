@@ -1,21 +1,19 @@
 {
-"meta_data":{"format_name":"",
-            "format_source":"",  
-            "format_version":"20220726"
+"meta_data":{"format_name":"mrmega",
+            "format_source":"https://genomics.ut.ee/en/tools",  
+            "format_version":"ver0.2",
+             "last_check_date":20220806
             },
-"format_dict":{"":"SNPID",
-                 "":"rsID",
-                 "":"CHR",
-                 "":"POS",
-                 "":"NEA",
-                "":"EA",
-                "":"N",
-                "":"BETA",
-                "":"SE",
-                "":"P",
-                "":"INFO",
-                "":"OR",
-                "":"OR_95L",
-                "":"OR_95U"
+"format_dict":{"MarkerName ":"SNPID",
+                 "Chromosome":"CHR",
+                 "Position":"POS",
+                 "NEA":"NEA",
+                "EA":"EA",
+                "EAF":"EAF",
+                "Nsample":"N",
+                "Effects":"DIRECTION",
+                "chisq_association":"CHISQ",
+                "ndf_association":"ndf_association",
+                "P-value_association":"P"
             }
 }

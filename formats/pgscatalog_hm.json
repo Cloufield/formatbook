@@ -1,12 +1,12 @@
 {
-"meta_data":{"format_name":"pgscatalog",
+"meta_data":{"format_name":"pgscatalog_hm Harmonized File",
             "format_source":"https://www.pgscatalog.org/downloads/",  
             "format_version":"20220726"
             },
-"format_dict":{
-                 "rsID":"rsID",
-                 "chr_name":"CHR",
-                 "chr_position":"POS",
+"format_dict":{      "hm_rsID":"rsID",
+                "hm_chr":"CHR",
+                "hm_pos":"POS",
+                "hm_inferOtherAllele":"NEA",
                  "other_allele":"NEA",
                 "effect_allele":"EA",
                 "allelefrequency_effect":"EAF",

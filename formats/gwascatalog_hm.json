@@ -1,0 +1,19 @@
+{
+"meta_data":{"format_name":"gwascatalog_hm",
+            "format_source":"https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",  
+            "format_version":20220806
+            },
+"format_dict":{"hm_variant_id":"SNPID",
+                 "chromosome":"CHR",
+                 "base_pair_location":"POS",
+                 "hm_other_allele":"NEA",
+                "hm_effect_allele":"EA",
+                "hm_beta":"BETA",
+                "hm_effect_allele_frequency":"EAF",
+                "standard_error":"SE",
+                "p-value":"P",
+                "hm_odds_ratio":"OR",
+                "hm_ci_lower":"OR_95L",
+                "hm_ci_upper":"OR_95U"
+            }
+}
