@@ -124,7 +124,7 @@
         },
         "format_dict": {
             "ID": "SNPID",
-            "CHROM": "CHR",
+            "#CHROM": "CHR",
             "POS": "POS",
             "REF": "NEA",
             "ALT": "EA",
