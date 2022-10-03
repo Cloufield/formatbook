@@ -30,7 +30,7 @@ For example : format for metal software
 }
 ```
 
-Support(coming soon):
+Supported formats:
 1. `ssf`: GWAS-SSF
 2. `gwascatalog` : GWAS Catalog format
 3. `pgscatalog` : PGS Catalog format
@@ -44,3 +44,4 @@ Support(coming soon):
 11. `fuma`: input format
 12. `ldsc`: input format
 13. `locuszoom`: input format
+14. `vcf`: gwas-vcf format
