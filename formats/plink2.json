@@ -16,6 +16,7 @@
            "SE":"SE",
            "Z_STAT":"Z",
            "P":"P",
+           "LOG10_P":"MLOG10P",
            "MACH_R2":"INFO",
            "OR":"OR",
            "L95":"OR_95L",
