@@ -7,8 +7,9 @@
 "format_dict":{"ID":"SNPID",
            "#CHROM":"CHR",
            "POS":"POS",
-           "REF":"NEA",
-           "ALT":"EA",
+           "REF":"REF",
+           "ALT":"ALT",
+           "A1":"EA"
            "OBS_CT":"N",
            "A1_FREQ":"EAF",
            "BETA":"BETA",
