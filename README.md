@@ -59,36 +59,33 @@ Supported formats:
     - SOURCE: [https://www.pgscatalog.org/downloads/#dl_ftp_scoring](https://www.pgscatalog.org/downloads/#dl_ftp_scoring)
     - CITATION: Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425.
 1. saige
-    - SOURCE:
-    - CITATION:
+    - SOURCE: [https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE#output-file](https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE#output-file)
+    - CITATION: Zhou, W., Nielsen, J. B., Fritsche, L. G., Dey, R., Gabrielsen, M. E., Wolford, B. N., ... & Lee, S. (2018). Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies. Nature genetics, 50(9), 1335-1341.
 1. regenie
-    - SOURCE:
-    - CITATION:
+    - SOURCE: [https://rgcgithub.github.io/regenie/options/#output](https://rgcgithub.github.io/regenie/options/#output)
+    - CITATION: Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.
 1. plink
-    - SOURCE:
-    - CITATION:
+    - SOURCE: [https://www.cog-genomics.org/plink/1.9/formats](https://www.cog-genomics.org/plink/1.9/formats)
+    - CITATION:Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.
 1. plink2
-    - SOURCE:
-    - CITATION:
-1. regenie
-    - SOURCE:
-    - CITATION:
+    - SOURCE: [https://www.cog-genomics.org/plink/2.0/formats](https://www.cog-genomics.org/plink/2.0/formats)
+    - CITATION: Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.
 1. fastgwa
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://yanglab.westlake.edu.cn/software/gcta/#fastGWA](https://yanglab.westlake.edu.cn/software/gcta/#fastGWA)
+    - CITATION:Jiang, L., Zheng, Z., Qi, T., Kemper, K. E., Wray, N. R., Visscher, P. M., & Yang, J. (2019). A resource-efficient tool for mixed model association analysis of large-scale data. Nature genetics, 51(12), 1749-1755.
 1. mrmega
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://genomics.ut.ee/en/tools](https://genomics.ut.ee/en/tools)
+    - CITATION: Mägi, R., Horikoshi, M., Sofer, T., Mahajan, A., Kitajima, H., Franceschini, N., ... & Morris, A. P. (2017). Trans-ethnic meta-regression of genome-wide association studies accounting for ancestry increases power for discovery and improves fine-mapping resolution. Human molecular genetics, 26(18), 3639-3650.
 1. fuma
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://fuma.ctglab.nl/tutorial#snp2gene](https://fuma.ctglab.nl/tutorial#snp2gene)
+    - CITATION: Watanabe, K., Taskesen, E., Van Bochoven, A., & Posthuma, D. (2017). Functional mapping and annotation of genetic associations with FUMA. Nature communications, 8(1), 1-11.
 1. ldsc
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation)
+    - CITATION: Bulik-Sullivan, B. K., Loh, P. R., Finucane, H. K., Ripke, S., Yang, J., Patterson, N., ... & Neale, B. M. (2015). LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nature genetics, 47(3), 291-295.
 1. locuszoom
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://my.locuszoom.org/about/](https://my.locuszoom.org/about/)
+    - CITATION: Pruim, R. J., Welch, R. P., Sanna, S., Teslovich, T. M., Chines, P. S., Gliedt, T. P., ... & Willer, C. J. (2010). LocusZoom: regional visualization of genome-wide association scan results. Bioinformatics, 26(18), 2336-2337.
 1. vcf
-    - SOURCE:
-    - CITATION:
+    - SOURCE:[https://github.com/MRCIEU/gwas-vcf-specification](https://github.com/MRCIEU/gwas-vcf-specification)
+    - CITATION: Lyon, M. S., Andrews, S. J., Elsworth, B., Gaunt, T. R., Hemani, G., & Marcora, E. (2021). The variant call format provides efficient and robust storage of GWAS summary statistics. Genome biology, 22(1), 1-10.
 
