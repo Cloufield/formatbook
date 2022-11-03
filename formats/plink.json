@@ -1,5 +1,5 @@
 {
-"meta_data":{"format_name":".assoc.linear, .assoc.logistic, .assoc.dosage",
+"meta_data":{"format_name":".assoc, .assoc.fisher, .assoc.linear, .assoc.logistic, .assoc.dosage",
          "format_source":"https://www.cog-genomics.org/plink/1.9/",  
          "format_version":"Stable (beta 6.26, 2 Apr)"
             },
@@ -16,6 +16,7 @@
           "L95":"OR_95L",
           "H95":"OR_95U",
           "STAT":"Z",
+          "CHISQ":"CHISQ",
           "NMISS":"N"
             }
 }
