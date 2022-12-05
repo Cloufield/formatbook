@@ -12,6 +12,7 @@
                 "ALLELE1":"EA",
                 "A1FREQ":"EAF",
                 "N":"N",
+               "INFO":"INFO",
                 "BETA":"BETA",
                 "SE":"SE",
                 "CHISQ":"CHISQ",
