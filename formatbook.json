@@ -121,6 +121,7 @@
             "ALLELE1": "EA",
             "A1FREQ": "EAF",
             "N": "N",
+            "INFO": "INFO",
             "BETA": "BETA",
             "SE": "SE",
             "CHISQ": "CHISQ",
@@ -223,9 +224,10 @@
     },
     "plink": {
         "meta_data": {
-            "format_name": ".assoc.linear, .assoc.logistic, .assoc.dosage",
+            "format_name": ".assoc, .assoc.fisher, .assoc.linear, .assoc.logistic, .assoc.dosage",
             "format_source": "https://www.cog-genomics.org/plink/1.9/",
-            "format_version": "Stable (beta 6.26, 2 Apr)"
+            "format_version": "Stable (beta 6.26, 2 Apr)",
+            "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
         },
         "format_dict": {
             "SNP": "rsID",
@@ -241,6 +243,7 @@
             "L95": "OR_95L",
             "H95": "OR_95U",
             "STAT": "Z",
+            "CHISQ": "CHISQ",
             "NMISS": "N"
         }
     },
@@ -337,13 +340,15 @@
             "SNP": "rsID",
             "A2": "NEA",
             "A1": "EA",
-            "CHR": "CHR",
-            "POS": "POS",
+            "Frq": "EAF",
             "N": "N",
             "Beta": "BETA",
             "P": "P",
+            "Z": "Z",
             "INFO": "INFO",
-            "OR": "OR"
+            "OR": "OR",
+            "CHR": "CHR",
+            "POS": "POS"
         }
     },
     "plink2": {
