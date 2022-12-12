@@ -1,0 +1,20 @@
+{
+"meta_data":{"format_name":".stats",
+         "format_source":"https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html",  
+         "format_version":"v2.4 (July 22, 2022)",
+         "software_license": "BOLT-LMM is free software under the GNU General Public License v3.0 (GPLv3).",
+         "format_citation":"Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290."
+            },
+"format_dict":{"SNP":"SNPID",
+          "CHR":"CHR",
+          "BP":"POS",
+          "ALLELE0":"NEA",
+          "ALLELE1":"EA",
+          "A1FREQ":"EAF",
+          "BETA":"BETA",
+          "SE":"SE",
+          "P_BOLT_LMM":"P",
+          "INFO":"INFO",
+          "CHISQ_BOLT_LMM":"CHISQ"
+            }
+}
