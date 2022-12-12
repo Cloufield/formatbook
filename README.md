@@ -45,6 +45,7 @@ Supported formats:
 12. `ldsc`: input format
 13. `locuszoom`: input format
 14. `vcf`: gwas-vcf format
+15. `bolt_lmm` : output format
 
 # Citations and sources
 1. GWAS-SSF
@@ -88,4 +89,6 @@ Supported formats:
 1. vcf
     - SOURCE:[https://github.com/MRCIEU/gwas-vcf-specification](https://github.com/MRCIEU/gwas-vcf-specification)
     - CITATION: Lyon, M. S., Andrews, S. J., Elsworth, B., Gaunt, T. R., Hemani, G., & Marcora, E. (2021). The variant call format provides efficient and robust storage of GWAS summary statistics. Genome biology, 22(1), 1-10.
-
+1. bolt_lmm
+    - SOURCE:[https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html](https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html)
+    - CITATION: Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290.
