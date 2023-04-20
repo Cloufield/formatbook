@@ -296,7 +296,7 @@
             "variant_id": "SNPID",
             "rsid": "rsID",
             "chromosome": "CHR",
-            "bas_pair_location": "POS",
+            "base_pair_location": "POS",
             "other_allele": "NEA",
             "effect_allele": "EA",
             "n": "N",
