@@ -14,6 +14,7 @@
         "beta":"BETA",
         "standard_error":"SE",
         "p_value":"P",
+        "neg_log_10_p_value":"MLOG10P",       
         "info":"INFO",
         "odds_ratio":"OR",
         "ci_lower":"OR_95L",
