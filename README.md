@@ -92,3 +92,10 @@ Supported formats:
 1. bolt_lmm
     - SOURCE:[https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html](https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html)
     - CITATION: Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290.
+
+Future update:
+To add fields in meta_data:
+1. `format_cite_name` : formal name of the format, e.g. GWAS-SSF v0.1
+1. `format_separator` : separator used in the format, e.g. `\t`
+1. `format_na` : NA notation in the format, e.g. `#NA`
+1. `format_comment` : comment line, e.g. `#`
