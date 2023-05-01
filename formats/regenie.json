@@ -3,7 +3,11 @@
             "format_source_1":"https://rgcgithub.github.io/regenie/", 
             "format_source_2":"https://github.com/rgcgithub/regenie/blob/master/example/test_bin_out_firth_Y1.regenie",
             "format_version":"20220726",
-            "last_check_date":20220806
+            "format_cite_name":"REGENIE",
+            "format_separator":" ",
+            "format_na":"NA",
+            "format_comment":null,
+            "last_check_date":20230501
             },
 "format_dict":{"ID":"SNPID",
                  "CHROM":"CHR",
