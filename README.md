@@ -99,4 +99,4 @@ To add fields in meta_data:
 1. `format_separator` : separator used in the format, e.g. `\t`
 1. `format_na` : NA notation in the format, e.g. `#NA`
 1. `format_comment` : comment line, e.g. `#`
-1. "format_col_order": column order
+1. `format_col_order`: column order
