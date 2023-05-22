@@ -1,0 +1,36 @@
+{
+"meta_data":{"format_name":"mtag",
+            "format_source":"https://github.com/JonJala/mtag/wiki/Tutorial-1:-The-Basics",
+            "format_version":"v1.0.8",
+            "format_separator":"\t",
+            "format_cite_name":"MTAG v1.0.8",
+            "format_comment":null,
+            "format_na":null,
+            "format_col_order":["snpid",
+                        "chr",
+                        "bpos",
+                        "a1",
+                        "beta",
+                        "a2",
+                        "freq",
+                        "beta",
+                        "se",
+                        "z",
+                        "pval",
+                        "p_value",
+                        "n"]
+            },
+"format_dict":{
+                 "snpid":"rsID",
+                 "chr":"CHR",
+                 "bpos":"POS",
+                 "a2":"NEA",
+                "a1":"EA",
+                "freq":"EAF",
+                "n":"N",
+                "beta":"BETA",
+                "se":"SE",
+                "pval":"P",
+                "z":"Z"
+            }
+}
