@@ -15,12 +15,11 @@
            "BETA":"BETA",
            "LOG(OR)_SE":"SE",
            "SE":"SE",
+           "T_STAT":"T",
            "Z_STAT":"Z",
            "P":"P",
            "LOG10_P":"MLOG10P",
            "MACH_R2":"INFO",
-           "OR":"OR",
-           "L95":"OR_95L",
-           "U95":"OR_95U"
+           "OR":"OR"
             }
 }

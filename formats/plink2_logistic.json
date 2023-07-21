@@ -1,0 +1,26 @@
+{
+    "meta_data":{"format_name":"PLINK2 .glm.firth, .glm.logistic[.hybrid]",
+             "format_source":"https://www.cog-genomics.org/plink/2.0/formats",  
+             "format_version":"Alpha 3.3 final (3 Jun)",
+             "last_check_date":20220806
+                },
+    "format_dict":{"ID":"SNPID",
+               "#CHROM":"CHR",
+               "POS":"POS",
+               "REF":"REF",
+               "ALT":"ALT",
+               "A1":"EA",
+               "OBS_CT":"N",
+               "A1_FREQ":"EAF",
+               "BETA":"BETA",
+               "LOG(OR)_SE":"SE",
+               "SE":"SE",
+               "Z_STAT":"Z",
+               "P":"P",
+               "LOG10_P":"MLOG10P",
+               "MACH_R2":"INFO",
+               "OR":"OR",
+               "L95":"OR_95L",
+               "U95":"OR_95U"
+                }
+    }
