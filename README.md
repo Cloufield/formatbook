@@ -31,21 +31,31 @@ For example : format for metal software
 ```
 
 Supported formats:
-1. `ssf`: GWAS-SSF
-2. `gwascatalog` : GWAS Catalog format
-3. `pgscatalog` : PGS Catalog format
-4. `plink`: PLINK output format
-5. `plink2`:  PLINK2 output format
-6. `saige`: SAIGE output format
-7. `regenie`: output format
-8. `fastgwa`: output format
-9. `metal`: output format
-10. `mrmega`: output format
-11. `fuma`: input format
-12. `ldsc`: input format
-13. `locuszoom`: input format
-14. `vcf`: gwas-vcf format
-15. `bolt_lmm` : output format
+
+|Keyword|Software|Description|
+|-|-|-|
+|`ssf`|-|GWAS-SSF|
+|`gwascatalog`|-|GWAS Catalog format (outdated; please use GWAS-SSF)|
+|`pgscatalog`|-|PGS Catalog format|
+|`plink`|PLINK|PLINK output format (only unambiguous headers)|
+|`plink_assoc` / `plink_fisher`|PLINK| `.assoc`, `.assoc.fisher`|
+|`plink_dosage`|PLINK|`.assoc.dosage`|
+|`plink_logistic`|PLINK| `.assoc.logistic`|
+|`plink_linear`|PLINK|`.assoc.linear`|
+|`plink2`|PLINK2|PLINK2 output format (only unambiguous headers)|
+|`plink2_linear`|PLINK2|PLINK2 output format: `.glm.linear`|
+|`plink2_logistic` / `plink2_firth`|PLINK2| `.glm.firth`, `.glm.logistic[.hybrid]`|
+|`saige`|SAIGE|SAIGE output format|
+|`regenie`|REGENIE|output format|
+|`fastgwa`|FASTGWA|output format|
+|`metal`|METAL|output format|
+|`mrmega`|MRMEGA|output format|
+|`fuma`|FUMA|input format|
+|`ldsc`|LDSC|input format|
+|`locuszoom`|LocusZoom|input format|
+|`vcf`|GWAS-VCF|gwas-vcf format|
+|`bolt_lmm`|BOLT-LMM|output format|
+
 
 # Citations and sources
 1. GWAS-SSF

@@ -1,0 +1,22 @@
+{
+    "meta_data":{"format_name":".assoc.linealogisticr",
+             "format_source":"https://www.cog-genomics.org/plink/1.9/formats#assoc",  
+             "format_version":"Stable (beta 6.26, 2 Apr)",
+             "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
+                },
+    "format_dict":{
+              "SNP":"SNPID",
+              "CHR":"CHR",
+              "BP":"POS",
+              "A2":"NEA",
+              "A1":"EA",
+              "OR":"OR",
+              "L95":"OR_95L",
+              "H95":"OR_95U",
+              "SE":"SE",
+              "P":"P",
+              "STAT":"T",
+              "CHISQ":"CHISQ",
+              "NMISS":"N"
+                }
+    }

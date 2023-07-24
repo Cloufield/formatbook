@@ -14,9 +14,7 @@
           "SE":"SE",
           "P":"P",
           "INFO":"INFO",
-          "L95":"OR_95L",
-          "H95":"OR_95U",
-          "STAT":"Z",
+          "STAT":"T",
           "CHISQ":"CHISQ",
           "NMISS":"N"
             }
