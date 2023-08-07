@@ -89,6 +89,33 @@
             "CHISQ_BOLT_LMM": "CHISQ"
         }
     },
+    "cojo": {
+        "meta_data": {
+            "format_name": "cojo",
+            "format_source": "https://yanglab.westlake.edu.cn/software/gcta/#COJO",
+            "format_version": 20230807,
+            "format_col_order": [
+                "SNP",
+                "A1",
+                "A2",
+                "freq",
+                "b",
+                "se",
+                "p",
+                "N"
+            ]
+        },
+        "format_dict": {
+            "SNP": "SNPID",
+            "A1": "EA",
+            "A2": "NEA",
+            "freq": "EAF",
+            "b": "BETA",
+            "se": "SE",
+            "p": "P",
+            "N": "N"
+        }
+    },
     "mrmega": {
         "meta_data": {
             "format_name": "mrmega",

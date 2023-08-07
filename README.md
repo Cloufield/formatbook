@@ -56,6 +56,7 @@ Supported formats:
 |`vcf`|[GWAS-VCF](https://github.com/MRCIEU/gwas-vcf-specification)|gwas-vcf format|Lyon, M. S., Andrews, S. J., Elsworth, B., Gaunt, T. R., Hemani, G., & Marcora, E. (2021). The variant call format provides efficient and robust storage of GWAS summary statistics. Genome biology, 22(1), 1-10.|
 |`bolt_lmm`|[BOLT-LMM](https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html)|output format|Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290.|
 |`popcorn`|[popcorn](https://github.com/brielin/Popcorn)|input format|Brown, B. C., Ye, C. J., Price, A. L., & Zaitlen, N. (2016). Transethnic genetic-correlation estimates from summary statistics. The American Journal of Human Genetics, 99(1), 76-88.|
+|`cojo`|[cojo](https://yanglab.westlake.edu.cn/software/gcta/#COJO)|input format|Yang et al. (2012) Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits. Nat Genet 44(4):369-375.|
 
 Future update:
 To add fields in meta_data:
