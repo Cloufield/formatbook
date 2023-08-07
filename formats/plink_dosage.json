@@ -5,7 +5,7 @@
              "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
                 },
     "format_dict":{
-              "SNP":"rsID",
+              "SNP":"SNPID",
               "CHR":"CHR",
               "BP":"POS",
               "A2":"NEA",

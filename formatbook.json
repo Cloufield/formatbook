@@ -265,7 +265,7 @@
             "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
         },
         "format_dict": {
-            "SNP": "rsID",
+            "SNP": "SNPID",
             "CHR": "CHR",
             "BP": "POS",
             "A2": "NEA",
@@ -307,7 +307,7 @@
             "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
         },
         "format_dict": {
-            "SNP": "rsID",
+            "SNP": "SNPID",
             "CHR": "CHR",
             "BP": "POS",
             "A2": "NEA",
@@ -328,7 +328,7 @@
             "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
         },
         "format_dict": {
-            "SNP": "rsID",
+            "SNP": "SNPID",
             "CHR": "CHR",
             "BP": "POS",
             "A2": "NEA",
@@ -511,6 +511,36 @@
             "STATUS": "STATUS"
         }
     },
+    "popcorn": {
+        "meta_data": {
+            "format_name": "popcorn",
+            "format_source": "https://github.com/brielin/Popcorn",
+            "format_version": 20230807,
+            "format_col_order": [
+                "rsid",
+                "A1",
+                "A2",
+                "N",
+                "beta",
+                "SE",
+                "OR",
+                "p-value",
+                "Z",
+                "AF"
+            ]
+        },
+        "format_dict": {
+            "rsid": "rsID",
+            "A2": "EA",
+            "A1": "NEA",
+            "AF": "EAF",
+            "N": "N",
+            "beta": "BETA",
+            "SE": "SE",
+            "p-value": "P",
+            "OR": "OR"
+        }
+    },
     "saige": {
         "meta_data": {
             "format_name": "saige",
@@ -578,7 +608,7 @@
     },
     "plink_logistic": {
         "meta_data": {
-            "format_name": ".assoc.linealogisticr",
+            "format_name": ".assoc.logistic",
             "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc",
             "format_version": "Stable (beta 6.26, 2 Apr)",
             "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."

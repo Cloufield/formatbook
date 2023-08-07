@@ -1,0 +1,26 @@
+{
+    "meta_data":{"format_name":"popcorn",
+                "format_source":"https://github.com/brielin/Popcorn", 
+                "format_version":20230807,
+                "format_col_order":["rsid",
+                "A1",
+                "A2",
+                "N",
+                "beta",
+                "SE",
+                "OR",
+                "p-value",
+                "Z",
+                "AF"]
+                },
+    "format_dict":{ "rsid":"rsID",
+                    "A2":"EA",
+                    "A1":"NEA",
+                    "AF":"EAF",
+                    "N":"N",
+                    "beta":"BETA",
+                    "SE":"SE",
+                    "p-value":"P",
+                    "OR":"OR"
+                }
+    }
