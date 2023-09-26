@@ -368,6 +368,48 @@
             "CHISQ": "CHISQ"
         }
     },
+    "regenie_gene": {
+        "meta_data": {
+            "format_name": "regenie_gene",
+            "format_source_1": "https://rgcgithub.github.io/regenie/",
+            "format_source_2": "https://github.com/rgcgithub/regenie/blob/master/example/test_bin_out_firth_Y1.regenie",
+            "format_version": "20230926",
+            "format_cite_name": "REGENIE",
+            "format_separator": " ",
+            "format_na": "NA",
+            "format_comment": "#",
+            "format_col_order": [
+                "CHROM",
+                "GENPOS",
+                "ID",
+                "ALLELE0",
+                "ALLELE1",
+                "A1FREQ",
+                "N",
+                "TEST",
+                "BETA",
+                "SE",
+                "CHISQ",
+                "LOG10P"
+            ],
+            "last_check_date": 20230926
+        },
+        "format_dict": {
+            "ID": "SNPID",
+            "CHROM": "CHR",
+            "GENPOS": "POS",
+            "ALLELE0": "NEA",
+            "ALLELE1": "EA",
+            "A1FREQ": "EAF",
+            "TEST": "TEST",
+            "N": "N",
+            "BETA": "BETA",
+            "SE": "SE",
+            "CHISQ": "CHISQ",
+            "LOG10P": "MLOG10P",
+            "EXTRA": "DOF"
+        }
+    },
     "metal": {
         "meta_data": {
             "format_name": "metal",
