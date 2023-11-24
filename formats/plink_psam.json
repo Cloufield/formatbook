@@ -1,0 +1,27 @@
+{
+    "meta_data":{"format_name":"plink_psam",
+                "format_source_1":"https://www.cog-genomics.org/plink/2.0/formats#psam", 
+                "format_version":"20231124",
+                "format_cite_name":"psam",
+                "format_separator":"\t",
+                "format_na":null,
+                "format_comment":null,
+                "format_header": true,
+                "format_datatype":{
+                    "IID":"string",
+                    "SID":"string",
+                    "PAT":"string",
+                    "MAT":"string", 
+                    "SEX":"category"
+                },
+                "format_col_order":["IID","SID","PAT","MAT","SEX"],
+                "last_check_date":"20231124"
+                },
+    "format_dict":{
+                    "#IID":"IID", 
+                    "SID":"SID",
+                    "PAT":"PAT",
+                    "MAT":"MAT", 
+                    "SEX":"SEX"
+                }
+    }

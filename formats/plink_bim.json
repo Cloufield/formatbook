@@ -1,0 +1,29 @@
+{
+    "meta_data":{"format_name":"plink_bim",
+                "format_source_1":"https://www.cog-genomics.org/plink/1.9/formats#bim", 
+                "format_version":"20231124",
+                "format_cite_name":"bim",
+                "format_separator":"\t",
+                "format_na":null,
+                "format_comment":null,
+                "format_header": null,
+                "format_datatype":{
+                    "CHR":"category",
+                    "SNPID":"string",
+                    "CM":"float",
+                    "POS":"int", 
+                    "NEA":"string", 
+                    "EA":"string"
+                },
+                "format_col_order":["CHR","SNPID","CM","POS","NEA","EA"],
+                "last_check_date":"20231124"
+                },
+    "format_dict":{
+                    "0":"CHR", 
+                    "1":"SNPID",
+                    "2":"CM",
+                    "3":"POS", 
+                    "4":"NEA", 
+                    "5":"EA"
+                }
+    }

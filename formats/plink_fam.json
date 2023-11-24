@@ -1,0 +1,29 @@
+{
+    "meta_data":{"format_name":"plink_fam",
+                "format_source_1":"https://www.cog-genomics.org/plink/1.9/formats#fam", 
+                "format_version":"20231124",
+                "format_cite_name":"fam",
+                "format_separator":"\t",
+                "format_na":null,
+                "format_comment":null,
+                "format_header": null,
+                "format_datatype":{
+                    "FID":"string",
+                    "IID":"string",
+                    "PAT":"string",
+                    "MAT":"string", 
+                    "SEX":"category", 
+                    "PHENO1":"category"
+                },
+                "format_col_order":["FID","IID","PAT","MAT","SEX","PHENO1"],
+                "last_check_date":"20231124"
+                },
+    "format_dict":{
+                    "0":"FID", 
+                    "1":"IID",
+                    "2":"PAT",
+                    "3":"MAT", 
+                    "4":"SEX", 
+                    "5":"PHENO1"
+                }
+    }
