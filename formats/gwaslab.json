@@ -13,6 +13,7 @@
                 "BETA":"BETA",
                 "SE":"SE",
                 "P":"P",
+                "MLOG10P":"MLOG10P",
                 "INFO":"INFO",
                 "OR":"OR",
                 "OR_95L":"OR_95L",
