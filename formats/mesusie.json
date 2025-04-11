@@ -1,0 +1,13 @@
+{
+    "meta_data":{"format_name":"MESuSiE",
+                "format_source":"https://borangao.github.io/meSuSie_Analysis/installation.html", 
+                "format_version":20221109
+                },
+    "format_dict":{ "SNP":"SNPID",
+                    "N":"N",
+                    "Beta":"BETA",
+                    "Se":"SE",
+                    "Z":"Z",
+                    "POS":"POS"
+                }
+    }
