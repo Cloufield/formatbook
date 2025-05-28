@@ -11,7 +11,7 @@
                 "hm_beta":"BETA",
                 "hm_effect_allele_frequency":"EAF",
                 "standard_error":"SE",
-                "p-value":"P",
+                "p_value":"P",
                 "hm_odds_ratio":"OR",
                 "hm_ci_lower":"OR_95L",
                 "hm_ci_upper":"OR_95U"
