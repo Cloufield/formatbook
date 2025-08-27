@@ -1,11 +1,11 @@
 {
     "meta_data":{
-    "format_name":"auto",
+    "format_name":"auto_neaf",
     "format_separator":"\t",
     "format_na":"#NA",
     "format_comment":null,
-    "format_assumption":"Note: auto-detection assumes A1=EA; Alt=EA and Frq=EAF",
-    "format_version":20230328
+    "format_assumption":"Note: auto-detection assumes A1=EA; ALT=EA and Frq=NEAF",
+    "format_version":20250827
              },
 "format_dict":{
         "variant_id":"SNPID",
@@ -76,14 +76,14 @@
         "ALLELE_1":"EA",
         "Allele_1":"EA",
         "allele_1":"EA",        
-        "Frq":"EAF",   
-        "FRQ":"EAF",  
-        "frq":"EAF",    
-        "Frequency":"EAF",    
-        "FREQ":"EAF",   
-        "Freq":"EAF",  
+        "Frq":"NEAF",   
+        "FRQ":"NEAF",  
+        "frq":"NEAF",    
+        "Frequency":"NEAF",    
+        "FREQ":"NEAF",   
+        "Freq":"NEAF",  
+        "freq":"NEAF",  
         "Freq1":"EAF",  
-        "freq":"EAF",  
         "A1FREQ":"EAF",
         "effect_allele_frequency":"EAF",
         "allelefrequency_effect":"EAF",
