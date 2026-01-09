@@ -1,0 +1,42 @@
+{
+    "meta_data": {
+        "format_name": "snptest",
+        "format_source": "https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest",
+        "format_version": "v2.5.4-beta3",
+        "format_citation": "Marchini, J., Howie, B., Myers, S., McVean, G., & Donnelly, P. (2007). A new multipoint method for genome-wide association studies via imputation of genotypes. Nature Genetics, 39(7), 906-913.",
+        "software_license": "SNPTEST is available free to use for academic use only."
+    },
+    "format_dict": {
+        "alternate_ids": "SNPID",
+        "id": "SNPID",
+        "rsid": "rsID",
+        "chromosome": "CHR",
+        "position": "POS",
+        "pos": "POS",
+        "alleleA": "NEA",
+        "allele_A": "NEA",
+        "alleleB": "EA",
+        "allele_B": "EA",
+        "freqB": "EAF",
+        "freq_alleleB": "EAF",
+        "freq_allele_B": "EAF",
+        "freqA": "EAF",
+        "all_maf": "MAF",
+        "cases_maf": "MAF_CASE",
+        "controls_maf": "MAF_CONTROL",
+        "all_total": "N",
+        "cases_total": "N_CASE",
+        "controls_total": "N_CONTROL",
+        "frequentist_add_pvalue": "P",
+        "frequentist_add_beta_1": "BETA",
+        "frequentist_add_se_1": "SE",
+        "frequentist_add_OR_1": "OR",
+        "frequentist_add_OR_95L_1": "OR_95L",
+        "frequentist_add_OR_95U_1": "OR_95U",
+        "bayesian_add_pvalue": "P",
+        "bayesian_add_beta_1": "BETA",
+        "bayesian_add_se_1": "SE",
+        "info": "INFO",
+        "average_maximum_posterior_call": "INFO"
+    }
+}

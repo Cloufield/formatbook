@@ -1,24 +1,37 @@
 {
-    "meta_data":{"format_name":"plink_pvar",
-                "format_source_1":"https://www.cog-genomics.org/plink/2.0/formats#pvar", 
-                "format_version":"20231124",
-                "format_cite_name":"pvar",
-                "format_separator":"\t",
-                "format_na":".",
-                "format_comment":"#",
-                "format_header": true,
-                "format_col_order":["POS","SNPID","NEA","EA","QUAL","FILTER","INFO","FORMAT","CM"],
-                "last_check_date":"20231124"
-                },
+    "meta_data":{
+        "format_name":".pvar",
+        "format_source":"https://www.cog-genomics.org/plink/2.0/formats#pvar",
+        "format_version":"Alpha 3.3 final (3 Jun)",
+        "format_cite_name":"PLINK 2.0",
+        "format_separator":"\t",
+        "format_na":".",
+        "format_comment":"#",
+        "format_header":true,
+        "format_datatype":{
+            "CHROM":"category",
+            "POS":"int",
+            "ID":"string",
+            "REF":"string",
+            "ALT":"string",
+            "QUAL":"float",
+            "FILTER":"string",
+            "INFO":"string"
+        },
+        "format_col_order":["#CHROM","POS","ID","REF","ALT","QUAL","FILTER","INFO"],
+        "last_check_date":"20250106"
+    },
     "format_dict":{
-                    "POS":"POS", 
-                    "ID":"SNPID",
-                    "REF":"NEA",
-                    "ALT":"EA", 
-                    "QUAL":"QUAL", 
-                    "FILTER":"FILTER",
-                    "INFO":"INFO",
-                    "FORMAT":"FORMAT",
-                    "CM":"CM"
-                }
+        "#CHROM":"CHR",
+        "CHROM":"CHR",
+        "POS":"POS",
+        "ID":"SNPID",
+        "REF":"REF",
+        "ALT":"ALT",
+        "QUAL":"QUAL",
+        "FILTER":"FILTER",
+        "INFO":"INFO",
+        "FORMAT":"FORMAT",
+        "CM":"CM"
     }
+}

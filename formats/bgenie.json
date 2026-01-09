@@ -1,0 +1,22 @@
+{
+    "meta_data": {
+        "format_name": "bgenie",
+        "format_source": "https://jmarchini.org/bgenie/",
+        "format_version": "latest",
+        "format_separator": " ",
+        "format_comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele)."
+    },
+    "format_dict": {
+        "chr": "CHR",
+        "rsid": "rsID",
+        "pos": "POS",
+        "a_0": "NEA",
+        "a_1": "EA",
+        "af": "EAF",
+        "info": "INFO",
+        "pheno1_beta": "BETA",
+        "pheno1_se": "SE",
+        "pheno1_t": "T",
+        "pheno1_p": "MLOG10P"
+    }
+}

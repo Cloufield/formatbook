@@ -1,0 +1,24 @@
+{
+    "meta_data": {
+        "format_name": "gemma",
+        "format_source": "https://github.com/genetics-statistics/GEMMA",
+        "format_version": "0.98.5",
+        "format_citation": "Zhou, X., & Stephens, M. (2012). Genome-wide efficient mixed-model analysis for association studies. Nature Genetics, 44(7), 821-824.",
+        "software_license": "GPL-3.0 license",
+        "format_separator": "\t",
+        "format_comment": "GEMMA univariate linear mixed model (LMM) output format. Columns: chr, rs, ps, n_miss, allele1, allele0, af, beta, se, l_remle, p_wald. The output is tab-separated. allele1 is the effect allele, allele0 is the non-effect allele, af is the allele frequency of allele1, and l_remle is the log-likelihood ratio test statistic."
+    },
+    "format_dict": {
+        "chr": "CHR",
+        "rs": "rsID",
+        "ps": "POS",
+        "n_miss": "N_MISS",
+        "allele1": "EA",
+        "allele0": "NEA",
+        "af": "EAF",
+        "beta": "BETA",
+        "se": "SE",
+        "l_remle": "L_REMLE",
+        "p_wald": "P"
+    }
+}
