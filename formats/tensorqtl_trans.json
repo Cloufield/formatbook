@@ -1,0 +1,26 @@
+{
+"meta_data":{"format_name":"tensorqtl_trans",
+            "format_source":"https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+            "format_version":"20220726",
+            "format_cite_name":"tensorQTL",
+            "format_description":"tensorQTL trans mode output format"
+            },
+"format_dict":{
+            "variant_id":"SNPID",
+            "phenotype_id":"TRAIT",
+            "pval":"P",
+            "b":"BETA",
+            "b_se":"SE",
+            "r2":"R2",
+            "af":"EAF"
+            },
+"header_description":{
+            "variant_id":"Variant ID",
+            "phenotype_id":"Phenotype ID",
+            "pval":"Nominal p-value of the association between the phenotype and variant",
+            "b":"Regression slope",
+            "b_se":"Standard error of the regression slope",
+            "r2":"Squared residual genotype-phenotype correlation (only generated if map_trans(..., return_r2=True))",
+            "af":"In-sample ALT allele frequency of the variant"
+            }
+}

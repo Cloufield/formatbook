@@ -1,0 +1,48 @@
+{
+"meta_data":{"format_name":"tensorqtl_cis_independent",
+            "format_source":"https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+            "format_version":"20220726",
+            "format_cite_name":"tensorQTL",
+            "format_description":"tensorQTL cis-independent mode output format"
+            },
+"format_dict":{
+            "phenotype_id":"TRAIT",
+            "num_var":"NUM_VAR",
+            "beta_shape1":"BETA_SHAPE1",
+            "beta_shape2":"BETA_SHAPE2",
+            "true_df":"TRUE_DF",
+            "pval_true_df":"P_TRUE_DF",
+            "variant_id":"SNPID",
+            "start_distance":"START_DISTANCE",
+            "end_distance":"END_DISTANCE",
+            "ma_samples":"MA_SAMPLES",
+            "ma_count":"MA_COUNT",
+            "af":"EAF",
+            "pval_nominal":"P",
+            "slope":"BETA",
+            "slope_se":"SE",
+            "pval_perm":"P_PERM",
+            "pval_beta":"P_BETA",
+            "rank":"RANK"
+            },
+"header_description":{
+            "phenotype_id":"Phenotype ID",
+            "num_var":"Number of variants in cis-window",
+            "beta_shape1":"Parameter of the fitted Beta distribution",
+            "beta_shape2":"Parameter of the fitted Beta distribution",
+            "true_df":"Degrees of freedom used to compute p-values",
+            "pval_true_df":"Nominal p-value based on true_df",
+            "variant_id":"Variant ID",
+            "start_distance":"Distance between the variant and phenotype start position (e.g., TSS)",
+            "end_distance":"Distance between the variant and phenotype end position (only present if different from start position)",
+            "ma_samples":"Number of samples carrying at least one minor allele",
+            "ma_count":"Number of minor alleles",
+            "af":"In-sample ALT allele frequency of the variant",
+            "pval_nominal":"Nominal p-value of the association between the phenotype and variant",
+            "slope":"Regression slope",
+            "slope_se":"Standard error of the regression slope",
+            "pval_perm":"Empirical p-value from permutations",
+            "pval_beta":"Beta-approximated empirical p-value",
+            "rank":"Rank of the variant for the phenotype"
+            }
+}

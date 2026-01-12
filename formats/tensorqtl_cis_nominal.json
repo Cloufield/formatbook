@@ -1,0 +1,32 @@
+{
+"meta_data":{"format_name":"tensorqtl_cis_nominal",
+            "format_source":"https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+            "format_version":"20220726",
+            "format_cite_name":"tensorQTL",
+            "format_description":"tensorQTL cis-nominal mode output format"
+            },
+"format_dict":{
+            "variant_id":"SNPID",
+            "phenotype_id":"TRAIT",
+            "start_distance":"START_DISTANCE",
+            "end_distance":"END_DISTANCE",
+            "af":"EAF",
+            "ma_samples":"MA_SAMPLES",
+            "ma_count":"MA_COUNT",
+            "pval_nominal":"P",
+            "slope":"BETA",
+            "slope_se":"SE"
+            },
+"header_description":{
+            "phenotype_id":"Phenotype ID",
+            "variant_id":"Variant ID",
+            "start_distance":"Distance between the variant and phenotype start position (e.g., TSS)",
+            "end_distance":"Distance between the variant and phenotype end position (only present if different from start position)",
+            "af":"In-sample ALT allele frequency of the variant",
+            "ma_samples":"Number of samples carrying at least one minor allele",
+            "ma_count":"Number of minor alleles",
+            "pval_nominal":"Nominal p-value of the association between the phenotype and variant",
+            "slope":"Regression slope",
+            "slope_se":"Standard error of the regression slope"
+            }
+}
