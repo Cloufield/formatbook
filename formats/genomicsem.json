@@ -1,7 +1,7 @@
 {
     "meta_data":{"format_name":"genomicSEM",
                 "format_source":"https://github.com/GenomicSEM/GenomicSEM/wiki/4.-Common-Factor-GWAS", 
-                 "format_source2":"https://github.com/GenomicSEM/GenomicSEM/wiki/5.-Multivariate-GWAS",
+                 "format_source_2":"https://github.com/GenomicSEM/GenomicSEM/wiki/5.-Multivariate-GWAS",
                 "format_version":20241210
                 },
     "format_dict":{ "SNP":"SNPID",

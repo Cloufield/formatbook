@@ -4,13 +4,14 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 
-ALLOWED_TOP_LEVEL_KEYS = {"meta_data", "format_dict", "header_description"}
+ALLOWED_TOP_LEVEL_KEYS = {"meta_data", "format_dict", "header_description", "companion_meta"}
 
 META_REQUIRED = {"format_name", "format_source", "format_version"}
 META_OPTIONAL = {
@@ -32,6 +33,8 @@ META_OPTIONAL = {
     "software_license",
 }
 META_ALLOWED = META_REQUIRED | META_OPTIONAL
+
+COMPANION_META_ALLOWED = {"meta_file_required", "meta_file_format", "meta_to_canonical"}
 
 
 @dataclass(frozen=True)
@@ -57,9 +60,29 @@ def _is_str_list_or_null(x: Any) -> bool:
     return x is None or _as_str_list(x) is not None
 
 
-def _load_json(path: Path) -> Any:
+def _load_json_with_duplicates(path: Path) -> tuple[Any, list[str]]:
+    duplicate_paths: list[str] = []
+
+    def _hook(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        out: dict[str, Any] = {}
+        for k, v in pairs:
+            if k in out:
+                duplicate_paths.append(k)
+            out[k] = v
+        return out
+
     with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        return json.load(f, object_pairs_hook=_hook), duplicate_paths
+
+
+def _is_allowed_meta_key(k: str) -> bool:
+    if k in META_ALLOWED:
+        return True
+    # Additional sources: format_source_2, format_source_3, ...
+    m = re.fullmatch(r"format_source_(\d+)", k)
+    if m and int(m.group(1)) >= 2:
+        return True
+    return False
 
 
 def _load_reserved_headers_from_gwaslab(path: Path) -> set[str]:
@@ -68,7 +91,8 @@ def _load_reserved_headers_from_gwaslab(path: Path) -> set[str]:
     - list[str]
     - dict[str, ...] (keys are headers)
     """
-    data = _load_json(path)
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
     if isinstance(data, list) and all(isinstance(x, str) for x in data):
         return set(data)
     if isinstance(data, dict) and all(isinstance(k, str) for k in data.keys()):
@@ -133,10 +157,25 @@ def validate_format_json(
         f.append(Finding("ERROR", file_path, "header_description must be an object when present"))
         header_desc = None
 
+    companion_meta = payload.get("companion_meta")
+    if companion_meta is not None and not isinstance(companion_meta, dict):
+        f.append(Finding("ERROR", file_path, "companion_meta must be an object when present"))
+        companion_meta = None
+
     if meta is not None:
         for k in sorted(META_REQUIRED):
             if k not in meta:
-                f.append(Finding("ERROR", file_path, f"meta_data missing required field: {k}"))
+                # Backward compatibility: allow legacy format_source_1 as the first source.
+                if k == "format_source" and "format_source_1" in meta:
+                    f.append(
+                        Finding(
+                            "WARN" if not strict else "ERROR",
+                            file_path,
+                            "meta_data uses legacy format_source_1; use format_source for the primary source.",
+                        )
+                    )
+                else:
+                    f.append(Finding("ERROR", file_path, f"meta_data missing required field: {k}"))
             else:
                 v = meta.get(k)
                 if k in {"format_name", "format_source"}:
@@ -150,10 +189,42 @@ def validate_format_json(
                     elif isinstance(v, str) and v.strip() == "":
                         f.append(Finding("WARN" if not strict else "ERROR", file_path, "meta_data.format_version is empty"))
 
-        unknown_meta = set(meta.keys()) - META_ALLOWED
+        unknown_meta = {k for k in meta.keys() if not _is_allowed_meta_key(k)}
         if unknown_meta:
-            msg = f"Unknown meta_data fields: {sorted(unknown_meta)} (allowed: {sorted(META_ALLOWED)})."
+            msg = (
+                f"Unknown meta_data fields: {sorted(unknown_meta)} "
+                f"(allowed: {sorted(META_ALLOWED)} plus format_source_2, format_source_3, ...)."
+            )
             f.append(Finding("WARN" if not strict else "ERROR", file_path, msg))
+
+        legacy_no_underscore = sorted(k for k in meta.keys() if re.fullmatch(r"format_source[2-9]\d*", k))
+        if legacy_no_underscore:
+            f.append(
+                Finding(
+                    "WARN" if not strict else "ERROR",
+                    file_path,
+                    f"Use underscore before the index for repeated sources: {legacy_no_underscore} "
+                    "(expected format_source_2, format_source_3, ...).",
+                )
+            )
+
+        if "format_source_1" in meta:
+            f.append(
+                Finding(
+                    "WARN" if not strict else "ERROR",
+                    file_path,
+                    "Use format_source for the first source, not format_source_1.",
+                )
+            )
+
+        for k in sorted(meta.keys()):
+            m = re.fullmatch(r"format_source_(\d+)", k)
+            if m and int(m.group(1)) >= 2:
+                v = meta[k]
+                if not isinstance(v, str):
+                    f.append(Finding("ERROR", file_path, f"meta_data.{k} must be a string"))
+                elif v.strip() == "":
+                    f.append(Finding("WARN" if not strict else "ERROR", file_path, f"meta_data.{k} is empty"))
 
         if "format_header" in meta and meta["format_header"] is not None and not isinstance(meta["format_header"], bool):
             f.append(Finding("ERROR", file_path, "meta_data.format_header must be boolean or null when present"))
@@ -220,8 +291,11 @@ def validate_format_json(
         for k, v in fmt.items():
             if not _is_non_empty_str(k):
                 f.append(Finding("ERROR", file_path, "format_dict contains an empty/invalid key"))
+            if v is None:
+                # Documented in docs/design.md: unmapped but present columns
+                continue
             if not _is_non_empty_str(v):
-                f.append(Finding("ERROR", file_path, f"format_dict['{k}'] must map to a non-empty string"))
+                f.append(Finding("ERROR", file_path, f"format_dict['{k}'] must map to a non-empty string or null"))
 
             if reserved_headers is not None and isinstance(v, str) and v not in reserved_headers:
                 f.append(
@@ -231,6 +305,54 @@ def validate_format_json(
                         f"format_dict['{k}'] maps to unknown canonical header '{v}' (reserved list size={len(reserved_headers)})",
                     )
                 )
+
+    if companion_meta is not None:
+        unknown_companion = set(companion_meta.keys()) - COMPANION_META_ALLOWED
+        if unknown_companion:
+            msg = (
+                f"Unknown companion_meta fields: {sorted(unknown_companion)} "
+                f"(allowed: {sorted(COMPANION_META_ALLOWED)})."
+            )
+            f.append(Finding("WARN" if not strict else "ERROR", file_path, msg))
+
+        if (
+            "meta_file_required" in companion_meta
+            and companion_meta["meta_file_required"] is not None
+            and not isinstance(companion_meta["meta_file_required"], bool)
+        ):
+            f.append(Finding("ERROR", file_path, "companion_meta.meta_file_required must be boolean or null"))
+
+        if (
+            "meta_file_format" in companion_meta
+            and companion_meta["meta_file_format"] is not None
+            and not isinstance(companion_meta["meta_file_format"], str)
+        ):
+            f.append(Finding("ERROR", file_path, "companion_meta.meta_file_format must be string or null"))
+
+        if "meta_to_canonical" in companion_meta:
+            mtc = companion_meta["meta_to_canonical"]
+            if mtc is not None and not isinstance(mtc, dict):
+                f.append(Finding("ERROR", file_path, "companion_meta.meta_to_canonical must be an object or null"))
+            elif isinstance(mtc, dict):
+                for k, v in mtc.items():
+                    if not _is_non_empty_str(k):
+                        f.append(Finding("ERROR", file_path, "companion_meta.meta_to_canonical contains empty/invalid key"))
+                    if not _is_non_empty_str(v):
+                        f.append(
+                            Finding(
+                                "ERROR",
+                                file_path,
+                                f"companion_meta.meta_to_canonical['{k}'] must map to a non-empty string",
+                            )
+                        )
+                    elif reserved_headers is not None and v not in reserved_headers:
+                        f.append(
+                            Finding(
+                                "ERROR" if strict else "WARN",
+                                file_path,
+                                f"companion_meta.meta_to_canonical['{k}'] maps to unknown canonical header '{v}'",
+                            )
+                        )
 
     # Cross-check col order against format_dict keys (warning by default, since some formats
     # may include columns that are intentionally unmapped).
@@ -245,18 +367,16 @@ def validate_format_json(
                 )
             )
 
-    # header_description consistency: docs say keys are canonical headers, but some examples
-    # use source columns. Accept either; warn if it matches neither.
+    # header_description keys should describe raw/source headers.
     if header_desc is not None and isinstance(header_desc, dict) and fmt is not None:
         hdr_keys = {k for k in header_desc.keys() if isinstance(k, str)}
         fmt_keys = set(fmt.keys())
-        fmt_vals = {v for v in fmt.values() if isinstance(v, str)}
-        if hdr_keys and not (hdr_keys.issubset(fmt_keys) or hdr_keys.issubset(fmt_vals)):
+        if hdr_keys and not hdr_keys.issubset(fmt_keys):
             f.append(
                 Finding(
                     "WARN" if not strict else "ERROR",
                     file_path,
-                    "header_description keys do not appear to be a subset of format_dict keys or mapped canonical headers.",
+                    "header_description keys must be a subset of format_dict keys (raw/source headers).",
                 )
             )
 
@@ -374,13 +494,24 @@ def main(argv: list[str]) -> int:
     findings: list[Finding] = []
     for fp in format_files:
         try:
-            payload = _load_json(fp)
+            payload, duplicate_keys = _load_json_with_duplicates(fp)
         except json.JSONDecodeError as e:
             findings.append(Finding("ERROR", fp, f"Invalid JSON: {e}"))
             continue
         except Exception as e:
             findings.append(Finding("ERROR", fp, f"Failed to read: {e}"))
             continue
+
+        if duplicate_keys:
+            # Duplicate keys are not safe in JSON because parsers keep the last value.
+            uniq = sorted(set(duplicate_keys))
+            findings.append(
+                Finding(
+                    "ERROR",
+                    fp,
+                    f"Duplicate JSON keys detected: {uniq}. Remove duplicates to avoid parser-dependent behavior.",
+                )
+            )
 
         findings.extend(
             validate_format_json(

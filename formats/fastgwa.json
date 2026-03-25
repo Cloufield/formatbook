@@ -1,7 +1,7 @@
 {
 "meta_data":{"format_name":"fastgwa",
             "format_source":"https://yanglab.westlake.edu.cn/software/gcta/#fastGWA",
-            "format_source2":"https://yanglab.westlake.edu.cn/software/gcta/#fastGWA-GLMM",
+            "format_source_2":"https://yanglab.westlake.edu.cn/software/gcta/#fastGWA-GLMM",
             "format_version":"20220726"
             },
 "format_dict":{

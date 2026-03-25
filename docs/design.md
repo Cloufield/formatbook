@@ -6,11 +6,11 @@ The formatbook is a standardized specification system for genetic association st
 
 ## Core Concept
 
-Each format specification maps tool-specific column names to a standardized set of canonical field names. This allows downstream tools to work with data from different sources without needing to know the specific column names used by each tool.
+Each format specification maps tool-specific column names to a standardized set of canonical field names used in GWASLab. This allows downstream tools to work with data from different sources without needing to know the specific column names used by each tool.
 
 ## Format Structure
 
-Each format specification is a JSON object with three main sections:
+Each format specification is a JSON object with three main sections (plus one optional companion metadata section):
 
 ### 1. `meta_data`
 
@@ -20,6 +20,7 @@ Contains metadata about the format specification itself:
 | --- | --- | --- |
 | `format_name` | Yes | The name of the format (e.g., "tensorqtl_cis", "plink", "vcf") |
 | `format_source` | Yes | URL or reference to the official documentation for this format |
+| `format_source_2` | No | Second URL/reference when a format has multiple official sources |
 | `format_version` | Yes | Version identifier for the format specification |
 | `format_cite_name` | No | Name to use when citing this format |
 | `format_citation` | No | Full citation string |
@@ -38,12 +39,20 @@ Contains metadata about the format specification itself:
 | `last_check_date` | No | Date when the format specification was last verified |
 | `software_license` | No | License information for the software that produces this format |
 
+Naming rule for repeated metadata fields:
+
+- For multiple values of the same field, use an underscore and a numeric suffix: `2`, `3`, ...
+- Example: `format_source` (first), `format_source_2`, `format_source_3`, ...
+- Do not use `format_source_1` (use `format_source` for the primary reference) or legacy keys like `format_source2` (no underscore).
+
 ### 2. `format_dict`
 
 A dictionary mapping format-specific column names to canonical field names. This is the core mapping that enables format conversion.
 
 **Key**: The actual column name as it appears in the format's output files  
-**Value**: The standardized canonical field name (must be one of the headers defined in `src/gwaslab/qc/qc_researved_header.json`)
+**Value**: The standardized canonical field name (must be one of the canonical headers defined in the GWASLab package, `qc/qc_researved_header.json`), or `null` for columns that exist in the file but are not mapped to any canonical field.
+
+Use `null` when you want to document extra columns (for example tool-specific statistics) so detectors and validators know the header may appear, without claiming a GWASLab canonical mapping. Do not use `format_other_cols` or similar separate lists; keep those columns in `format_dict` with `null` values instead.
 
 Example:
 ```json
@@ -63,9 +72,9 @@ This means:
 
 ### 3. `header_description` (optional)
 
-A dictionary providing human-readable descriptions for each canonical field used in this format. This helps users understand what each field represents.
+A dictionary providing human-readable descriptions for each raw/source header used in this format.
 
-**Key**: The canonical field name (same as values in `format_dict`)  
+**Key**: The raw/source header name (same as keys in `format_dict`)  
 **Value**: Human-readable description
 
 Example:
@@ -78,9 +87,36 @@ Example:
 }
 ```
 
+### 4. `companion_meta` (optional)
+
+Use this section when a format has a companion metadata file (for example SSF sidecar metadata).
+
+Minimal fields:
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `meta_file_required` | No | Whether the companion metadata file is required for parsing/conversion |
+| `meta_file_format` | No | Metadata file type (e.g., `yaml`, `json`) |
+| `meta_to_canonical` | No | Mapping from metadata keys to GWASLab canonical fields |
+
+Example:
+```json
+{
+  "companion_meta": {
+    "meta_file_required": false,
+    "meta_file_format": "yaml",
+    "meta_to_canonical": {
+      "genome_build": "BUILD",
+      "trait": "TRAIT",
+      "sample_size": "N"
+    }
+  }
+}
+```
+
 ## Canonical Field Names
 
-The formatbook uses a standardized set of canonical field names. **All canonical headers are defined in `gwaslab/qc/qc_researved_header.json`**, which serves as the authoritative reference for all valid canonical field names.
+The formatbook uses a standardized set of canonical field names. **All canonical headers are defined in the GWASLab package (`qc/qc_researved_header.json`)**, which serves as the authoritative reference for all valid canonical field names.
 
 All values in `format_dict` must map to one of these reserved canonical headers. This ensures consistency and prevents the introduction of non-standard field names.
 
@@ -223,7 +259,7 @@ The formatbook enables:
 - Individual format specifications are stored in `formats/*.json`
 - All formats are aggregated into a single `formatbook.json` file
 - Each format is keyed by its format identifier (e.g., "tensorqtl_cis", "plink")
-- **Canonical headers are defined in `src/gwaslab/qc/qc_researved_header.json`** - this file contains the authoritative list of all valid canonical field names that can be used as values in `format_dict`
+- **Canonical headers are defined in the GWASLab package (`qc/qc_researved_header.json`)** - this file contains the authoritative list of all valid canonical field names that can be used as values in `format_dict`
 
 ## Future Considerations
 
@@ -231,3 +267,25 @@ The formatbook enables:
 - Validation schemas for data types and value ranges
 - Format evolution tracking
 - Automated format detection and validation tools
+
+## Policy: Conflicting Aliases and Duplicate Keys (ID Fields)
+
+Keep `SNPID`/`rsID` mapping deterministic.
+
+### Forward conversion (source → GWASLab)
+- If both ID types exist, keep both: `SNPID` and `rsID`.
+- If only one exists, output only `SNPID`.
+
+### Reverse conversion (GWASLab → source)
+- For headers that can take either ID type (for example `ID`, `SNP`), use `rsID` if present; otherwise use `SNPID`.
+
+### Alias and duplicate-key rules
+- Each raw source header may appear only once in `format_dict`.
+- Do not map one raw alias to both `SNPID` and `rsID` in the same format file.
+- If multiple aliases map to one canonical field, use a fixed priority: exact header > case/legacy alias.
+- If ambiguity remains, prefer `SNPID`.
+
+### `format_dict` guidance
+- Use explicit mappings, for example:
+  - `SNP`, `MarkerName`, `variant_id` → `SNPID`
+  - `RSID`, `rsid` → `rsID`

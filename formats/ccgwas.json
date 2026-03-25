@@ -6,8 +6,7 @@
                 "format_separator":"\t",
                 "format_citation":"Peyrot, W. J., & Price, A. L. (2021). Identifying loci with different allele frequencies among cases of eight psychiatric disorders using CC-GWAS. Nature genetics, 53(4), 445-454.",
                 "format_comment":null,
-                "format_na":null,
-                "format_other_cols":["Exact_beta","Exact_se","Exact_pval","CCGWAS_signif"]
+                "format_na":null
                 },
     "format_dict":{ "SNP":"SNPID",
                     "CHR":"CHR",
@@ -16,6 +15,10 @@
                     "A1":"EA",
                     "OLS_beta":"BETA",
                     "OLS_se":"SE",
-                    "OLS_pval":"P"
+                    "OLS_pval":"P",
+                    "Exact_beta":null,
+                    "Exact_se":null,
+                    "Exact_pval":null,
+                    "CCGWAS_signif":null
                 }
     }

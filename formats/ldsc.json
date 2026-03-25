@@ -1,7 +1,7 @@
 {
 "meta_data":{"format_name":"ldsc",
             "format_source":"https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format", 
-             "format_source2":"https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
+             "format_source_2":"https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
             "format_version":20150306
             },
 "format_dict":{ "SNP":"SNPID",

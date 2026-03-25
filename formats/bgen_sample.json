@@ -1,0 +1,41 @@
+{
+    "meta_data":{
+        "format_name":".sample",
+        "format_source":"https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/sample_file_formats.html",
+        "format_source_2":"https://www.cog-genomics.org/plink/2.0/formats#sample",
+        "format_version":"20260208",
+        "format_cite_name":"Oxford/BGEN",
+        "format_separator":" ",
+        "format_na":"NA",
+        "format_comment":null,
+        "format_header":true,
+        "format_header_lines":2,
+        "format_header_line2_description":"Second header line specifies column types: '0' for ID/covariates, 'D' for discrete/categorical, 'B' for binary, 'P' for continuous phenotype",
+        "format_datatype":{
+            "ID_1":"string",
+            "ID_2":"string",
+            "missing":"float",
+            "sex":"category"
+        },
+        "format_col_order":["ID_1","ID_2","missing","sex"],
+        "format_description":"Sample information file (.sample) accompanying .gen, .bgen genotype dosage files, or .haps phased reference panels. Loaded with --data/--sample, and produced by --export. The file is space-delimited with two header lines followed by one line per sample.",
+        "last_check_date":"20260208"
+    },
+    "format_dict":{
+        "ID_1":"FID",
+        "ID_2":"IID",
+        "missing":"MISSING",
+        "sex":"SEX"
+    },
+    "header_description":{
+        "ID_1":"Family ID (header line 2 value: 0)",
+        "ID_2":"Individual ID (header line 2 value: 0)",
+        "missing":"Missing call frequency (header line 2 value: 0)",
+        "sex":"Sex code ('1' = male, '2' = female, '0' = unknown; header line 2 value: D)"
+    },
+    "phenotype_types":{
+        "B":"Binary phenotype ('0' = control, '1' = case, 'NA' = missing)",
+        "D":"Discrete/categorical phenotype (positive integers, 'NA' = missing)",
+        "P":"Continuous phenotype (real numbers, 'NA' = missing)"
+    }
+}

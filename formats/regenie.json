@@ -1,6 +1,6 @@
 {
 "meta_data":{"format_name":"regenie",
-            "format_source_1":"https://rgcgithub.github.io/regenie/", 
+            "format_source":"https://rgcgithub.github.io/regenie/", 
             "format_source_2":"https://github.com/rgcgithub/regenie/blob/master/example/test_bin_out_firth_Y1.regenie",
             "format_version":"20220726",
             "format_cite_name":"REGENIE",
