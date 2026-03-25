@@ -6,9 +6,10 @@
         "format_cite_name":"PLINK 2.0",
         "format_separator":"\t",
         "format_na":".",
-        "format_comment":"#",
+        "format_comment":"##",
         "format_header":true,
         "format_datatype":{
+            "#CHROM":"category",
             "CHROM":"category",
             "POS":"int",
             "ID":"string",
