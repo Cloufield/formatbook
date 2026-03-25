@@ -5,7 +5,7 @@
         "format_version":"v4.0.5",
         "format_citation":null,
         "format_cite_name":"GWASLab",
-        "format_separator":null,
+        "format_separator":"\t",
         "format_na":null,
         "format_comment":null,
         "format_header":true,
