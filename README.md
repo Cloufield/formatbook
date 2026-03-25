@@ -30,6 +30,18 @@ For example : format for metal software
 }
 ```
 
+Integrity check:
+
+```bash
+python3 scripts/check_format_jsons.py
+```
+
+To validate `format_dict` canonical headers against a gwaslab checkout:
+
+```bash
+python3 scripts/check_format_jsons.py --reserved-headers ../gwaslab/src/gwaslab/qc/qc_researved_header.json
+```
+
 Supported formats:
 
 |Keyword|Software|Description|Citation|

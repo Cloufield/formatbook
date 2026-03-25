@@ -16,25 +16,27 @@ Each format specification is a JSON object with three main sections:
 
 Contains metadata about the format specification itself:
 
-- **`format_name`** (required): The name of the format (e.g., "tensorqtl_cis", "plink", "vcf")
-- **`format_source`** (required): URL or reference to the official documentation for this format
-- **`format_version`** (required): Version identifier for the format specification
-- **`format_cite_name`** (optional): Name to use when citing this format
-- **`format_citation`** (optional): Full citation string
-- **`format_description`** (optional): Human-readable description of what this format represents
-- **`format_separator`** (optional): Field separator character (e.g., "\t" for tab, " " for space)
-- **`format_na`** (optional): How missing values are represented (e.g., "NA", ".", null, or an array of possible values)
-- **`format_comment`** (optional): Character used for comment lines (e.g., "#")
-- **`format_header`** (optional): Boolean indicating whether the file has a header row
-- **`format_col_order`** (optional): Array specifying the expected column order
-- **`format_datatype`** (optional): Object mapping column names to data types (e.g., "int", "float", "string", "category")
-- **`format_fixed_header`** (optional): Fixed header lines (e.g., for VCF format)
-- **`format_fixed`** (optional): Fixed columns that must be present
-- **`format_format`** (optional): Format-specific fields (e.g., for VCF FORMAT field)
-- **`format_assumption`** (optional): Notes about assumptions made in the format mapping
-- **`format_notes`** (optional): Array of additional notes about the format
-- **`last_check_date`** (optional): Date when the format specification was last verified
-- **`software_license`** (optional): License information for the software that produces this format
+| Field | Required | Description |
+| --- | --- | --- |
+| `format_name` | Yes | The name of the format (e.g., "tensorqtl_cis", "plink", "vcf") |
+| `format_source` | Yes | URL or reference to the official documentation for this format |
+| `format_version` | Yes | Version identifier for the format specification |
+| `format_cite_name` | No | Name to use when citing this format |
+| `format_citation` | No | Full citation string |
+| `format_description` | No | Human-readable description of what this format represents |
+| `format_separator` | No | Field separator character (e.g., "\t" for tab, " " for space) |
+| `format_na` | No | How missing values are represented (e.g., "NA", ".", null, or an array of possible values) |
+| `format_comment` | No | Character used for comment lines (e.g., "#") |
+| `format_header` | No | Boolean indicating whether the file has a header row |
+| `format_col_order` | No | Array specifying the expected column order |
+| `format_datatype` | No | Object mapping column names to data types (e.g., "int", "float", "string", "category") |
+| `format_fixed_header` | No | Fixed header lines (e.g., for VCF format) |
+| `format_fixed` | No | Fixed columns that must be present |
+| `format_format` | No | Format-specific fields (e.g., for VCF FORMAT field) |
+| `format_assumption` | No | Notes about assumptions made in the format mapping |
+| `format_notes` | No | Array of additional notes about the format |
+| `last_check_date` | No | Date when the format specification was last verified |
+| `software_license` | No | License information for the software that produces this format |
 
 ### 2. `format_dict`
 
