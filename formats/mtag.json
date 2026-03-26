@@ -10,7 +10,6 @@
                         "chr",
                         "bpos",
                         "a1",
-                        "beta",
                         "a2",
                         "freq",
                         "beta",
@@ -31,6 +30,7 @@
                 "beta":"BETA",
                 "se":"SE",
                 "pval":"P",
+                "p_value":"P",
                 "z":"Z"
             }
 }

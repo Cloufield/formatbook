@@ -1,31 +1,55 @@
 {
-    "meta_data":{
-        "format_name":".assoc.logistic",
-        "format_source":"https://www.cog-genomics.org/plink/1.9/formats#assoc",
-        "format_version":"Stable (beta 6.26, 2 Apr)",
-        "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
-        "format_cite_name":"PLINK 1.9",
-        "format_separator":"\t",
-        "format_na":null,
-        "format_comment":null,
-        "format_header":true,
-        "format_col_order":["CHR","SNP","BP","A1","A2","TEST","NMISS","OR","SE","L95","U95","STAT","P"],
-        "last_check_date":"20250106"
+    "meta_data": {
+        "format_name": ".assoc.logistic",
+        "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_linear",
+        "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+        "format_cite_name": "PLINK 1.9",
+        "format_description": "Multi-covariate logistic regression from --logistic. BETA column appears with '--logistic beta'; otherwise OR. With --ci 0.xy, SE, L_xy, U_xy are inserted before STAT (SE is on log-odds scale).",
+        "format_separator": "\t",
+        "format_na": null,
+        "format_comment": null,
+        "format_header": true,
+        "format_col_order": [
+            "CHR", "SNP", "BP", "A1", "TEST", "NMISS", "OR", "BETA", "SE", "L95", "U95", "STAT", "P"
+        ],
+        "last_check_date": "20260326"
     },
-    "format_dict":{
-        "SNP":"SNPID",
-        "CHR":"CHR",
-        "BP":"POS",
-        "A2":"NEA",
-        "A1":"EA",
-        "OR":"OR",
-        "L95":"OR_95L",
-        "U95":"OR_95U",
-        "H95":"OR_95U",
-        "SE":"SE",
-        "P":"P",
-        "STAT":"T",
-        "CHISQ":"CHISQ",
-        "NMISS":"N"
+    "format_dict": {
+        "CHR": "CHR",
+        "SNP": "SNPID",
+        "BP": "POS",
+        "A1": "EA",
+        "A2": "NEA",
+        "TEST": null,
+        "NMISS": "N",
+        "OR": "OR",
+        "BETA": "BETA",
+        "SE": "SE",
+        "L95": "OR_95L",
+        "U95": "OR_95U",
+        "STAT": "T",
+        "P": "P",
+        "CHISQ": "CHISQ"
+    },
+    "format_dict_2": {
+        "SNP": "rsID"
+    },
+    "header_description": {
+        "CHR": "Chromosome code (omitted with 'no-snp')",
+        "SNP": "Variant identifier (omitted with 'no-snp')",
+        "BP": "Base-pair coordinate (omitted with 'no-snp')",
+        "A1": "Allele 1 (omitted with 'no-snp')",
+        "A2": "Allele 2 (when present)",
+        "TEST": "Test identifier",
+        "NMISS": "Observations with nonmissing genotype, phenotype, and covariates",
+        "OR": "Odds ratio (without '--logistic beta')",
+        "BETA": "Log-odds coefficient ('--logistic beta')",
+        "SE": "Standard error of beta / log-odds (--ci)",
+        "L95": "Lower end of symmetric approx. CI for OR (--ci)",
+        "U95": "Upper end of symmetric approx. CI for OR (--ci)",
+        "STAT": "t-statistic",
+        "P": "Asymptotic p-value for t-statistic",
+        "CHISQ": "Chi-square (when reported for some tests)"
     }
 }

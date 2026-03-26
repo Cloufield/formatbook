@@ -1,28 +1,51 @@
 {
-    "meta_data":{
-        "format_name":".assoc.dosage",
-        "format_source":"https://www.cog-genomics.org/plink/1.9/formats#assoc_dosage",
-        "format_version":"Stable (beta 6.26, 2 Apr)",
-        "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
-        "format_cite_name":"PLINK 1.9",
-        "format_separator":"\t",
-        "format_na":null,
-        "format_comment":null,
-        "format_header":true,
-        "format_col_order":["CHR","SNP","BP","A1","A2","FRQ","OR","BETA","SE","P","INFO"],
-        "last_check_date":"20250106"
+    "meta_data": {
+        "format_name": ".assoc.dosage",
+        "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_dosage",
+        "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+        "format_cite_name": "PLINK 1.9",
+        "format_description": "Dosage association from --dosage. CHR/BP require --map. 'case-control-freqs' replaces FRQ with FRQ_A and FRQ_U.",
+        "format_separator": "\t",
+        "format_na": null,
+        "format_comment": null,
+        "format_header": true,
+        "format_col_order": [
+            "CHR", "SNP", "BP", "A1", "A2", "FRQ", "FRQ_A", "FRQ_U", "INFO", "BETA", "OR", "SE", "P"
+        ],
+        "last_check_date": "20260326"
     },
-    "format_dict":{
-        "SNP":"SNPID",
-        "CHR":"CHR",
-        "BP":"POS",
-        "A2":"NEA",
-        "A1":"EA",
-        "FRQ":"EAF",
-        "OR":"OR",
-        "BETA":"BETA",
-        "INFO":"INFO",
-        "SE":"SE",
-        "P":"P"
+    "format_dict": {
+        "CHR": "CHR",
+        "SNP": "SNPID",
+        "BP": "POS",
+        "A1": "EA",
+        "A2": "NEA",
+        "FRQ": "EAF",
+        "FRQ_A": "EAF_CASE",
+        "FRQ_U": "EAF_CONTROL",
+        "INFO": "INFO",
+        "BETA": "BETA",
+        "OR": "OR",
+        "SE": "SE",
+        "P": "P"
+    },
+    "format_dict_2": {
+        "SNP": "rsID"
+    },
+    "header_description": {
+        "CHR": "Chromosome code",
+        "SNP": "Variant identifier",
+        "BP": "Base-pair coordinate",
+        "A1": "Allele 1 (usually minor)",
+        "A2": "Allele 2 (usually major)",
+        "FRQ": "Allele 1 frequency (overall)",
+        "FRQ_A": "Allele 1 frequency in cases ('case-control-freqs')",
+        "FRQ_U": "Allele 1 frequency in controls ('case-control-freqs')",
+        "INFO": "R-squared quality / information content",
+        "BETA": "Regression coefficient (quantitative trait)",
+        "OR": "Odds ratio (case/control)",
+        "SE": "Standard error of effect (not OR SE)",
+        "P": "Association p-value"
     }
 }

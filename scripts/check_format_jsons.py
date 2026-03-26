@@ -11,7 +11,14 @@ from pathlib import Path
 from typing import Any
 
 
-ALLOWED_TOP_LEVEL_KEYS = {"meta_data", "format_dict", "header_description", "companion_meta"}
+ALLOWED_TOP_LEVEL_KEYS = {
+    "meta_data",
+    "format_dict",
+    "format_dict_2",
+    "header_description",
+    "companion_meta",
+    "phenotype_types",
+}
 
 META_REQUIRED = {"format_name", "format_source", "format_version"}
 META_OPTIONAL = {
@@ -31,6 +38,10 @@ META_OPTIONAL = {
     "format_notes",
     "last_check_date",
     "software_license",
+    "format_header_lines",
+    "format_header_line2_description",
+    "format_contig_19",
+    "format_contig_38",
 }
 META_ALLOWED = META_REQUIRED | META_OPTIONAL
 
@@ -60,7 +71,29 @@ def _is_str_list_or_null(x: Any) -> bool:
     return x is None or _as_str_list(x) is not None
 
 
-def _load_json_with_duplicates(path: Path) -> tuple[Any, list[str]]:
+def _format_dict_primary_value(v: Any) -> str | None:
+    """format_dict / format_dict_2 value: mapped canonical string, or None when unmapped."""
+    if v is None:
+        return None
+    if isinstance(v, str) and v.strip():
+        return v
+    return None
+
+
+def _all_canonicals_for_raw(raw: str, fmt: dict[str, Any], fd2: dict[str, Any] | None) -> list[str]:
+    """Ordered: primary from format_dict, then optional second canonical from format_dict_2."""
+    out: list[str] = []
+    p = _format_dict_primary_value(fmt.get(raw))
+    if p:
+        out.append(p)
+    if fd2 is not None and raw in fd2:
+        s = _format_dict_primary_value(fd2.get(raw))
+        if s and s not in out:
+            out.append(s)
+    return out
+
+
+def _load_json_detect_duplicate_keys(path: Path) -> tuple[Any, list[str]]:
     duplicate_paths: list[str] = []
 
     def _hook(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
@@ -161,6 +194,11 @@ def validate_format_json(
     if companion_meta is not None and not isinstance(companion_meta, dict):
         f.append(Finding("ERROR", file_path, "companion_meta must be an object when present"))
         companion_meta = None
+
+    format_dict_2 = payload.get("format_dict_2")
+    if format_dict_2 is not None and not isinstance(format_dict_2, dict):
+        f.append(Finding("ERROR", file_path, "format_dict_2 must be an object when present"))
+        format_dict_2 = None
 
     if meta is not None:
         for k in sorted(META_REQUIRED):
@@ -292,17 +330,76 @@ def validate_format_json(
             if not _is_non_empty_str(k):
                 f.append(Finding("ERROR", file_path, "format_dict contains an empty/invalid key"))
             if v is None:
-                # Documented in docs/design.md: unmapped but present columns
                 continue
-            if not _is_non_empty_str(v):
-                f.append(Finding("ERROR", file_path, f"format_dict['{k}'] must map to a non-empty string or null"))
+            primary = _format_dict_primary_value(v)
+            if primary is None:
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        f"format_dict['{k}'] must be a non-empty string or null",
+                    )
+                )
+                continue
+            for canon in _all_canonicals_for_raw(k, fmt, format_dict_2):
+                if reserved_headers is not None and canon not in reserved_headers:
+                    f.append(
+                        Finding(
+                            "ERROR" if strict else "WARN",
+                            file_path,
+                            f"format_dict / format_dict_2 for raw '{k}' references unknown canonical header '{canon}' (reserved list size={len(reserved_headers)})",
+                        )
+                    )
 
-            if reserved_headers is not None and isinstance(v, str) and v not in reserved_headers:
+    if format_dict_2 is not None and isinstance(format_dict_2, dict) and fmt is not None:
+        for sk, sv in format_dict_2.items():
+            if not _is_non_empty_str(sk):
+                f.append(Finding("ERROR", file_path, "format_dict_2 contains an empty/invalid key"))
+                continue
+            if sk not in fmt:
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        f"format_dict_2 key '{sk}' is not a format_dict key",
+                    )
+                )
+                continue
+            prim = _format_dict_primary_value(fmt.get(sk))
+            if prim is None:
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        f"format_dict_2['{sk}'] requires format_dict['{sk}'] to be a mapped string (not null)",
+                    )
+                )
+                continue
+            sec = _format_dict_primary_value(sv)
+            if sec is None:
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        f"format_dict_2['{sk}'] must be a non-empty string",
+                    )
+                )
+                continue
+            if sec == prim:
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        f"format_dict_2['{sk}'] must differ from format_dict primary canonical '{prim}'",
+                    )
+                )
+                continue
+            if reserved_headers is not None and sec not in reserved_headers:
                 f.append(
                     Finding(
                         "ERROR" if strict else "WARN",
                         file_path,
-                        f"format_dict['{k}'] maps to unknown canonical header '{v}' (reserved list size={len(reserved_headers)})",
+                        f"format_dict_2['{sk}'] maps to unknown canonical header '{sec}'",
                     )
                 )
 
@@ -494,7 +591,7 @@ def main(argv: list[str]) -> int:
     findings: list[Finding] = []
     for fp in format_files:
         try:
-            payload, duplicate_keys = _load_json_with_duplicates(fp)
+            payload, duplicate_keys = _load_json_detect_duplicate_keys(fp)
         except json.JSONDecodeError as e:
             findings.append(Finding("ERROR", fp, f"Invalid JSON: {e}"))
             continue
@@ -503,13 +600,12 @@ def main(argv: list[str]) -> int:
             continue
 
         if duplicate_keys:
-            # Duplicate keys are not safe in JSON because parsers keep the last value.
             uniq = sorted(set(duplicate_keys))
             findings.append(
                 Finding(
                     "ERROR",
                     fp,
-                    f"Duplicate JSON keys detected: {uniq}. Remove duplicates to avoid parser-dependent behavior.",
+                    f"Duplicate JSON keys detected: {uniq}. Use format_dict_2 for a second mapping to the same raw header.",
                 )
             )
 
@@ -532,7 +628,22 @@ def main(argv: list[str]) -> int:
     print(f"  Checked files: {len(format_files)}", file=sys.stderr)
     print(f"  Errors: {len(errors)}", file=sys.stderr)
     print(f"  Warnings: {len(warns)}", file=sys.stderr)
-    return 1 if errors or (args.strict and warns) else 0
+    base_rc = 1 if errors or (args.strict and warns) else 0
+    if base_rc != 0:
+        return base_rc
+    scripts_dir = Path(__file__).resolve().parent
+    if str(scripts_dir) not in sys.path:
+        sys.path.insert(0, str(scripts_dir))
+    try:
+        import check_auto_assumption_dict as _auto_assumption_check  # noqa: PLC0415
+    except ImportError as e:
+        print(f"ERROR: could not import check_auto_assumption_dict: {e}", file=sys.stderr)
+        return 1
+    _print_section("Auto presets (assumption_dict)")
+    auto_rc = _auto_assumption_check.main([])
+    if auto_rc != 0:
+        return auto_rc
+    return 0
 
 
 if __name__ == "__main__":

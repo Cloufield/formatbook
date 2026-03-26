@@ -42,5 +42,6 @@
         "odds_ratio":"OR",
         "hazard_ratio":"HR",
         "ci_lower":"OR_95L",
-        "ci_upper":"OR_95U"}
+        "ci_upper":"OR_95U",
+        "ref_allele":"REF"}
 }

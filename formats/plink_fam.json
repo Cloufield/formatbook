@@ -1,31 +1,40 @@
 {
-    "meta_data":{
-        "format_name":".fam",
-        "format_source":"https://www.cog-genomics.org/plink/1.9/formats#fam",
-        "format_version":"Stable (beta 6.26, 2 Apr)",
-        "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
-        "format_cite_name":"PLINK 1.9",
-        "format_separator":"\t",
-        "format_na":null,
-        "format_comment":null,
-        "format_header":false,
-        "format_datatype":{
-            "FID":"string",
-            "IID":"string",
-            "PAT":"string",
-            "MAT":"string",
-            "SEX":"category",
-            "PHENO1":"category"
+    "meta_data": {
+        "format_name": ".fam",
+        "format_source": "https://www.cog-genomics.org/plink/1.9/formats#fam",
+        "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+        "format_cite_name": "PLINK 1.9",
+        "format_description": "Per-sample row for .bed: FID, IID, father IID, mother IID, sex, phenotype. Quantitative phenotype if numeric values other than {-9,0,1,2} appear.",
+        "format_separator": "\t",
+        "format_na": null,
+        "format_comment": null,
+        "format_header": false,
+        "format_datatype": {
+            "0": "string",
+            "1": "string",
+            "2": "string",
+            "3": "string",
+            "4": "category",
+            "5": "category"
         },
-        "format_col_order":["FID","IID","PAT","MAT","SEX","PHENO1"],
-        "last_check_date":"20250106"
+        "format_col_order": ["0", "1", "2", "3", "4", "5"],
+        "last_check_date": "20260326"
     },
-    "format_dict":{
-        "0":"FID",
-        "1":"IID",
-        "2":"PAT",
-        "3":"MAT",
-        "4":"SEX",
-        "5":"PHENO1"
+    "format_dict": {
+        "0": "FID",
+        "1": "IID",
+        "2": "PAT",
+        "3": "MAT",
+        "4": "SEX",
+        "5": "PHENO1"
+    },
+    "header_description": {
+        "0": "Family ID",
+        "1": "Within-family ID (cannot be '0')",
+        "2": "Paternal IID ('0' if unknown)",
+        "3": "Maternal IID ('0' if unknown)",
+        "4": "Sex (1=male, 2=female, 0=unknown)",
+        "5": "Phenotype (1=control, 2=case; -9/0/non-numeric missing for case/control)"
     }
 }

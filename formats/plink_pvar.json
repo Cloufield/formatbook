@@ -1,38 +1,54 @@
 {
-    "meta_data":{
-        "format_name":".pvar",
-        "format_source":"https://www.cog-genomics.org/plink/2.0/formats#pvar",
-        "format_version":"Alpha 3.3 final (3 Jun)",
-        "format_cite_name":"PLINK 2.0",
-        "format_separator":"\t",
-        "format_na":".",
-        "format_comment":"##",
-        "format_header":true,
-        "format_datatype":{
-            "#CHROM":"category",
-            "CHROM":"category",
-            "POS":"int",
-            "ID":"string",
-            "REF":"string",
-            "ALT":"string",
-            "QUAL":"float",
-            "FILTER":"string",
-            "INFO":"string"
+    "meta_data": {
+        "format_name": ".pvar",
+        "format_source": "https://www.cog-genomics.org/plink/2.0/formats#pvar",
+        "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "format_cite_name": "PLINK 2.0",
+        "format_description": "Variant table for .pgen; VCF-style headers allowed. Last header line starts with '#CHROM'. Without headers, columns follow .bim order (CHROM, ID, CM, POS, ALT, REF or 5-column without CM).",
+        "format_separator": "\t",
+        "format_na": ".",
+        "format_comment": "#",
+        "format_header": true,
+        "format_datatype": {
+            "#CHROM": "category",
+            "CHROM": "category",
+            "POS": "int",
+            "ID": "string",
+            "REF": "string",
+            "ALT": "string",
+            "QUAL": "float",
+            "FILTER": "string",
+            "INFO": "string"
         },
-        "format_col_order":["#CHROM","POS","ID","REF","ALT","QUAL","FILTER","INFO"],
-        "last_check_date":"20250106"
+        "format_col_order": ["#CHROM", "POS", "ID", "REF", "ALT", "QUAL", "FILTER", "INFO", "FORMAT", "CM"],
+        "last_check_date": "20260326"
     },
-    "format_dict":{
-        "#CHROM":"CHR",
-        "CHROM":"CHR",
-        "POS":"POS",
-        "ID":"SNPID",
-        "REF":"REF",
-        "ALT":"ALT",
-        "QUAL":"QUAL",
-        "FILTER":"FILTER",
-        "INFO":"INFO",
-        "FORMAT":"FORMAT",
-        "CM":"CM"
+    "format_dict": {
+        "#CHROM": "CHR",
+        "CHROM": "CHR",
+        "POS": "POS",
+        "ID": "SNPID",
+        "REF": "REF",
+        "ALT": "ALT",
+        "QUAL": "QUAL",
+        "FILTER": "FILTER",
+        "INFO": "INFO",
+        "FORMAT": "FORMAT",
+        "CM": "CM"
+    },
+    "format_dict_2": {
+        "ID": "rsID"
+    },
+    "header_description": {
+        "#CHROM": "Chromosome code",
+        "POS": "Base-pair coordinate",
+        "ID": "Variant ID",
+        "REF": "Reference allele",
+        "ALT": "Alternate alleles (comma-separated)",
+        "QUAL": "Phred-scaled locus quality",
+        "FILTER": "FILTER field",
+        "INFO": "INFO field",
+        "FORMAT": "FORMAT column when present",
+        "CM": "Centimorgan position (optional)"
     }
 }

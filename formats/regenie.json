@@ -21,6 +21,7 @@
                 "BETA":"BETA",
                 "SE":"SE",
                 "CHISQ":"CHISQ",
-               "LOG10P":"MLOG10P"
+               "LOG10P":"MLOG10P",
+                "TEST":null
             }
 }

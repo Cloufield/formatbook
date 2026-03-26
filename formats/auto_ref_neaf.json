@@ -1,11 +1,11 @@
 {
     "meta_data": {
-        "format_name": "auto_ref",
+        "format_name": "auto_ref_neaf",
         "format_separator": "\t",
         "format_na": "#NA",
         "format_comment": null,
-        "format_assumption": "Note: auto_ref assumes A1=EA; REF=EA; Frq=EAF — same as `auto_1_ref` / `auto_1_ref_eaf`",
-        "format_version": 20230328
+        "format_assumption": "Note: auto_ref_neaf assumes A1=EA; REF=EA; Frq=NEAF — same as `auto_1_ref_neaf`",
+        "format_version": 20250827
     },
     "format_dict": {
         "variant_id": "SNPID",
@@ -171,12 +171,12 @@
         "Allele_1": "EA",
         "Allele_2": "NEA",
         "Alt": "NEA",
-        "FREQ": "EAF",
-        "FRQ": "EAF",
-        "Freq": "EAF",
+        "FREQ": "NEAF",
+        "FRQ": "NEAF",
+        "Freq": "NEAF",
         "Freq1": "EAF",
-        "Frequency": "EAF",
-        "Frq": "EAF",
+        "Frequency": "NEAF",
+        "Frq": "NEAF",
         "REF": "EA",
         "Ref": "EA",
         "a0": "NEA",
@@ -191,8 +191,8 @@
         "alternative": "NEA",
         "alternative_allele": "NEA",
         "alternative_allele_frequency": "NEAF",
-        "freq": "EAF",
-        "frq": "EAF",
+        "freq": "NEAF",
+        "frq": "NEAF",
         "reference": "EA",
         "reference_allele": "EA",
         "reference_allele_frequency": "EAF"

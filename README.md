@@ -36,6 +36,12 @@ Integrity check:
 python3 scripts/check_format_jsons.py
 ```
 
+`check_format_jsons.py` skips `formats/auto*.json` in the main pass but, when that pass succeeds, runs **`scripts/check_auto_assumption_dict.py`** on auto presets. To run only the auto check:
+
+```bash
+python3 scripts/check_auto_assumption_dict.py
+```
+
 To validate `format_dict` canonical headers against a gwaslab checkout:
 
 ```bash

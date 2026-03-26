@@ -21,6 +21,7 @@
                     "beta":"BETA",
                     "SE":"SE",
                     "p-value":"P",
-                    "OR":"OR"
+                    "OR":"OR",
+                    "Z":"Z"
                 }
     }

@@ -1,32 +1,53 @@
 {
-    "meta_data":{
-        "format_name":".assoc.linear",
-        "format_source":"https://www.cog-genomics.org/plink/1.9/formats#assoc",
-        "format_version":"Stable (beta 6.26, 2 Apr)",
-        "format_citation":"Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
-        "format_cite_name":"PLINK 1.9",
-        "format_separator":"\t",
-        "format_na":null,
-        "format_comment":null,
-        "format_header":true,
-        "format_col_order":["CHR","SNP","BP","A1","A2","TEST","NMISS","BETA","SE","R2","T","P"],
-        "last_check_date":"20250106"
+    "meta_data": {
+        "format_name": ".assoc.linear",
+        "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_linear",
+        "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+        "format_cite_name": "PLINK 1.9",
+        "format_description": "Multi-covariate linear regression from --linear. With --ci 0.xy, SE, L_xy, U_xy are inserted before STAT. Column count varies with 'genotypic', 'hethom', and --tests.",
+        "format_separator": "\t",
+        "format_na": null,
+        "format_comment": null,
+        "format_header": true,
+        "format_col_order": [
+            "CHR", "SNP", "BP", "A1", "TEST", "NMISS", "BETA", "SE", "L95", "U95", "STAT", "P"
+        ],
+        "last_check_date": "20260326"
     },
-    "format_dict":{
-        "SNP":"SNPID",
-        "CHR":"CHR",
-        "BP":"POS",
-        "A2":"NEA",
-        "A1":"EA",
-        "BETA":"BETA",
-        "L95":"BETA_95L",
-        "H95":"BETA_95U",
-        "U95":"BETA_95U",
-        "SE":"SE",
-        "P":"P",
-        "STAT":"T",
-        "T":"T",
-        "CHISQ":"CHISQ",
-        "NMISS":"N"
+    "format_dict": {
+        "CHR": "CHR",
+        "SNP": "SNPID",
+        "BP": "POS",
+        "A1": "EA",
+        "A2": "NEA",
+        "TEST": null,
+        "NMISS": "N",
+        "BETA": "BETA",
+        "SE": "SE",
+        "L95": "BETA_95L",
+        "U95": "BETA_95U",
+        "STAT": "T",
+        "P": "P",
+        "CHISQ": "CHISQ"
+    },
+    "format_dict_2": {
+        "SNP": "rsID"
+    },
+    "header_description": {
+        "CHR": "Chromosome code (omitted with 'no-snp')",
+        "SNP": "Variant identifier (omitted with 'no-snp')",
+        "BP": "Base-pair coordinate (omitted with 'no-snp')",
+        "A1": "Allele 1 (omitted with 'no-snp')",
+        "A2": "Allele 2 (when present)",
+        "TEST": "Test identifier",
+        "NMISS": "Observations with nonmissing genotype, phenotype, and covariates",
+        "BETA": "Regression coefficient (--linear)",
+        "SE": "Standard error of beta (--ci)",
+        "L95": "Lower end of symmetric approx. CI for beta (--ci)",
+        "U95": "Upper end of symmetric approx. CI for beta (--ci)",
+        "STAT": "t-statistic",
+        "P": "Asymptotic p-value for t-statistic",
+        "CHISQ": "Chi-square (when reported for some tests)"
     }
 }

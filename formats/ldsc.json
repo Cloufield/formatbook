@@ -1,21 +1,25 @@
 {
-"meta_data":{"format_name":"ldsc",
-            "format_source":"https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format", 
-             "format_source_2":"https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
-            "format_version":20150306
-            },
-"format_dict":{ "SNP":"SNPID",
-                "SNP":"rsID",
-                "A2":"NEA",
-                "A1":"EA",
-                "Frq":"EAF",
-                "N":"N",
-                "Beta":"BETA",
-                "P":"P",
-                "Z":"Z",
-                "INFO":"INFO",
-                "OR":"OR",
-                "CHR":"CHR",
-                "POS":"POS"
-            }
+    "meta_data": {
+        "format_name": "ldsc",
+        "format_source": "https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format",
+        "format_source_2": "https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
+        "format_version": 20150306
+    },
+    "format_dict": {
+        "SNP": "rsID",
+        "A2": "NEA",
+        "A1": "EA",
+        "Frq": "EAF",
+        "N": "N",
+        "Beta": "BETA",
+        "P": "P",
+        "Z": "Z",
+        "INFO": "INFO",
+        "OR": "OR",
+        "CHR": "CHR",
+        "POS": "POS"
+    },
+    "format_dict_2": {
+        "SNP": "SNPID"
+    }
 }

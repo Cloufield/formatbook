@@ -1,11 +1,11 @@
 {
     "meta_data": {
-        "format_name": "auto_ref",
+        "format_name": "auto_1_ref",
         "format_separator": "\t",
         "format_na": "#NA",
         "format_comment": null,
-        "format_assumption": "Note: auto_ref assumes A1=EA; REF=EA; Frq=EAF — same as `auto_1_ref` / `auto_1_ref_eaf`",
-        "format_version": 20230328
+        "format_assumption": "Note: auto_1_ref assumes A1=EA; REF=EA; Frq=EAF — same as `auto_ref` / `auto_1_ref_eaf`",
+        "format_version": 20250827
     },
     "format_dict": {
         "variant_id": "SNPID",
@@ -152,11 +152,12 @@
         "OR_95U": "OR_95U",
         "STATUS": "STATUS",
         "A0": "NEA",
+        "A0FREQ": "NEAF",
         "A1": "EA",
-        "A1FREQ": "EAF",
         "A2": "NEA",
         "AF": "EAF",
         "AF1": "EAF",
+        "AF2": "NEAF",
         "ALLELE0": "NEA",
         "ALLELE1": "EA",
         "ALLELE2": "NEA",
@@ -174,7 +175,7 @@
         "FREQ": "EAF",
         "FRQ": "EAF",
         "Freq": "EAF",
-        "Freq1": "EAF",
+        "Freq0": "NEAF",
         "Frequency": "EAF",
         "Frq": "EAF",
         "REF": "EA",
