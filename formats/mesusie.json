@@ -1,13 +1,18 @@
 {
-    "meta_data":{"format_name":"MESuSiE",
-                "format_source":"https://borangao.github.io/meSuSie_Analysis/installation.html", 
-                "format_version":20221109
-                },
-    "format_dict":{ "SNP":"SNPID",
-                    "N":"N",
-                    "Beta":"BETA",
-                    "Se":"SE",
-                    "Z":"Z",
-                    "POS":"POS"
-                }
+    "meta_data": {
+        "format_name": "MESuSiE",
+        "format_source": "https://borangao.github.io/meSuSie_Analysis/",
+        "format_version": 20221109,
+        "format_cite_name": "MESuSiE",
+        "format_citation": "Gao, B., & Zhou, X. (2024). MESuSiE enables scalable and powerful multi-ancestry fine-mapping of causal variants in genome-wide association studies. Nature Genetics, 56(1), 170-179.",
+        "github_url": "https://github.com/borangao/MESuSiE"
+    },
+    "format_dict": {
+        "SNP": "SNPID",
+        "N": "N",
+        "Beta": "BETA",
+        "Se": "SE",
+        "Z": "Z",
+        "POS": "POS"
     }
+}

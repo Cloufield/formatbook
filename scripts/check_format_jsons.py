@@ -10,6 +10,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+from formatbook_lib import all_canonicals_for_raw as _all_canonicals_for_raw
+from formatbook_lib import format_dict_primary_value as _format_dict_primary_value
+
 
 ALLOWED_TOP_LEVEL_KEYS = {
     "meta_data",
@@ -24,6 +31,7 @@ META_REQUIRED = {"format_name", "format_source", "format_version"}
 META_OPTIONAL = {
     "format_cite_name",
     "format_citation",
+    "github_url",
     "format_description",
     "format_separator",
     "format_na",
@@ -69,28 +77,6 @@ def _as_str_list(x: Any) -> list[str] | None:
 
 def _is_str_list_or_null(x: Any) -> bool:
     return x is None or _as_str_list(x) is not None
-
-
-def _format_dict_primary_value(v: Any) -> str | None:
-    """format_dict / format_dict_2 value: mapped canonical string, or None when unmapped."""
-    if v is None:
-        return None
-    if isinstance(v, str) and v.strip():
-        return v
-    return None
-
-
-def _all_canonicals_for_raw(raw: str, fmt: dict[str, Any], fd2: dict[str, Any] | None) -> list[str]:
-    """Ordered: primary from format_dict, then optional second canonical from format_dict_2."""
-    out: list[str] = []
-    p = _format_dict_primary_value(fmt.get(raw))
-    if p:
-        out.append(p)
-    if fd2 is not None and raw in fd2:
-        s = _format_dict_primary_value(fd2.get(raw))
-        if s and s not in out:
-            out.append(s)
-    return out
 
 
 def _load_json_detect_duplicate_keys(path: Path) -> tuple[Any, list[str]]:
@@ -303,6 +289,34 @@ def validate_format_json(
 
         if "format_comment" in meta and meta["format_comment"] is not None and not isinstance(meta["format_comment"], str):
             f.append(Finding("ERROR", file_path, "meta_data.format_comment must be string or null when present"))
+
+        if "github_url" in meta:
+            gh = meta["github_url"]
+            if not isinstance(gh, str):
+                f.append(Finding("ERROR", file_path, "meta_data.github_url must be a string when present"))
+            elif not re.fullmatch(r"https://github\.com/[^/]+/[^/]+", gh.strip()):
+                f.append(
+                    Finding(
+                        "ERROR",
+                        file_path,
+                        "meta_data.github_url must be a GitHub repo root URL (https://github.com/owner/repo)",
+                    )
+                )
+
+        cite_level = "ERROR" if strict else "WARN"
+        if not _is_non_empty_str(meta.get("format_cite_name")):
+            f.append(Finding(cite_level, file_path, "meta_data.format_cite_name is missing or empty"))
+        if not _is_non_empty_str(meta.get("format_citation")):
+            f.append(Finding(cite_level, file_path, "meta_data.format_citation is missing or empty"))
+        src = str(meta.get("format_source") or "")
+        if "github.com" in src and not _is_non_empty_str(meta.get("github_url")):
+            f.append(
+                Finding(
+                    "WARN",
+                    file_path,
+                    "format_source references GitHub but meta_data.github_url is missing",
+                )
+            )
 
         if "format_na" in meta:
             na = meta["format_na"]

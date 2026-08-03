@@ -10,11 +10,33 @@
         "format_comment": "#",
         "format_header": true,
         "format_col_order": [
-            "#CHROM", "POS", "ID", "REF", "ALT1", "ALT", "PROVISIONAL_REF?", "A1", "OMITTED",
-            "A1_CT", "ALLELE_CT", "A1_FREQ", "MACH_R2", "TEST", "OBS_CT", "BETA", "SE",
-            "L95", "U95", "T_STAT", "F_STAT", "P", "ERRCODE", "LOG10_P"
+            "#CHROM",
+            "POS",
+            "ID",
+            "REF",
+            "ALT1",
+            "ALT",
+            "PROVISIONAL_REF?",
+            "A1",
+            "OMITTED",
+            "A1_CT",
+            "ALLELE_CT",
+            "A1_FREQ",
+            "MACH_R2",
+            "TEST",
+            "OBS_CT",
+            "BETA",
+            "SE",
+            "L95",
+            "U95",
+            "T_STAT",
+            "F_STAT",
+            "P",
+            "ERRCODE",
+            "LOG10_P"
         ],
-        "last_check_date": "20260326"
+        "last_check_date": "20260326",
+        "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
     },
     "format_dict": {
         "#CHROM": "CHR",

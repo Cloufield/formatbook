@@ -1,19 +1,23 @@
 {
-"meta_data":{"format_name":"mrmega",
-            "format_source":"https://genomics.ut.ee/en/tools",  
-            "format_version":"ver0.2",
-             "last_check_date":20220806
-            },
-"format_dict":{"MarkerName ":"SNPID",
-                 "Chromosome":"CHR",
-                 "Position":"POS",
-                 "NEA":"NEA",
-                "EA":"EA",
-                "EAF":"EAF",
-                "Nsample":"N",
-                "Effects":"DIRECTION",
-                "chisq_association":"CHISQ",
-                "ndf_association":"ndf_association",
-                "P-value_association":"P"
-            }
+    "meta_data": {
+        "format_name": "mrmega",
+        "format_source": "https://genomics.ut.ee/en/tools",
+        "format_version": "ver0.2",
+        "last_check_date": 20220806,
+        "format_cite_name": "MR-MEGA",
+        "format_citation": "Mägi, R., Horikoshi, M., Sofer, T., Mahajan, A., Kitajima, H., Franceschini, N., ... & Morris, A. P. (2017). Trans-ethnic meta-regression of genome-wide association studies accounting for ancestry increases power for discovery and improves fine-mapping resolution. Human molecular genetics, 26(18), 3639-3650."
+    },
+    "format_dict": {
+        "MarkerName ": "SNPID",
+        "Chromosome": "CHR",
+        "Position": "POS",
+        "NEA": "NEA",
+        "EA": "EA",
+        "EAF": "EAF",
+        "Nsample": "N",
+        "Effects": "DIRECTION",
+        "chisq_association": "CHISQ",
+        "ndf_association": "ndf_association",
+        "P-value_association": "P"
+    }
 }

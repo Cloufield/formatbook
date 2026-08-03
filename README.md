@@ -48,6 +48,16 @@ To validate `format_dict` canonical headers against a gwaslab checkout:
 python3 scripts/check_format_jsons.py --reserved-headers ../gwaslab/src/gwaslab/qc/qc_researved_header.json
 ```
 
+Format summary (interactive HTML coverage heatmap):
+
+```bash
+python3 scripts/format_summary.py
+pip install -r requirements-docs.txt
+mkdocs serve
+```
+
+Open **Format summary** in the nav bar, or browse `docs/format_summary.html` directly.
+
 Supported formats:
 
 |Keyword|Software|Description|Citation|

@@ -19,7 +19,8 @@
             "n",
             "A1Freq"
         ],
-        "last_check_date": "20260801"
+        "last_check_date": "20260801",
+        "format_citation": "Speed D, Holmes J, Sumner MD, et al. (2020). Reevaluation of SNP heritability in complex human traits. Nature Genetics."
     },
     "format_dict": {
         "Predictor": "SNPID",

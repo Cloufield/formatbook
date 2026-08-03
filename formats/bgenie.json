@@ -4,7 +4,9 @@
         "format_source": "https://jmarchini.org/bgenie/",
         "format_version": "latest",
         "format_separator": " ",
-        "format_comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele)."
+        "format_comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele).",
+        "format_cite_name": "BGENIE",
+        "format_citation": "Bycroft, C., Freeman, C., Petkova, D., Band, G., Elliott, L. T., Sharp, K., Motyer, A., Vukcevic, D., Delaneau, O., O'Connell, J., Cortes, A., Welsh, S., McVean, G., Leslie, S., Donnelly, P., & Marchini, J. (2018). The UK Biobank resource with deep phenotyping and genomic data. Nature, 562(7726), 203-209."
     },
     "format_dict": {
         "chr": "CHR",

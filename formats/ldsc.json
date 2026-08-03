@@ -3,7 +3,10 @@
         "format_name": "ldsc",
         "format_source": "https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format",
         "format_source_2": "https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
-        "format_version": 20150306
+        "format_version": 20150306,
+        "format_cite_name": "LDSC",
+        "format_citation": "Bulik-Sullivan, B. K., Loh, P. R., Finucane, H. K., Ripke, S., Yang, J., Patterson, N., ... & Neale, B. M. (2015). LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nature genetics, 47(3), 291-295.",
+        "github_url": "https://github.com/bulik/ldsc"
     },
     "format_dict": {
         "SNP": "rsID",

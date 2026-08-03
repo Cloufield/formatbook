@@ -1,0 +1,60 @@
+{
+  "description": "Columns for the format metadata summary table. Each column maps to a meta_data field with a human-readable header description.",
+  "columns": [
+    {
+      "id": "separator",
+      "label": "Separator",
+      "field": "format_separator",
+      "description": "Field delimiter between columns (e.g. TAB, SPACE)."
+    },
+    {
+      "id": "na",
+      "label": "NA value",
+      "field": "format_na",
+      "description": "Token(s) used for missing values."
+    },
+    {
+      "id": "comment",
+      "label": "Comment",
+      "field": "format_comment",
+      "description": "Prefix character marking comment lines."
+    },
+    {
+      "id": "header",
+      "label": "Header row",
+      "field": "format_header",
+      "description": "Whether the file includes a header row."
+    },
+    {
+      "id": "header_lines",
+      "label": "Header lines",
+      "field": "format_header_lines",
+      "description": "Number of header lines before data rows."
+    },
+    {
+      "id": "cite_name",
+      "label": "Cite name",
+      "field": "format_cite_name",
+      "description": "Short software or format name for citations."
+    },
+    {
+      "id": "citation",
+      "label": "Citation",
+      "field": "format_citation",
+      "description": "Copy the full citation string to the clipboard.",
+      "widget": "copy_citation"
+    },
+    {
+      "id": "version",
+      "label": "Version",
+      "field": "format_version",
+      "description": "Format specification or software version."
+    },
+    {
+      "id": "last_check",
+      "label": "Last check",
+      "field": "last_check_date",
+      "description": "Date the format spec was last verified."
+    }
+  ]
+}

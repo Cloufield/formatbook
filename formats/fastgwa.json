@@ -1,18 +1,21 @@
 {
-"meta_data":{"format_name":"fastgwa",
-            "format_source":"https://yanglab.westlake.edu.cn/software/gcta/#fastGWA",
-            "format_source_2":"https://yanglab.westlake.edu.cn/software/gcta/#fastGWA-GLMM",
-            "format_version":"20220726"
-            },
-"format_dict":{
-           "SNP":"SNPID",
-            "CHR":"CHR",
-            "POS":"POS",
-            "A2":"NEA",
-            "A1":"EA",
-            "AF1":"EAF",
-            "BETA":"BETA",
-            "SE":"SE",
-            "P":"P"
-            }
+    "meta_data": {
+        "format_name": "fastgwa",
+        "format_source": "https://yanglab.westlake.edu.cn/software/gcta/#fastGWA",
+        "format_source_2": "https://yanglab.westlake.edu.cn/software/gcta/#fastGWA-GLMM",
+        "format_version": "20220726",
+        "format_cite_name": "fastGWA",
+        "format_citation": "Jiang, L., Zheng, Z., Qi, T., Kemper, K. E., Wray, N. R., Visscher, P. M., & Yang, J. (2019). A resource-efficient tool for mixed model association analysis of large-scale data. Nature genetics, 51(12), 1749-1755."
+    },
+    "format_dict": {
+        "SNP": "SNPID",
+        "CHR": "CHR",
+        "POS": "POS",
+        "A2": "NEA",
+        "A1": "EA",
+        "AF1": "EAF",
+        "BETA": "BETA",
+        "SE": "SE",
+        "P": "P"
+    }
 }

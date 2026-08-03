@@ -1,0 +1,7529 @@
+{
+  "generated_at": "2026-08-03 05:23 UTC",
+  "format_count": 46,
+  "tier_groups": [
+    {
+      "id": "variant_id",
+      "label": "Variant ID",
+      "mode": "any",
+      "headers": [
+        "SNPID",
+        "rsID"
+      ],
+      "description": "At least one variant identifier column (SNPID or rsID)."
+    },
+    {
+      "id": "location",
+      "label": "Genomic location",
+      "mode": "all",
+      "headers": [
+        "CHR",
+        "POS"
+      ],
+      "description": "Both chromosome and base-pair position must be mapped."
+    },
+    {
+      "id": "alleles",
+      "label": "Effect / other allele",
+      "mode": "all",
+      "headers": [
+        "EA",
+        "NEA"
+      ],
+      "description": "Both effect allele and non-effect allele must be mapped."
+    },
+    {
+      "id": "effect",
+      "label": "Effect size",
+      "mode": "any",
+      "headers": [
+        "BETA",
+        "OR",
+        "HR",
+        "Z"
+      ],
+      "description": "At least one effect-size statistic (beta, odds ratio, hazard ratio, or Z-score)."
+    },
+    {
+      "id": "uncertainty",
+      "label": "Uncertainty",
+      "mode": "any",
+      "headers": [
+        "SE"
+      ],
+      "description": "Standard error of the effect estimate."
+    },
+    {
+      "id": "significance",
+      "label": "P-value",
+      "mode": "any",
+      "headers": [
+        "P",
+        "MLOG10P"
+      ],
+      "description": "P-value or minus log10 p-value."
+    },
+    {
+      "id": "sample",
+      "label": "Sample size",
+      "mode": "any",
+      "headers": [
+        "N",
+        "N_CASE"
+      ],
+      "description": "Total sample size or case count (case-control studies may also map N_CONTROL separately)."
+    },
+    {
+      "id": "frequency",
+      "label": "Allele frequency",
+      "mode": "any",
+      "headers": [
+        "EAF",
+        "MAF",
+        "NEAF"
+      ],
+      "description": "Effect, minor, or non-effect allele frequency."
+    },
+    {
+      "id": "quality",
+      "label": "Imputation / QC",
+      "mode": "any",
+      "headers": [
+        "INFO"
+      ],
+      "description": "Imputation quality or INFO score."
+    }
+  ],
+  "meta_columns": [
+    {
+      "id": "separator",
+      "label": "Separator",
+      "field": "format_separator",
+      "description": "Field delimiter between columns (e.g. TAB, SPACE)."
+    },
+    {
+      "id": "na",
+      "label": "NA value",
+      "field": "format_na",
+      "description": "Token(s) used for missing values."
+    },
+    {
+      "id": "comment",
+      "label": "Comment",
+      "field": "format_comment",
+      "description": "Prefix character marking comment lines."
+    },
+    {
+      "id": "header",
+      "label": "Header row",
+      "field": "format_header",
+      "description": "Whether the file includes a header row."
+    },
+    {
+      "id": "header_lines",
+      "label": "Header lines",
+      "field": "format_header_lines",
+      "description": "Number of header lines before data rows."
+    },
+    {
+      "id": "cite_name",
+      "label": "Cite name",
+      "field": "format_cite_name",
+      "description": "Short software or format name for citations."
+    },
+    {
+      "id": "citation",
+      "label": "Citation",
+      "field": "format_citation",
+      "description": "Copy the full citation string to the clipboard.",
+      "widget": "copy_citation"
+    },
+    {
+      "id": "version",
+      "label": "Version",
+      "field": "format_version",
+      "description": "Format specification or software version."
+    },
+    {
+      "id": "last_check",
+      "label": "Last check",
+      "field": "last_check_date",
+      "description": "Date the format spec was last verified."
+    }
+  ],
+  "avg_tiers_satisfied": 6.39,
+  "formats": [
+    {
+      "key": "bgen_sample",
+      "file": "bgen_sample.json",
+      "format_name": ".sample",
+      "format_source": "https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/sample_file_formats.html",
+      "format_version": "20260208",
+      "format_description": "Sample information file (.sample) accompanying .gen, .bgen genotype dosage files, or .haps phased reference panels. Loaded with --data/--sample, and produced by --export. The file is space-delimited with two header lines followed by one line per sample.",
+      "format_cite_name": "Oxford/BGEN",
+      "format_citation": "Band, G., & Marchini, J. (2018). BGEN: a binary file format for imputed genotype and haplotype data. bioRxiv.",
+      "github_url": null,
+      "last_check_date": "20260208",
+      "raw_column_count": 4,
+      "mapped_count": 3,
+      "unmapped_count": 1,
+      "canonical_count": 3,
+      "canonicals": [
+        "FID",
+        "IID",
+        "SEX"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SNPID",
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 0,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "SPACE",
+        "na": "NA",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "2",
+        "cite_name": "Oxford/BGEN",
+        "version": "20260208",
+        "last_check": "20260208"
+      }
+    },
+    {
+      "key": "bgenie",
+      "file": "bgenie.json",
+      "format_name": "bgenie",
+      "format_source": "https://jmarchini.org/bgenie/",
+      "format_version": "latest",
+      "format_description": null,
+      "format_cite_name": "BGENIE",
+      "format_citation": "Bycroft, C., Freeman, C., Petkova, D., Band, G., Elliott, L. T., Sharp, K., Motyer, A., Vukcevic, D., Delaneau, O., O'Connell, J., Cortes, A., Welsh, S., McVean, G., Leslie, S., Donnelly, P., & Marchini, J. (2018). The UK Biobank resource with deep phenotyping and genomic data. Nature, 562(7726), 203-209.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "MLOG10P",
+        "NEA",
+        "POS",
+        "SE",
+        "T",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "MLOG10P"
+          ],
+          "missing_headers": [
+            "P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "SPACE",
+        "na": "—",
+        "comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele).",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "BGENIE",
+        "version": "latest",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "bolt_lmm",
+      "file": "bolt_lmm.json",
+      "format_name": ".stats",
+      "format_source": "https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html",
+      "format_version": "v2.4 (July 22, 2022)",
+      "format_description": null,
+      "format_cite_name": "BOLT-LMM",
+      "format_citation": "Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "BOLT-LMM",
+        "version": "v2.4 (July 22, 2022)",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "ccgwas",
+      "file": "ccgwas.json",
+      "format_name": "CCGWAS",
+      "format_source": "https://github.com/wouterpeyrot/CCGWAS#output-files",
+      "format_version": "20220901",
+      "format_description": null,
+      "format_cite_name": "CC-GWAS",
+      "format_citation": "Peyrot, W. J., & Price, A. L. (2021). Identifying loci with different allele frequencies among cases of eight psychiatric disorders using CC-GWAS. Nature genetics, 53(4), 445-454.",
+      "github_url": "https://github.com/wouterpeyrot/CCGWAS",
+      "last_check_date": "20250416",
+      "raw_column_count": 12,
+      "mapped_count": 8,
+      "unmapped_count": 4,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "CC-GWAS",
+        "version": "20220901",
+        "last_check": "20250416"
+      }
+    },
+    {
+      "key": "cojo",
+      "file": "cojo.json",
+      "format_name": "cojo",
+      "format_source": "https://yanglab.westlake.edu.cn/software/gcta/#COJO",
+      "format_version": 20230807,
+      "format_description": null,
+      "format_cite_name": "GCTA-COJO",
+      "format_citation": "Yang, J., Ferreira, T., Morris, A. P., Medland, S. E., Madden, P. A., Heath, A. C., ... & Visscher, P. M. (2012). Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits. Nature genetics, 44(4), 369-375.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 8,
+      "mapped_count": 8,
+      "unmapped_count": 0,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "EA",
+        "EAF",
+        "N",
+        "NEA",
+        "P",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GCTA-COJO",
+        "version": "20230807",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "fastgwa",
+      "file": "fastgwa.json",
+      "format_name": "fastgwa",
+      "format_source": "https://yanglab.westlake.edu.cn/software/gcta/#fastGWA",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "fastGWA",
+      "format_citation": "Jiang, L., Zheng, Z., Qi, T., Kemper, K. E., Wray, N. R., Visscher, P. M., & Yang, J. (2019). A resource-efficient tool for mixed model association analysis of large-scale data. Nature genetics, 51(12), 1749-1755.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 9,
+      "mapped_count": 9,
+      "unmapped_count": 0,
+      "canonical_count": 9,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "fastGWA",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "gemma",
+      "file": "gemma.json",
+      "format_name": "gemma",
+      "format_source": "https://github.com/genetics-statistics/GEMMA",
+      "format_version": "0.98.5",
+      "format_description": null,
+      "format_cite_name": "GEMMA",
+      "format_citation": "Zhou, X., & Stephens, M. (2012). Genome-wide efficient mixed-model analysis for association studies. Nature Genetics, 44(7), 821-824.",
+      "github_url": "https://github.com/genetics-statistics/GEMMA",
+      "last_check_date": null,
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "L_REMLE",
+        "NEA",
+        "N_MISS",
+        "P",
+        "POS",
+        "SE",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "GEMMA univariate linear mixed model (LMM) output format. Columns: chr, rs, ps, n_miss, allele1, allele0, af, beta, se, l_remle, p_wald. The output is tab-separated. allele1 is the effect allele, allele0 is the non-effect allele, af is the allele frequency of allele1, and l_remle is the log-likelihood ratio test statistic.",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GEMMA",
+        "version": "0.98.5",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "genomicsem",
+      "file": "genomicsem.json",
+      "format_name": "genomicSEM",
+      "format_source": "https://github.com/GenomicSEM/GenomicSEM/wiki/4.-Common-Factor-GWAS",
+      "format_version": 20241210,
+      "format_description": null,
+      "format_cite_name": "genomicSEM",
+      "format_citation": "Grotzinger, A. D., Rhemtulla, M., de Vlaming, R., Ritchie, S. J., Mallard, T. T., Hill, W. D., ... & Tucker-Drob, E. M. (2019). Genomic structural equation modelling provides insights into the multivariate genetic architecture of complex traits. Nature communications, 10(1), 3402.",
+      "github_url": "https://github.com/GenomicSEM/GenomicSEM",
+      "last_check_date": null,
+      "raw_column_count": 15,
+      "mapped_count": 15,
+      "unmapped_count": 0,
+      "canonical_count": 16,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "DOF",
+        "EA",
+        "EAF",
+        "MAF",
+        "N",
+        "NEA",
+        "P",
+        "POS",
+        "P_HET",
+        "Q",
+        "SE",
+        "SNPID",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "Z"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF",
+            "MAF"
+          ],
+          "missing_headers": [
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "genomicSEM",
+        "version": "20241210",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "gwascatalog",
+      "file": "gwascatalog.json",
+      "format_name": "gwascatalog",
+      "format_source": "https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "GWAS Catalog",
+      "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 12,
+      "mapped_count": 12,
+      "unmapped_count": 0,
+      "canonical_count": 12,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GWAS Catalog",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "gwascatalog_hm",
+      "file": "gwascatalog_hm.json",
+      "format_name": "gwascatalog_hm",
+      "format_source": "https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",
+      "format_version": 20220806,
+      "format_description": null,
+      "format_cite_name": "GWAS Catalog",
+      "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 12,
+      "mapped_count": 12,
+      "unmapped_count": 0,
+      "canonical_count": 12,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GWAS Catalog",
+        "version": "20220806",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "gwaslab",
+      "file": "gwaslab.json",
+      "format_name": "gwaslab",
+      "format_source": "https://cloufield.github.io/gwaslab/",
+      "format_version": "v4.0.5",
+      "format_description": null,
+      "format_cite_name": "GWASLab",
+      "format_citation": "Cloufield. GWASLab: a Python package for GWAS summary statistics. https://github.com/Cloufield/gwaslab",
+      "github_url": "https://github.com/Cloufield/gwaslab",
+      "last_check_date": "20260109",
+      "raw_column_count": 34,
+      "mapped_count": 34,
+      "unmapped_count": 0,
+      "canonical_count": 34,
+      "canonicals": [
+        "ALT",
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "DIRECTION",
+        "DOF",
+        "EA",
+        "EAF",
+        "F",
+        "HR",
+        "HR_95L",
+        "HR_95U",
+        "I2",
+        "INFO",
+        "MAF",
+        "MLOG10P",
+        "N",
+        "NEA",
+        "N_CASE",
+        "N_CONTROL",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "P_HET",
+        "REF",
+        "SE",
+        "SNPID",
+        "SNPR2",
+        "STATUS",
+        "T",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N",
+            "N_CASE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF",
+            "MAF"
+          ],
+          "missing_headers": [
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "GWASLab",
+        "version": "v4.0.5",
+        "last_check": "20260109"
+      }
+    },
+    {
+      "key": "ldak",
+      "file": "ldak.json",
+      "format_name": "ldak",
+      "format_source": "https://dougspeed.com/summary-statistics/",
+      "format_version": "20260801",
+      "format_description": "LDAK/SumHer summary statistics with Predictor, A1, A2, n, and either Z or BETA plus SE; A1Freq is recommended.",
+      "format_cite_name": "LDAK/SumHer",
+      "format_citation": "Speed D, Holmes J, Sumner MD, et al. (2020). Reevaluation of SNP heritability in complex human traits. Nature Genetics.",
+      "github_url": null,
+      "last_check_date": "20260801",
+      "raw_column_count": 8,
+      "mapped_count": 8,
+      "unmapped_count": 0,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "EA",
+        "EAF",
+        "N",
+        "NEA",
+        "SE",
+        "SNPID",
+        "Z"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "Z"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "LDAK/SumHer",
+        "version": "20260801",
+        "last_check": "20260801"
+      }
+    },
+    {
+      "key": "ldsc",
+      "file": "ldsc.json",
+      "format_name": "ldsc",
+      "format_source": "https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format",
+      "format_version": 20150306,
+      "format_description": null,
+      "format_cite_name": "LDSC",
+      "format_citation": "Bulik-Sullivan, B. K., Loh, P. R., Finucane, H. K., Ripke, S., Yang, J., Patterson, N., ... & Neale, B. M. (2015). LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nature genetics, 47(3), 291-295.",
+      "github_url": "https://github.com/bulik/ldsc",
+      "last_check_date": null,
+      "raw_column_count": 12,
+      "mapped_count": 12,
+      "unmapped_count": 0,
+      "canonical_count": 13,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "N",
+        "NEA",
+        "OR",
+        "P",
+        "POS",
+        "SNPID",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "Z"
+          ],
+          "missing_headers": [
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "LDSC",
+        "version": "20150306",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "mesusie",
+      "file": "mesusie.json",
+      "format_name": "MESuSiE",
+      "format_source": "https://borangao.github.io/meSuSie_Analysis/",
+      "format_version": 20221109,
+      "format_description": null,
+      "format_cite_name": "MESuSiE",
+      "format_citation": "Gao, B., & Zhou, X. (2024). MESuSiE enables scalable and powerful multi-ancestry fine-mapping of causal variants in genome-wide association studies. Nature Genetics, 56(1), 170-179.",
+      "github_url": "https://github.com/borangao/MESuSiE",
+      "last_check_date": null,
+      "raw_column_count": 6,
+      "mapped_count": 6,
+      "unmapped_count": 0,
+      "canonical_count": 6,
+      "canonicals": [
+        "BETA",
+        "N",
+        "POS",
+        "SE",
+        "SNPID",
+        "Z"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": true,
+          "matched_headers": [
+            "POS"
+          ],
+          "missing_headers": [
+            "CHR"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "Z"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 4,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "MESuSiE",
+        "version": "20221109",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "metal",
+      "file": "metal.json",
+      "format_name": "metal",
+      "format_source": "https://genome.sph.umich.edu/wiki/METAL_Documentation",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "METAL",
+      "format_citation": "Willer, C. J., Li, Y., & Abecasis, G. R. (2010). METAL: fast and efficient meta-analysis of genomewide association scans. Bioinformatics, 26(17), 2190-2191.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 8,
+      "mapped_count": 8,
+      "unmapped_count": 0,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "DIRECTION",
+        "EA",
+        "EAF",
+        "NEA",
+        "P",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "METAL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "mrmega",
+      "file": "mrmega.json",
+      "format_name": "mrmega",
+      "format_source": "https://genomics.ut.ee/en/tools",
+      "format_version": "ver0.2",
+      "format_description": null,
+      "format_cite_name": "MR-MEGA",
+      "format_citation": "Mägi, R., Horikoshi, M., Sofer, T., Mahajan, A., Kitajima, H., Franceschini, N., ... & Morris, A. P. (2017). Trans-ethnic meta-regression of genome-wide association studies accounting for ancestry increases power for discovery and improves fine-mapping resolution. Human molecular genetics, 26(18), 3639-3650.",
+      "github_url": null,
+      "last_check_date": 20220806,
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "CHISQ",
+        "CHR",
+        "DIRECTION",
+        "EA",
+        "EAF",
+        "N",
+        "NEA",
+        "P",
+        "POS",
+        "SNPID",
+        "ndf_association"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "MR-MEGA",
+        "version": "ver0.2",
+        "last_check": "20220806"
+      }
+    },
+    {
+      "key": "mtag",
+      "file": "mtag.json",
+      "format_name": "mtag",
+      "format_source": "https://github.com/JonJala/mtag/wiki/Tutorial-1:-The-Basics",
+      "format_version": "v1.0.8",
+      "format_description": null,
+      "format_cite_name": "MTAG v1.0.8",
+      "format_citation": "Turley, P., Walters, R. K., Maghzian, O., Okbay, A., Lee, J. J., Fontana, M. A., ... & Benjamin, D. J. (2018). Multi-trait analysis of genome-wide association summary statistics using MTAG. Nature Genetics, 50(2), 229-237.",
+      "github_url": "https://github.com/JonJala/mtag",
+      "last_check_date": null,
+      "raw_column_count": 12,
+      "mapped_count": 12,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "N",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "Z"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "MTAG v1.0.8",
+        "version": "v1.0.8",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "pgscatalog",
+      "file": "pgscatalog.json",
+      "format_name": "pgscatalog",
+      "format_source": "https://www.pgscatalog.org/downloads/",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "PGS Catalog",
+      "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 8,
+      "mapped_count": 8,
+      "unmapped_count": 0,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "NEA",
+        "OR",
+        "POS",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "PGS Catalog",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "pgscatalog_hm",
+      "file": "pgscatalog_hm.json",
+      "format_name": "pgscatalog_hm Harmonized File",
+      "format_source": "https://www.pgscatalog.org/downloads/",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "PGS Catalog",
+      "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 9,
+      "mapped_count": 9,
+      "unmapped_count": 0,
+      "canonical_count": 8,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "NEA",
+        "OR",
+        "POS",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "PGS Catalog",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "pheweb",
+      "file": "pheweb.json",
+      "format_name": "pheweb",
+      "format_source": "https://github.com/statgen/pheweb",
+      "format_version": "20220928",
+      "format_description": null,
+      "format_cite_name": "PheWeb",
+      "format_citation": "Gagliano Taliun, S.A., VandeHaar, P. et al. Exploring and visualizing large-scale genetic associations by using PheWeb. Nat Genet 52, 550–552 (2020).",
+      "github_url": "https://github.com/statgen/pheweb",
+      "last_check_date": "20250106",
+      "raw_column_count": 39,
+      "mapped_count": 39,
+      "unmapped_count": 0,
+      "canonical_count": 17,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "INFO",
+        "MAF",
+        "N",
+        "NEA",
+        "N_CASE",
+        "N_CONTROL",
+        "OR",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N",
+            "N_CASE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF",
+            "MAF"
+          ],
+          "missing_headers": [
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "'tab, space, or comma'",
+        "na": ", ., NA, N/A, n/a, nan, -nan, NaN, -NaN, null, NULL",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PheWeb",
+        "version": "20220928",
+        "last_check": "20250106"
+      }
+    },
+    {
+      "key": "plink",
+      "file": "plink.json",
+      "format_name": "plink1_assoc_outputs",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Union of common association columns across .assoc, .assoc.fisher, .assoc.linear, .assoc.logistic, and .assoc.dosage; see per-extension specs in formats/plink_*.json.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 18,
+      "mapped_count": 18,
+      "unmapped_count": 0,
+      "canonical_count": 17,
+      "canonicals": [
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "INFO",
+        "N",
+        "NEA",
+        "OR",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "T",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink2",
+      "file": "plink2.json",
+      "format_name": "plink2_glm_outputs",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Union of columns across .glm.linear, .glm.logistic, and .glm.firth; full column sets are in formats/plink2_*.json.",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 23,
+      "mapped_count": 23,
+      "unmapped_count": 0,
+      "canonical_count": 22,
+      "canonicals": [
+        "ALT",
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "F",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "REF",
+        "SE",
+        "SNPID",
+        "T",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": true,
+          "matched_headers": [
+            "EA"
+          ],
+          "missing_headers": [
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "Z"
+          ],
+          "missing_headers": [
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": ".",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink2_firth",
+      "file": "plink2_firth.json",
+      "format_name": ".glm.firth",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats#glm_logistic",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Same column layout as .glm.logistic when Firth logistic regression is used (extension .glm.firth or .glm.logistic.hybrid).",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 40,
+      "mapped_count": 22,
+      "unmapped_count": 18,
+      "canonical_count": 21,
+      "canonicals": [
+        "ALT",
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "F",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "REF",
+        "SE",
+        "SNPID",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": true,
+          "matched_headers": [
+            "EA"
+          ],
+          "missing_headers": [
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "Z"
+          ],
+          "missing_headers": [
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": ".",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink2_linear",
+      "file": "plink2_linear.json",
+      "format_name": ".glm.linear",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats#glm_linear",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Linear regression from --glm (quantitative phenotype). Header line starts with '#'. Column set can be reduced with cols=; optional NEG_LOG10_P and joint F_STAT appear with modifiers.",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 25,
+      "mapped_count": 18,
+      "unmapped_count": 7,
+      "canonical_count": 18,
+      "canonicals": [
+        "ALT",
+        "BETA",
+        "BETA_95L",
+        "BETA_95U",
+        "CHR",
+        "EA",
+        "EAF",
+        "F",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "P",
+        "POS",
+        "REF",
+        "SE",
+        "SNPID",
+        "T",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": true,
+          "matched_headers": [
+            "EA"
+          ],
+          "missing_headers": [
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": ".",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink2_logistic",
+      "file": "plink2_logistic.json",
+      "format_name": ".glm.logistic",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats#glm_logistic",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Logistic or Firth logistic from --glm (case/control). LOG(OR)_SE is SE on log-odds scale; Z_STAT is Wald Z. Column set varies with cols= and case/control count columns.",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 40,
+      "mapped_count": 22,
+      "unmapped_count": 18,
+      "canonical_count": 21,
+      "canonicals": [
+        "ALT",
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "F",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "REF",
+        "SE",
+        "SNPID",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": true,
+          "matched_headers": [
+            "EA"
+          ],
+          "missing_headers": [
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "Z"
+          ],
+          "missing_headers": [
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": ".",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_assoc",
+      "file": "plink_assoc.json",
+      "format_name": ".assoc",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Case/control basic allelic test from --assoc (not --linear/--logistic). Default columns; 'counts' replaces F_A/F_U with C_A/C_U; --ci 0.xy appends SE, L_xy, U_xy after OR.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 15,
+      "mapped_count": 13,
+      "unmapped_count": 2,
+      "canonical_count": 14,
+      "canonicals": [
+        "CHISQ",
+        "CHR",
+        "EA",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "OR"
+          ],
+          "missing_headers": [
+            "BETA",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_bim",
+      "file": "plink_bim.json",
+      "format_name": ".bim",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#bim",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Extended variant map with .bed: CHR, SNP, CM, BP, A1 (first/clear-bit allele, usually minor), A2 (second/set-bit allele, usually major). PLINK 2 .bim lists ALT before REF but encodes the same roles as 1.x A1/A2.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 6,
+      "mapped_count": 6,
+      "unmapped_count": 0,
+      "canonical_count": 6,
+      "canonicals": [
+        "CHR",
+        "CM",
+        "EA",
+        "NEA",
+        "POS",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 3,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "no",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_dosage",
+      "file": "plink_dosage.json",
+      "format_name": ".assoc.dosage",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_dosage",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Dosage association from --dosage. CHR/BP require --map. 'case-control-freqs' replaces FRQ with FRQ_A and FRQ_U.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 13,
+      "mapped_count": 13,
+      "unmapped_count": 0,
+      "canonical_count": 14,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "INFO",
+        "NEA",
+        "OR",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_fam",
+      "file": "plink_fam.json",
+      "format_name": ".fam",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#fam",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Per-sample row for .bed: FID, IID, father IID, mother IID, sex, phenotype. Quantitative phenotype if numeric values other than {-9,0,1,2} appear.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 6,
+      "mapped_count": 6,
+      "unmapped_count": 0,
+      "canonical_count": 6,
+      "canonicals": [
+        "FID",
+        "IID",
+        "MAT",
+        "PAT",
+        "PHENO1",
+        "SEX"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SNPID",
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 0,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "no",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_fisher",
+      "file": "plink_fisher.json",
+      "format_name": ".assoc.fisher",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Case/control allelic test with Fisher (or Fisher mid-p); same layout as .assoc but CHISQ is not written.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 15,
+      "mapped_count": 12,
+      "unmapped_count": 3,
+      "canonical_count": 13,
+      "canonicals": [
+        "CHR",
+        "EA",
+        "EAF_CASE",
+        "EAF_CONTROL",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "OR"
+          ],
+          "missing_headers": [
+            "BETA",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 6,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_linear",
+      "file": "plink_linear.json",
+      "format_name": ".assoc.linear",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_linear",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Multi-covariate linear regression from --linear. With --ci 0.xy, SE, L_xy, U_xy are inserted before STAT. Column count varies with 'genotypic', 'hethom', and --tests.",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 14,
+      "mapped_count": 13,
+      "unmapped_count": 1,
+      "canonical_count": 14,
+      "canonicals": [
+        "BETA",
+        "BETA_95L",
+        "BETA_95U",
+        "CHISQ",
+        "CHR",
+        "EA",
+        "N",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "T",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_logistic",
+      "file": "plink_logistic.json",
+      "format_name": ".assoc.logistic",
+      "format_source": "https://www.cog-genomics.org/plink/1.9/formats#assoc_linear",
+      "format_version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+      "format_description": "Multi-covariate logistic regression from --logistic. BETA column appears with '--logistic beta'; otherwise OR. With --ci 0.xy, SE, L_xy, U_xy are inserted before STAT (SE is on log-odds scale).",
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 15,
+      "mapped_count": 14,
+      "unmapped_count": 1,
+      "canonical_count": 15,
+      "canonicals": [
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "EA",
+        "N",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "T",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "—",
+        "comment": "—",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 1.9",
+        "version": "PLINK 1.9 (doc revision 19 Aug 2025)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_psam",
+      "file": "plink_psam.json",
+      "format_name": ".psam",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats#psam",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Sample table for .pgen. Last header line starts with '#FID' or '#IID'; FID may be omitted (then assumed '0'). Columns after SEX are phenotype/covariate names.",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 8,
+      "mapped_count": 8,
+      "unmapped_count": 0,
+      "canonical_count": 6,
+      "canonicals": [
+        "FID",
+        "IID",
+        "MAT",
+        "PAT",
+        "SEX",
+        "SID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SNPID",
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 0,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "NA",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "plink_pvar",
+      "file": "plink_pvar.json",
+      "format_name": ".pvar",
+      "format_source": "https://www.cog-genomics.org/plink/2.0/formats#pvar",
+      "format_version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+      "format_description": "Variant table for .pgen; VCF-style headers allowed. Last header line starts with '#CHROM'. Without headers, columns follow .bim order (CHROM, ID, CM, POS, ALT, REF or 5-column without CM).",
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015.",
+      "github_url": null,
+      "last_check_date": "20260326",
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "ALT",
+        "CHR",
+        "CM",
+        "FILTER",
+        "FORMAT",
+        "INFO",
+        "POS",
+        "QUAL",
+        "REF",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EAF",
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 3,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": ".",
+        "comment": "#",
+        "header": "yes",
+        "header_lines": "—",
+        "cite_name": "PLINK 2.0",
+        "version": "PLINK 2.0 (doc revision 11 Mar 2026)",
+        "last_check": "20260326"
+      }
+    },
+    {
+      "key": "popcorn",
+      "file": "popcorn.json",
+      "format_name": "popcorn",
+      "format_source": "https://github.com/brielin/Popcorn",
+      "format_version": 20230807,
+      "format_description": null,
+      "format_cite_name": "Popcorn",
+      "format_citation": "Brown, B. C., Ye, C. J., Price, A. L., & Zaitlen, N. (2016). Transethnic genetic-correlation estimates from summary statistics. The American Journal of Human Genetics, 99(1), 76-88.",
+      "github_url": "https://github.com/brielin/Popcorn",
+      "last_check_date": null,
+      "raw_column_count": 10,
+      "mapped_count": 10,
+      "unmapped_count": 0,
+      "canonical_count": 10,
+      "canonicals": [
+        "BETA",
+        "EA",
+        "EAF",
+        "N",
+        "NEA",
+        "OR",
+        "P",
+        "SE",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "rsID"
+          ],
+          "missing_headers": [
+            "SNPID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "Z"
+          ],
+          "missing_headers": [
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 7,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "Popcorn",
+        "version": "20230807",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "regenie",
+      "file": "regenie.json",
+      "format_name": "regenie",
+      "format_source": "https://rgcgithub.github.io/regenie/",
+      "format_version": "20220726",
+      "format_description": null,
+      "format_cite_name": "REGENIE",
+      "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+      "github_url": "https://github.com/rgcgithub/regenie",
+      "last_check_date": 20230501,
+      "raw_column_count": 13,
+      "mapped_count": 12,
+      "unmapped_count": 1,
+      "canonical_count": 12,
+      "canonicals": [
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "NEA",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "MLOG10P"
+          ],
+          "missing_headers": [
+            "P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "SPACE",
+        "na": "NA",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "REGENIE",
+        "version": "20220726",
+        "last_check": "20230501"
+      }
+    },
+    {
+      "key": "regenie_gene",
+      "file": "regenie_gene.json",
+      "format_name": "regenie_gene",
+      "format_source": "https://rgcgithub.github.io/regenie/",
+      "format_version": "20230926",
+      "format_description": null,
+      "format_cite_name": "REGENIE",
+      "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+      "github_url": "https://github.com/rgcgithub/regenie",
+      "last_check_date": 20230926,
+      "raw_column_count": 13,
+      "mapped_count": 13,
+      "unmapped_count": 0,
+      "canonical_count": 13,
+      "canonicals": [
+        "BETA",
+        "CHISQ",
+        "CHR",
+        "DOF",
+        "EA",
+        "EAF",
+        "MLOG10P",
+        "N",
+        "NEA",
+        "POS",
+        "SE",
+        "SNPID",
+        "TEST"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "MLOG10P"
+          ],
+          "missing_headers": [
+            "P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 8,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "SPACE",
+        "na": "NA",
+        "comment": "#",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "REGENIE",
+        "version": "20230926",
+        "last_check": "20230926"
+      }
+    },
+    {
+      "key": "saige",
+      "file": "saige.json",
+      "format_name": "saige",
+      "format_source": "https://saigegit.github.io/SAIGE-doc/docs/single_step2.html",
+      "format_version": "v1.1.3",
+      "format_description": null,
+      "format_cite_name": "SAIGE",
+      "format_citation": "Zhou, W., Nielsen, J. B., Fritsche, L. G., Dey, R., Gabrielsen, M. E., Wolford, B. N., ... & Lee, S. (2018). Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies. Nature genetics, 50(9), 1335-1341.",
+      "github_url": "https://github.com/weizhouUMICH/SAIGE",
+      "last_check_date": 20220806,
+      "raw_column_count": 11,
+      "mapped_count": 11,
+      "unmapped_count": 0,
+      "canonical_count": 11,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "N",
+        "NEA",
+        "P",
+        "POS",
+        "SE",
+        "SNPID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "SAIGE",
+        "version": "v1.1.3",
+        "last_check": "20220806"
+      }
+    },
+    {
+      "key": "snptest",
+      "file": "snptest.json",
+      "format_name": "snptest",
+      "format_source": "https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest",
+      "format_version": "v2.5.4-beta3",
+      "format_description": null,
+      "format_cite_name": "SNPTEST",
+      "format_citation": "Marchini, J., Howie, B., Myers, S., McVean, G., & Donnelly, P. (2007). A new multipoint method for genome-wide association studies via imputation of genotypes. Nature Genetics, 39(7), 906-913.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 31,
+      "mapped_count": 31,
+      "unmapped_count": 0,
+      "canonical_count": 20,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "MAF",
+        "MAF_CASE",
+        "MAF_CONTROL",
+        "N",
+        "NEA",
+        "N_CASE",
+        "N_CONTROL",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "SE",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR"
+          ],
+          "missing_headers": [
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N",
+            "N_CASE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF",
+            "MAF"
+          ],
+          "missing_headers": [
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "SNPTEST",
+        "version": "v2.5.4-beta3",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "ssf",
+      "file": "ssf.json",
+      "format_name": "ssf",
+      "format_source": "https://www.ebi.ac.uk/gwas/docs/summary-statistics-format",
+      "format_version": 20230328,
+      "format_description": null,
+      "format_cite_name": "GWAS-SSF v0.1",
+      "format_citation": "Hayhurst, J., Buniello, A., Harris, L., Mosaku, A., Chang, C., Gignoux, C. R., ... & Barroso, I. (2022). A community driven GWAS summary statistics standard. bioRxiv.",
+      "github_url": null,
+      "last_check_date": null,
+      "raw_column_count": 18,
+      "mapped_count": 18,
+      "unmapped_count": 0,
+      "canonical_count": 18,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "HR",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "NEA",
+        "OR",
+        "OR_95L",
+        "OR_95U",
+        "P",
+        "POS",
+        "REF",
+        "SE",
+        "SNPID",
+        "rsID"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "OR",
+            "HR"
+          ],
+          "missing_headers": [
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P",
+            "MLOG10P"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "TAB",
+        "na": "#NA",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GWAS-SSF v0.1",
+        "version": "20230328",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "tensorqtl_cis",
+      "file": "tensorqtl_cis.json",
+      "format_name": "tensorqtl_cis",
+      "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+      "format_version": "20220726",
+      "format_description": "tensorQTL cis mode output format with permutations",
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl",
+      "last_check_date": null,
+      "raw_column_count": 19,
+      "mapped_count": 19,
+      "unmapped_count": 0,
+      "canonical_count": 19,
+      "canonicals": [
+        "BETA",
+        "BETA_SHAPE1",
+        "BETA_SHAPE2",
+        "EAF",
+        "END_DISTANCE",
+        "MA_COUNT",
+        "MA_SAMPLES",
+        "NUM_VAR",
+        "P",
+        "P_BETA",
+        "P_NOMINAL_THRESHOLD",
+        "P_PERM",
+        "P_TRUE_DF",
+        "QVAL",
+        "SE",
+        "SNPID",
+        "START_DISTANCE",
+        "TRAIT",
+        "TRUE_DF"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "tensorQTL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "tensorqtl_cis_independent",
+      "file": "tensorqtl_cis_independent.json",
+      "format_name": "tensorqtl_cis_independent",
+      "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+      "format_version": "20220726",
+      "format_description": "tensorQTL cis-independent mode output format",
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl",
+      "last_check_date": null,
+      "raw_column_count": 18,
+      "mapped_count": 18,
+      "unmapped_count": 0,
+      "canonical_count": 18,
+      "canonicals": [
+        "BETA",
+        "BETA_SHAPE1",
+        "BETA_SHAPE2",
+        "EAF",
+        "END_DISTANCE",
+        "MA_COUNT",
+        "MA_SAMPLES",
+        "NUM_VAR",
+        "P",
+        "P_BETA",
+        "P_PERM",
+        "P_TRUE_DF",
+        "RANK",
+        "SE",
+        "SNPID",
+        "START_DISTANCE",
+        "TRAIT",
+        "TRUE_DF"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "tensorQTL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "tensorqtl_cis_nominal",
+      "file": "tensorqtl_cis_nominal.json",
+      "format_name": "tensorqtl_cis_nominal",
+      "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+      "format_version": "20220726",
+      "format_description": "tensorQTL cis-nominal mode output format",
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl",
+      "last_check_date": null,
+      "raw_column_count": 10,
+      "mapped_count": 10,
+      "unmapped_count": 0,
+      "canonical_count": 10,
+      "canonicals": [
+        "BETA",
+        "EAF",
+        "END_DISTANCE",
+        "MA_COUNT",
+        "MA_SAMPLES",
+        "P",
+        "SE",
+        "SNPID",
+        "START_DISTANCE",
+        "TRAIT"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "tensorQTL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "tensorqtl_cis_nominal_interaction",
+      "file": "tensorqtl_cis_nominal_interaction.json",
+      "format_name": "tensorqtl_cis_nominal_interaction",
+      "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+      "format_version": "20220726",
+      "format_description": "tensorQTL cis-nominal mode with interaction term output format",
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl",
+      "last_check_date": null,
+      "raw_column_count": 19,
+      "mapped_count": 19,
+      "unmapped_count": 0,
+      "canonical_count": 19,
+      "canonicals": [
+        "BETA_G",
+        "BETA_GI",
+        "BETA_I",
+        "EAF",
+        "END_DISTANCE",
+        "MA_COUNT",
+        "MA_SAMPLES",
+        "P_ADJ_BH",
+        "P_EMT",
+        "P_G",
+        "P_GI",
+        "P_I",
+        "SE_G",
+        "SE_GI",
+        "SE_I",
+        "SNPID",
+        "START_DISTANCE",
+        "TESTS_EMT",
+        "TRAIT"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "BETA",
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "SE"
+          ]
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "P",
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 2,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "tensorQTL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "tensorqtl_trans",
+      "file": "tensorqtl_trans.json",
+      "format_name": "tensorqtl_trans",
+      "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
+      "format_version": "20220726",
+      "format_description": "tensorQTL trans mode output format",
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl",
+      "last_check_date": null,
+      "raw_column_count": 7,
+      "mapped_count": 7,
+      "unmapped_count": 0,
+      "canonical_count": 7,
+      "canonicals": [
+        "BETA",
+        "EAF",
+        "P",
+        "R2",
+        "SE",
+        "SNPID",
+        "TRAIT"
+      ],
+      "has_format_dict_2": false,
+      "has_header_description": true,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID"
+          ],
+          "missing_headers": [
+            "rsID"
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "CHR",
+            "POS"
+          ]
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "EA",
+            "NEA"
+          ]
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR",
+            "Z"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "P"
+          ],
+          "missing_headers": [
+            "MLOG10P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "N",
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": false,
+          "partial": false,
+          "matched_headers": [],
+          "missing_headers": [
+            "INFO"
+          ]
+        }
+      ],
+      "tiers_satisfied": 5,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "tensorQTL",
+        "version": "20220726",
+        "last_check": "—"
+      }
+    },
+    {
+      "key": "vcf",
+      "file": "vcf.json",
+      "format_name": "vcf",
+      "format_source": "https://github.com/MRCIEU/gwas-vcf-specification/tree/1.0.0",
+      "format_version": 20220923,
+      "format_description": null,
+      "format_cite_name": "GWAS-VCF",
+      "format_citation": "Lyon, M.S., Andrews, S.J., Elsworth, B. et al. The variant call format provides efficient and robust storage of GWAS summary statistics. Genome Biol 22, 32 (2021). https://doi.org/10.1186/s13059-020-02248-0",
+      "github_url": "https://github.com/MRCIEU/gwas-vcf-specification",
+      "last_check_date": null,
+      "raw_column_count": 12,
+      "mapped_count": 12,
+      "unmapped_count": 0,
+      "canonical_count": 13,
+      "canonicals": [
+        "BETA",
+        "CHR",
+        "EA",
+        "EAF",
+        "INFO",
+        "MLOG10P",
+        "N",
+        "NEA",
+        "POS",
+        "SE",
+        "SNPID",
+        "Z",
+        "rsID"
+      ],
+      "has_format_dict_2": true,
+      "has_header_description": false,
+      "has_companion_meta": false,
+      "tiers": [
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SNPID",
+            "rsID"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "location",
+          "label": "Genomic location",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "CHR",
+            "POS"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "alleles",
+          "label": "Effect / other allele",
+          "mode": "all",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EA",
+            "NEA"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "effect",
+          "label": "Effect size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "BETA",
+            "Z"
+          ],
+          "missing_headers": [
+            "OR",
+            "HR"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "label": "Uncertainty",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "SE"
+          ],
+          "missing_headers": []
+        },
+        {
+          "id": "significance",
+          "label": "P-value",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "MLOG10P"
+          ],
+          "missing_headers": [
+            "P"
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample size",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "N"
+          ],
+          "missing_headers": [
+            "N_CASE"
+          ]
+        },
+        {
+          "id": "frequency",
+          "label": "Allele frequency",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "EAF"
+          ],
+          "missing_headers": [
+            "MAF",
+            "NEAF"
+          ]
+        },
+        {
+          "id": "quality",
+          "label": "Imputation / QC",
+          "mode": "any",
+          "satisfied": true,
+          "partial": false,
+          "matched_headers": [
+            "INFO"
+          ],
+          "missing_headers": []
+        }
+      ],
+      "tiers_satisfied": 9,
+      "tiers_total": 9,
+      "meta_display": {
+        "separator": "—",
+        "na": "—",
+        "comment": "—",
+        "header": "—",
+        "header_lines": "—",
+        "cite_name": "GWAS-VCF",
+        "version": "20220923",
+        "last_check": "—"
+      }
+    }
+  ],
+  "repo_root": "/home/yunye/work/github/formatbook"
+}

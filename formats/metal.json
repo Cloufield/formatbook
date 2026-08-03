@@ -1,17 +1,19 @@
 {
-"meta_data":{"format_name":"metal",
-            "format_source":"https://genome.sph.umich.edu/wiki/METAL_Documentation",
-            "format_version":"20220726"
-            },
-"format_dict":{
-            "MarkerName":"SNPID",
-            "Allele1":"EA",
-            "Allele2":"NEA",
-            "Freq1":"EAF",
-            "Effect":"BETA",
-            "StdErr":"SE",
-            "P-value":"P",
-            "Direction": "DIRECTION"
-            }
+    "meta_data": {
+        "format_name": "metal",
+        "format_source": "https://genome.sph.umich.edu/wiki/METAL_Documentation",
+        "format_version": "20220726",
+        "format_cite_name": "METAL",
+        "format_citation": "Willer, C. J., Li, Y., & Abecasis, G. R. (2010). METAL: fast and efficient meta-analysis of genomewide association scans. Bioinformatics, 26(17), 2190-2191."
+    },
+    "format_dict": {
+        "MarkerName": "SNPID",
+        "Allele1": "EA",
+        "Allele2": "NEA",
+        "Freq1": "EAF",
+        "Effect": "BETA",
+        "StdErr": "SE",
+        "P-value": "P",
+        "Direction": "DIRECTION"
+    }
 }
-

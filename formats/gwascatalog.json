@@ -1,19 +1,23 @@
 {
-"meta_data":{"format_name":"gwascatalog",
-            "format_source":"https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",  
-            "format_version":"20220726"
-            },
-"format_dict":{"variant_id":"SNPID",
-                 "chromosome":"CHR",
-                 "base_pair_location":"POS",
-                 "other_allele":"NEA",
-                "effect_allele":"EA",
-                "beta":"BETA",
-                "effect_allele_frequency":"EAF",
-                "standard_error":"SE",
-                "p_value":"P",
-                "odds_ratio":"OR",
-                "ci_lower":"OR_95L",
-                "ci_upper":"OR_95U"
-            }
+    "meta_data": {
+        "format_name": "gwascatalog",
+        "format_source": "https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",
+        "format_version": "20220726",
+        "format_cite_name": "GWAS Catalog",
+        "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012."
+    },
+    "format_dict": {
+        "variant_id": "SNPID",
+        "chromosome": "CHR",
+        "base_pair_location": "POS",
+        "other_allele": "NEA",
+        "effect_allele": "EA",
+        "beta": "BETA",
+        "effect_allele_frequency": "EAF",
+        "standard_error": "SE",
+        "p_value": "P",
+        "odds_ratio": "OR",
+        "ci_lower": "OR_95L",
+        "ci_upper": "OR_95U"
+    }
 }

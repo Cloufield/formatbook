@@ -1,0 +1,11 @@
+# Formats
+
+Browse GWAS summary-statistics format specifications. Each page lists metadata, column mappings to GWASLab canonical headers, and tier coverage.
+
+For a heatmap view, see the [Format summary](../format_summary.html).
+
+## All formats ({{ formats | length }})
+
+{% for fmt in formats -%}
+- [{{ fmt.format_name }}]({{ fmt.key }}.md) — `{{ fmt.key }}`
+{% endfor -%}

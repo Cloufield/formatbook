@@ -1,0 +1,174 @@
+{
+  "description": "Shared format_cite_name, format_citation, and github_url for formatbook software families. Copy into formats/*.json meta_data; do not load at runtime.",
+  "families": {
+    "PLINK 1.9": {
+      "format_cite_name": "PLINK 1.9",
+      "format_citation": "Purcell, S., Neale, B., Todd-Brown, K., Thomas, L., Ferreira, M. A., Bender, D., ... & Sham, P. C. (2007). PLINK: a tool set for whole-genome association and population-based linkage analyses. The American journal of human genetics, 81(3), 559-575."
+    },
+    "PLINK 2.0": {
+      "format_cite_name": "PLINK 2.0",
+      "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
+    },
+    "tensorQTL": {
+      "format_cite_name": "tensorQTL",
+      "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+      "github_url": "https://github.com/broadinstitute/tensorqtl"
+    },
+    "REGENIE": {
+      "format_cite_name": "REGENIE",
+      "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+      "github_url": "https://github.com/rgcgithub/regenie"
+    },
+    "GWAS-SSF": {
+      "format_cite_name": "GWAS-SSF v0.1",
+      "format_citation": "Hayhurst, J., Buniello, A., Harris, L., Mosaku, A., Chang, C., Gignoux, C. R., ... & Barroso, I. (2022). A community driven GWAS summary statistics standard. bioRxiv."
+    },
+    "GWAS Catalog": {
+      "format_cite_name": "GWAS Catalog",
+      "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012."
+    },
+    "PGS Catalog": {
+      "format_cite_name": "PGS Catalog",
+      "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425."
+    },
+    "GWAS-VCF": {
+      "format_cite_name": "GWAS-VCF",
+      "format_citation": "Lyon, M.S., Andrews, S.J., Elsworth, B. et al. The variant call format provides efficient and robust storage of GWAS summary statistics. Genome Biol 22, 32 (2021). https://doi.org/10.1186/s13059-020-02248-0",
+      "github_url": "https://github.com/MRCIEU/gwas-vcf-specification"
+    },
+    "PheWeb": {
+      "format_cite_name": "PheWeb",
+      "format_citation": "Gagliano Taliun, S.A., VandeHaar, P. et al. Exploring and visualizing large-scale genetic associations by using PheWeb. Nat Genet 52, 550–552 (2020).",
+      "github_url": "https://github.com/statgen/pheweb"
+    },
+    "BOLT-LMM": {
+      "format_cite_name": "BOLT-LMM",
+      "format_citation": "Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290."
+    },
+    "CC-GWAS": {
+      "format_cite_name": "CC-GWAS",
+      "format_citation": "Peyrot, W. J., & Price, A. L. (2021). Identifying loci with different allele frequencies among cases of eight psychiatric disorders using CC-GWAS. Nature genetics, 53(4), 445-454.",
+      "github_url": "https://github.com/wouterpeyrot/CCGWAS"
+    },
+    "GEMMA": {
+      "format_cite_name": "GEMMA",
+      "format_citation": "Zhou, X., & Stephens, M. (2012). Genome-wide efficient mixed-model analysis for association studies. Nature Genetics, 44(7), 821-824.",
+      "github_url": "https://github.com/genetics-statistics/GEMMA"
+    },
+    "SNPTEST": {
+      "format_cite_name": "SNPTEST",
+      "format_citation": "Marchini, J., Howie, B., Myers, S., McVean, G., & Donnelly, P. (2007). A new multipoint method for genome-wide association studies via imputation of genotypes. Nature Genetics, 39(7), 906-913."
+    },
+    "GWASLab": {
+      "format_cite_name": "GWASLab",
+      "format_citation": "Cloufield. GWASLab: a Python package for GWAS summary statistics. https://github.com/Cloufield/gwaslab",
+      "github_url": "https://github.com/Cloufield/gwaslab"
+    },
+    "LDAK/SumHer": {
+      "format_cite_name": "LDAK/SumHer",
+      "format_citation": "Speed D, Holmes J, Sumner MD, et al. (2020). Reevaluation of SNP heritability in complex human traits. Nature Genetics."
+    },
+    "MTAG": {
+      "format_cite_name": "MTAG v1.0.8",
+      "format_citation": "Turley, P., Walters, R. K., Maghzian, O., Okbay, A., Lee, J. J., Fontana, M. A., ... & Benjamin, D. J. (2018). Multi-trait analysis of genome-wide association summary statistics using MTAG. Nature Genetics, 50(2), 229-237.",
+      "github_url": "https://github.com/JonJala/mtag"
+    },
+    "METAL": {
+      "format_cite_name": "METAL",
+      "format_citation": "Willer, C. J., Li, Y., & Abecasis, G. R. (2010). METAL: fast and efficient meta-analysis of genomewide association scans. Bioinformatics, 26(17), 2190-2191."
+    },
+    "MR-MEGA": {
+      "format_cite_name": "MR-MEGA",
+      "format_citation": "Mägi, R., Horikoshi, M., Sofer, T., Mahajan, A., Kitajima, H., Franceschini, N., ... & Morris, A. P. (2017). Trans-ethnic meta-regression of genome-wide association studies accounting for ancestry increases power for discovery and improves fine-mapping resolution. Human molecular genetics, 26(18), 3639-3650."
+    },
+    "SAIGE": {
+      "format_cite_name": "SAIGE",
+      "format_citation": "Zhou, W., Nielsen, J. B., Fritsche, L. G., Dey, R., Gabrielsen, M. E., Wolford, B. N., ... & Lee, S. (2018). Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies. Nature genetics, 50(9), 1335-1341.",
+      "github_url": "https://github.com/weizhouUMICH/SAIGE"
+    },
+    "fastGWA": {
+      "format_cite_name": "fastGWA",
+      "format_citation": "Jiang, L., Zheng, Z., Qi, T., Kemper, K. E., Wray, N. R., Visscher, P. M., & Yang, J. (2019). A resource-efficient tool for mixed model association analysis of large-scale data. Nature genetics, 51(12), 1749-1755."
+    },
+    "LDSC": {
+      "format_cite_name": "LDSC",
+      "format_citation": "Bulik-Sullivan, B. K., Loh, P. R., Finucane, H. K., Ripke, S., Yang, J., Patterson, N., ... & Neale, B. M. (2015). LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nature genetics, 47(3), 291-295.",
+      "github_url": "https://github.com/bulik/ldsc"
+    },
+    "Popcorn": {
+      "format_cite_name": "Popcorn",
+      "format_citation": "Brown, B. C., Ye, C. J., Price, A. L., & Zaitlen, N. (2016). Transethnic genetic-correlation estimates from summary statistics. The American Journal of Human Genetics, 99(1), 76-88.",
+      "github_url": "https://github.com/brielin/Popcorn"
+    },
+    "COJO": {
+      "format_cite_name": "GCTA-COJO",
+      "format_citation": "Yang, J., Ferreira, T., Morris, A. P., Medland, S. E., Madden, P. A., Heath, A. C., ... & Visscher, P. M. (2012). Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits. Nature genetics, 44(4), 369-375."
+    },
+    "genomicSEM": {
+      "format_cite_name": "genomicSEM",
+      "format_citation": "Grotzinger, A. D., Rhemtulla, M., de Vlaming, R., Ritchie, S. J., Mallard, T. T., Hill, W. D., ... & Tucker-Drob, E. M. (2019). Genomic structural equation modelling provides insights into the multivariate genetic architecture of complex traits. Nature communications, 10(1), 3402.",
+      "github_url": "https://github.com/GenomicSEM/GenomicSEM"
+    },
+    "BGENIE": {
+      "format_cite_name": "BGENIE",
+      "format_citation": "Bycroft, C., Freeman, C., Petkova, D., Band, G., Elliott, L. T., Sharp, K., Motyer, A., Vukcevic, D., Delaneau, O., O'Connell, J., Cortes, A., Welsh, S., McVean, G., Leslie, S., Donnelly, P., & Marchini, J. (2018). The UK Biobank resource with deep phenotyping and genomic data. Nature, 562(7726), 203-209."
+    },
+    "MESuSiE": {
+      "format_cite_name": "MESuSiE",
+      "format_citation": "Gao, B., & Zhou, X. (2024). MESuSiE enables scalable and powerful multi-ancestry fine-mapping of causal variants in genome-wide association studies. Nature Genetics, 56(1), 170-179.",
+      "github_url": "https://github.com/borangao/MESuSiE"
+    },
+    "Oxford/BGEN": {
+      "format_cite_name": "Oxford/BGEN",
+      "format_citation": "Band, G., & Marchini, J. (2018). BGEN: a binary file format for imputed genotype and haplotype data. bioRxiv."
+    }
+  },
+  "format_family": {
+    "bgen_sample.json": "Oxford/BGEN",
+    "bgenie.json": "BGENIE",
+    "bolt_lmm.json": "BOLT-LMM",
+    "ccgwas.json": "CC-GWAS",
+    "cojo.json": "COJO",
+    "fastgwa.json": "fastGWA",
+    "gemma.json": "GEMMA",
+    "genomicsem.json": "genomicSEM",
+    "gwascatalog.json": "GWAS Catalog",
+    "gwascatalog_hm.json": "GWAS Catalog",
+    "gwaslab.json": "GWASLab",
+    "ldak.json": "LDAK/SumHer",
+    "ldsc.json": "LDSC",
+    "mesusie.json": "MESuSiE",
+    "metal.json": "METAL",
+    "mrmega.json": "MR-MEGA",
+    "mtag.json": "MTAG",
+    "pgscatalog.json": "PGS Catalog",
+    "pgscatalog_hm.json": "PGS Catalog",
+    "pheweb.json": "PheWeb",
+    "plink.json": "PLINK 1.9",
+    "plink_assoc.json": "PLINK 1.9",
+    "plink_bim.json": "PLINK 1.9",
+    "plink_dosage.json": "PLINK 1.9",
+    "plink_fam.json": "PLINK 1.9",
+    "plink_fisher.json": "PLINK 1.9",
+    "plink_linear.json": "PLINK 1.9",
+    "plink_logistic.json": "PLINK 1.9",
+    "plink2.json": "PLINK 2.0",
+    "plink2_firth.json": "PLINK 2.0",
+    "plink2_linear.json": "PLINK 2.0",
+    "plink2_logistic.json": "PLINK 2.0",
+    "plink_psam.json": "PLINK 2.0",
+    "plink_pvar.json": "PLINK 2.0",
+    "popcorn.json": "Popcorn",
+    "regenie.json": "REGENIE",
+    "regenie_gene.json": "REGENIE",
+    "saige.json": "SAIGE",
+    "snptest.json": "SNPTEST",
+    "ssf.json": "GWAS-SSF",
+    "tensorqtl_cis.json": "tensorQTL",
+    "tensorqtl_cis_independent.json": "tensorQTL",
+    "tensorqtl_cis_nominal.json": "tensorQTL",
+    "tensorqtl_cis_nominal_interaction.json": "tensorQTL",
+    "tensorqtl_trans.json": "tensorQTL",
+    "vcf.json": "GWAS-VCF"
+  }
+}

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FormatBook — Format Summary</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666;
+      --border: #ddd;
+      --accent: #1565c0;
+      --yes-bg: #c8e6c9;
+      --yes-fg: #1b5e20;
+      --no-bg: #f5f5f5;
+      --no-fg: #9e9e9e;
+      --partial-bg: #fff3e0;
+      --partial-fg: #e65100;
+      --row-hover: #e3f2fd;
+      --detail-bg: #f8f9fa;
+      --chip-bg: #e8eaf6;
+      --chip-fg: #283593;
+      --thead-bg: #eceff1;
+      --row-stripe: #f5f7fa;
+      --meta-empty-bg: #eceff1;
+      --meta-empty-fg: #888;
+      --format-col-bg: #fafbfc;
+      --tiers-high: #e8f5e9;
+      --tiers-mid: #fff8e1;
+      --tiers-low: #ffebee;
+      --meta-expanded-bg: #fffde7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+    }
+    header h1 { margin: 0 0 0.25rem; font-size: 1.5rem; font-weight: 600; }
+    header p { margin: 0; color: var(--muted); font-size: 0.875rem; }
+    main { max-width: 1400px; margin: 0 auto; padding: 1.25rem 1.5rem 2rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.875rem 1rem;
+    }
+    .card .value { font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+    .card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+    }
+    .controls label { font-size: 0.8125rem; color: var(--muted); }
+    .controls input, .controls select {
+      font: inherit;
+      padding: 0.35rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--surface);
+    }
+    .controls input[type="search"] { min-width: 200px; }
+    .controls .btn-toggle {
+      font: inherit;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .controls .btn-toggle:hover { background: var(--row-hover); }
+    body.hide-header-explanations .tier-head-meta,
+    body.hide-header-explanations .tier-head-desc,
+    body.hide-header-explanations .meta-head-desc {
+      display: none;
+    }
+    thead th.header-toggle {
+      cursor: pointer;
+      user-select: none;
+    }
+    thead th.header-toggle:hover {
+      background: #dfe6eb;
+    }
+    body.hide-header-explanations thead th.header-toggle {
+      background: var(--thead-bg);
+    }
+    .section-title {
+      margin: 1.5rem 0 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+    .section-title:first-of-type { margin-top: 0; }
+    .section-hint {
+      margin: -0.35rem 0 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .swatch {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+    .swatch.yes { background: var(--yes-bg); }
+    .swatch.no { background: var(--no-bg); }
+    .swatch.partial { background: var(--partial-bg); }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      max-height: 70vh;
+    }
+    .table-wrap-meta {
+      max-height: none;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: max-content;
+      min-width: 100%;
+      font-size: 0.8125rem;
+    }
+    table.data-table th, table.data-table td {
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      padding: 0.4rem 0.5rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    table.data-table th:last-child, table.data-table td:last-child { border-right: none; }
+    table.data-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--thead-bg);
+      font-weight: 600;
+    }
+    table.data-table td.format-name, table.data-table th.format-col {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--format-col-bg);
+      text-align: left;
+      font-weight: 500;
+      min-width: 140px;
+    }
+    table.data-table thead th.format-col { z-index: 3; background: var(--thead-bg); }
+    table.coverage td.format-name { cursor: pointer; background: var(--format-col-bg); }
+    table.coverage tbody tr.data-row:nth-child(odd) td.format-name {
+      background: var(--row-stripe);
+    }
+    table.coverage tbody tr:hover td { background: var(--row-hover); }
+    table.coverage tbody tr:hover td.format-name { background: var(--row-hover); }
+    table.coverage tbody tr:hover td.tier-yes { background: var(--yes-bg); }
+    table.coverage tbody tr:hover td.tier-no { background: var(--no-bg); }
+    table.coverage tbody tr:hover td.tier-partial { background: var(--partial-bg); }
+    table.coverage tbody tr:hover td.tiers-count.tiers-0,
+    table.coverage tbody tr:hover td.tiers-count.tiers-1,
+    table.coverage tbody tr:hover td.tiers-count.tiers-2 { background: var(--tiers-low); }
+    table.coverage tbody tr:hover td.tiers-count.tiers-3,
+    table.coverage tbody tr:hover td.tiers-count.tiers-4,
+    table.coverage tbody tr:hover td.tiers-count.tiers-5 { background: var(--tiers-mid); }
+    table.coverage tbody tr:hover td.tiers-count.tiers-6,
+    table.coverage tbody tr:hover td.tiers-count.tiers-7,
+    table.coverage tbody tr:hover td.tiers-count.tiers-8,
+    table.coverage tbody tr:hover td.tiers-count.tiers-9 { background: var(--tiers-high); }
+    table.coverage tbody tr.expanded td.format-name { font-weight: 600; color: var(--accent); }
+    table.data-table thead th.tier-col,
+    table.data-table thead th.meta-col {
+      white-space: normal;
+      text-align: left;
+      vertical-align: top;
+      min-width: 8.5rem;
+      max-width: 11rem;
+      line-height: 1.35;
+      padding: 0.5rem 0.6rem;
+    }
+    .tier-head-label, .meta-head-label { font-weight: 600; font-size: 0.8125rem; }
+    .tier-head-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    .tier-mode {
+      font-family: ui-monospace, monospace;
+      font-size: 0.7rem;
+      background: #e0e0e0;
+      padding: 0.05rem 0.3rem;
+      border-radius: 3px;
+    }
+    .tier-head-desc, .meta-head-desc {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-weight: 400;
+    }
+    td.tier-yes { background: var(--yes-bg); color: var(--yes-fg); }
+    td.tier-no { background: var(--no-bg); color: var(--no-fg); }
+    td.tier-partial { background: var(--partial-bg); color: var(--partial-fg); }
+    td.tiers-count { font-variant-numeric: tabular-nums; font-weight: 600; }
+    td.tiers-count.tiers-0,
+    td.tiers-count.tiers-1,
+    td.tiers-count.tiers-2 { background: var(--tiers-low); }
+    td.tiers-count.tiers-3,
+    td.tiers-count.tiers-4,
+    td.tiers-count.tiers-5 { background: var(--tiers-mid); }
+    td.tiers-count.tiers-6,
+    td.tiers-count.tiers-7,
+    td.tiers-count.tiers-8,
+    td.tiers-count.tiers-9 { background: var(--tiers-high); }
+    table.meta {
+      width: 100%;
+      table-layout: auto;
+    }
+    table.meta thead th {
+      border-bottom: 2px solid #cfd8dc;
+    }
+    table.meta tbody tr.meta-row:nth-child(even) td {
+      background: var(--row-stripe);
+    }
+    table.meta tbody tr.meta-row:nth-child(even) td.meta-empty {
+      background: var(--meta-empty-bg);
+    }
+    table.meta tbody tr:hover td { background: var(--row-hover); }
+    table.meta tbody tr:hover td.format-name { background: var(--row-hover); }
+    table.meta tbody tr:hover td.meta-empty { background: var(--meta-empty-bg); }
+    table.meta td.meta-value-cell {
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      text-align: left;
+      vertical-align: top;
+      max-width: 11rem;
+    }
+    table.meta td.meta-value-cell:not(.meta-empty) {
+      cursor: pointer;
+    }
+    table.meta td.meta-value-cell:not(.meta-empty):hover {
+      background: var(--row-hover);
+    }
+    table.meta td.meta-value-cell.expanded {
+      background: var(--meta-expanded-bg);
+    }
+    table.meta td.meta-value-cell.expanded:hover {
+      background: var(--meta-expanded-bg);
+    }
+    table.meta td.meta-empty {
+      background: var(--meta-empty-bg);
+      color: var(--meta-empty-fg);
+      text-align: center;
+      vertical-align: middle;
+      cursor: default;
+    }
+    table.meta td.meta-value-cell code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      color: #37474f;
+    }
+    table.meta td.meta-empty code {
+      display: inline;
+      -webkit-line-clamp: unset;
+      color: var(--meta-empty-fg);
+    }
+    table.meta td.meta-value-cell.expanded code {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    table.meta td.meta-citation-cell {
+      width: 1%;
+      white-space: nowrap;
+      text-align: center;
+      vertical-align: middle;
+    }
+    table.meta tbody tr:hover td.meta-citation-cell:not(.meta-empty) {
+      background: var(--row-hover);
+    }
+    .btn-copy-citation {
+      font: inherit;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .btn-copy-citation:hover {
+      background: var(--row-hover);
+    }
+    .btn-copy-citation.copied {
+      background: var(--yes-bg);
+      border-color: var(--yes-fg);
+      color: var(--yes-fg);
+    }
+    .citation-tooltip {
+      position: fixed;
+      z-index: 1000;
+      max-width: min(28rem, calc(100vw - 2rem));
+      padding: 0.5rem 0.65rem;
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      pointer-events: none;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .citation-tooltip.hidden {
+      display: none;
+    }
+    tr.detail-row td {
+      padding: 0;
+      background: var(--detail-bg);
+      text-align: left;
+      white-space: normal;
+    }
+    tr.detail-row.hidden { display: none; }
+    .detail-panel {
+      padding: 0.75rem 1rem 1rem;
+      border-top: 1px dashed var(--border);
+    }
+    .detail-panel h3 { margin: 0 0 0.5rem; font-size: 0.9375rem; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .detail-grid dl { margin: 0; font-size: 0.8125rem; }
+    .detail-grid dt { color: var(--muted); font-size: 0.75rem; }
+    .detail-grid dd { margin: 0.15rem 0 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .chip {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      background: var(--chip-bg);
+      color: var(--chip-fg);
+      font-size: 0.75rem;
+      font-family: ui-monospace, monospace;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    body.hide-header-explanations table.data-table thead th.tier-col,
+    body.hide-header-explanations table.data-table thead th.meta-col {
+      min-width: 0;
+      max-width: max-content;
+      width: max-content;
+      padding: 0.3rem 0.4rem;
+      white-space: nowrap;
+      word-break: normal;
+      overflow-wrap: normal;
+      line-height: 1.25;
+    }
+    body.hide-header-explanations .tier-head-label,
+    body.hide-header-explanations .meta-head-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    body.hide-header-explanations table.coverage td:not(.format-name):not(.tiers-count) {
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
+    body.hide-header-explanations table.coverage tbody td.tier-yes,
+    body.hide-header-explanations table.coverage tbody td.tier-no,
+    body.hide-header-explanations table.coverage tbody td.tier-partial {
+      width: max-content;
+      max-width: max-content;
+      min-width: 0;
+    }
+    body.hide-header-explanations table.meta td.meta-value-cell {
+      max-width: 0;
+      min-width: 0;
+    }
+    body.hide-header-explanations table.coverage,
+    body.hide-header-explanations table.meta {
+      width: max-content;
+    }
+    a { color: var(--accent); }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+    .site-nav a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .site-nav a:hover {
+      color: var(--accent);
+      background: var(--row-hover);
+    }
+    .site-nav a[aria-current="page"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    header {
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <a href="index.html">Home</a>
+    <a href="format_summary.html" aria-current="page">Format summary</a>
+    <a href="formats/">Formats</a>
+    <a href="design/">Design</a>
+    <a href="auto/">Auto presets</a>
+  </nav>
+  <header>
+    <h1>FormatBook — Format Summary</h1>
+    <p>Generated {{ report.generated_at }} · {{ report.format_count }} tool formats · tier coverage and parsing metadata</p>
+  </header>
+  <main>
+    <div class="cards">
+      <div class="card">
+        <div class="value" id="stat-formats">{{ report.format_count }}</div>
+        <div class="label">Formats</div>
+      </div>
+      <div class="card">
+        <div class="value">{{ report.avg_tiers_satisfied }}</div>
+        <div class="label">Avg tiers satisfied</div>
+      </div>
+      <div class="card">
+        <div class="value">{{ report.tier_groups | length }}</div>
+        <div class="label">Tier groups</div>
+      </div>
+      <div class="card">
+        <div class="value" id="stat-visible">{{ report.format_count }}</div>
+        <div class="label">Visible rows</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label>
+        Search
+        <input type="search" id="search" placeholder="Filter by format name…" autocomplete="off">
+      </label>
+      <label>
+        Sort
+        <select id="sort">
+          <option value="name-asc">Name (A–Z)</option>
+          <option value="name-desc">Name (Z–A)</option>
+          <option value="tiers-desc">Tiers satisfied (high→low)</option>
+          <option value="tiers-asc">Tiers satisfied (low→high)</option>
+        </select>
+      </label>
+      <label>
+        Min tiers
+        <select id="min-tiers">
+          <option value="0">Any</option>
+          {% for n in range(1, report.tier_groups | length + 1) %}
+          <option value="{{ n }}">≥ {{ n }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <button type="button" id="toggle-explanations" class="btn-toggle">Hide explanations</button>
+    </div>
+
+    <h2 class="section-title">Canonical header coverage</h2>
+    <div class="legend">
+      <span><i class="swatch yes"></i> Tier satisfied</span>
+      <span><i class="swatch partial"></i> Partial (all-mode: some headers missing)</span>
+      <span><i class="swatch no"></i> Not satisfied</span>
+      <span>Click a format name to expand details</span>
+      <span>Click column headers or Hide explanations to toggle header detail</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table coverage" id="coverage-table">
+        <thead>
+          <tr>
+            <th class="format-col" scope="col">Format</th>
+            {% for g in report.tier_groups %}
+            <th class="tier-col header-toggle" scope="col" title="Click to show/hide column explanations">
+              <div class="tier-head-label">{{ g.label }}</div>
+              <div class="tier-head-meta"><span class="tier-mode">{{ g.mode }}</span> · {{ g.headers | join(', ') }}</div>
+              <div class="tier-head-desc">{{ g.description }}</div>
+            </th>
+            {% endfor %}
+            <th scope="col">Tiers</th>
+          </tr>
+        </thead>
+        <tbody id="coverage-body">
+          {% for fmt in report.formats %}
+          <tr class="data-row" data-key="{{ fmt.key | e }}"
+              data-name="{{ fmt.format_name | lower | e }}"
+              data-tiers="{{ fmt.tiers_satisfied }}">
+            <td class="format-name"><a href="formats/{{ fmt.key | e }}/">{{ fmt.format_name }}</a></td>
+            {% for tier in fmt.tiers %}
+            {% if tier.satisfied %}
+            <td class="tier-yes" title="{{ tier.matched_headers | join(', ') }}">●</td>
+            {% elif tier.partial %}
+            <td class="tier-partial" title="Missing: {{ tier.missing_headers | join(', ') }}">◐</td>
+            {% else %}
+            <td class="tier-no" title="Missing: {{ tier.missing_headers | join(', ') if tier.missing_headers else tier.label }}">○</td>
+            {% endif %}
+            {% endfor %}
+            <td class="tiers-count tiers-{{ fmt.tiers_satisfied }}">{{ fmt.tiers_satisfied }}/{{ fmt.tiers_total }}</td>
+          </tr>
+          <tr class="detail-row hidden" data-detail-for="{{ fmt.key | e }}">
+            <td colspan="{{ report.tier_groups | length + 2 }}">
+              <div class="detail-panel">
+                <h3>{{ fmt.format_name }}</h3>
+                <div class="detail-grid">
+                  <dl>
+                    <dt>File</dt>
+                    <dd><code>formats/{{ fmt.file }}</code></dd>
+                    <dt>Version</dt>
+                    <dd>{{ fmt.format_version or '—' }}</dd>
+                    <dt>Last checked</dt>
+                    <dd>{{ fmt.last_check_date or '—' }}</dd>
+                  </dl>
+                  <dl>
+                    <dt>Columns</dt>
+                    <dd>{{ fmt.raw_column_count }} raw · {{ fmt.mapped_count }} mapped · {{ fmt.unmapped_count }} unmapped</dd>
+                    <dt>Canonical fields</dt>
+                    <dd>{{ fmt.canonical_count }} distinct</dd>
+                    <dt>Extras</dt>
+                    <dd>
+                      {% if fmt.has_format_dict_2 %}format_dict_2{% endif %}
+                      {% if fmt.has_header_description %}{% if fmt.has_format_dict_2 %}, {% endif %}header_description{% endif %}
+                      {% if fmt.has_companion_meta %}{% if fmt.has_format_dict_2 or fmt.has_header_description %}, {% endif %}companion_meta{% endif %}
+                      {% if not fmt.has_format_dict_2 and not fmt.has_header_description and not fmt.has_companion_meta %}—{% endif %}
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>Source</dt>
+                    <dd>{% if fmt.format_source %}<a href="{{ fmt.format_source }}" target="_blank" rel="noopener">{{ fmt.format_source }}</a>{% else %}—{% endif %}</dd>
+                    {% if fmt.format_description %}
+                    <dt>Description</dt>
+                    <dd>{{ fmt.format_description }}</dd>
+                    {% endif %}
+                  </dl>
+                </div>
+                <p><strong>Mapped canonical headers</strong></p>
+                <div class="chips">
+                  {% for c in fmt.canonicals %}
+                  <span class="chip">{{ c }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">Format metadata</h2>
+    <p class="section-hint">Striped rows alternate formats; gray cells are unset metadata. Click a value to expand or collapse long text. Click <strong>Copy</strong> in the Citation column to copy the full reference.</p>
+    <div class="table-wrap table-wrap-meta">
+      <table class="data-table meta" id="meta-table">
+        <thead>
+          <tr>
+            <th class="format-col" scope="col">Format</th>
+            {% for col in report.meta_columns %}
+            <th class="meta-col header-toggle" scope="col" title="Click to show/hide column explanations">
+              <div class="meta-head-label">{{ col.label }}</div>
+              <div class="meta-head-desc">{{ col.description }}</div>
+            </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody id="meta-body">
+          {% for fmt in report.formats %}
+          <tr class="meta-row" data-key="{{ fmt.key | e }}" data-name="{{ fmt.format_name | lower | e }}">
+            <td class="format-name"><a href="formats/{{ fmt.key | e }}/">{{ fmt.format_name }}</a></td>
+            {% for col in report.meta_columns %}
+            {% if col.get('widget') == 'copy_citation' %}
+            <td class="meta-citation-cell{% if not fmt.format_citation %} meta-empty{% endif %}">
+              {% if fmt.format_citation %}
+              <button type="button" class="btn-copy-citation" data-citation="{{ fmt.format_citation }}">Copy</button>
+              {% else %}—{% endif %}
+            </td>
+            {% else %}
+            <td class="meta-value-cell{% if fmt.meta_display[col.id] == '—' %} meta-empty{% endif %}"
+                {% if fmt.meta_display[col.id] != '—' %}title="Click to expand"{% endif %}>
+              <code>{{ fmt.meta_display[col.id] }}</code>
+            </td>
+            {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <div id="citation-tooltip" class="citation-tooltip hidden" role="tooltip" aria-hidden="true"></div>
+  <footer>Generated by scripts/format_summary.py — do not edit this file by hand.</footer>
+
+  <script>
+    (function () {
+      const coverageBody = document.getElementById('coverage-body');
+      const metaBody = document.getElementById('meta-body');
+      const search = document.getElementById('search');
+      const sort = document.getElementById('sort');
+      const minTiers = document.getElementById('min-tiers');
+      const statVisible = document.getElementById('stat-visible');
+      const toggleExplanations = document.getElementById('toggle-explanations');
+      const citationTooltip = document.getElementById('citation-tooltip');
+      const STORAGE_KEY = 'formatbook.hideHeaderExplanations';
+
+      function hideCitationTooltip() {
+        citationTooltip.classList.add('hidden');
+        citationTooltip.setAttribute('aria-hidden', 'true');
+      }
+
+      function positionCitationTooltip(btn) {
+        const rect = btn.getBoundingClientRect();
+        citationTooltip.style.left = rect.left + 'px';
+        citationTooltip.style.top = (rect.bottom + 6) + 'px';
+        const tipRect = citationTooltip.getBoundingClientRect();
+        const maxLeft = window.innerWidth - tipRect.width - 16;
+        citationTooltip.style.left = Math.max(16, Math.min(rect.left, maxLeft)) + 'px';
+        if (tipRect.bottom > window.innerHeight - 8) {
+          citationTooltip.style.top = (rect.top - tipRect.height - 6) + 'px';
+        }
+      }
+
+      function showCitationTooltip(btn) {
+        const text = btn.dataset.citation || '';
+        if (!text) return;
+        citationTooltip.textContent = text;
+        citationTooltip.classList.remove('hidden');
+        citationTooltip.setAttribute('aria-hidden', 'false');
+        positionCitationTooltip(btn);
+      }
+
+      function setExplanationsHidden(hidden) {
+        document.body.classList.toggle('hide-header-explanations', hidden);
+        toggleExplanations.textContent = hidden ? 'Show explanations' : 'Hide explanations';
+        try {
+          localStorage.setItem(STORAGE_KEY, hidden ? '1' : '0');
+        } catch (e) { /* ignore */ }
+      }
+
+      function toggleExplanationsState() {
+        setExplanationsHidden(!document.body.classList.contains('hide-header-explanations'));
+      }
+
+      function rowPairs() {
+        const pairs = [];
+        coverageBody.querySelectorAll('tr.data-row').forEach(function (row) {
+          const key = row.dataset.key;
+          const detail = coverageBody.querySelector('tr.detail-row[data-detail-for="' + key + '"]');
+          pairs.push({ row: row, detail: detail, key: key });
+        });
+        return pairs;
+      }
+
+      function metaRowForKey(key) {
+        return metaBody.querySelector('tr.meta-row[data-key="' + key + '"]');
+      }
+
+      function applyFilters() {
+        const q = search.value.trim().toLowerCase();
+        const min = parseInt(minTiers.value, 10) || 0;
+        let visible = 0;
+        rowPairs().forEach(function (p) {
+          const name = p.row.dataset.name || '';
+          const tiers = parseInt(p.row.dataset.tiers, 10) || 0;
+          const show = (!q || name.indexOf(q) !== -1) && tiers >= min;
+          p.row.style.display = show ? '' : 'none';
+          if (p.detail) {
+            if (!show) {
+              p.detail.classList.add('hidden');
+              p.row.classList.remove('expanded');
+            }
+            p.detail.style.display = show ? '' : 'none';
+          }
+          const metaRow = metaRowForKey(p.key);
+          if (metaRow) metaRow.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        statVisible.textContent = String(visible);
+      }
+
+      function applySort() {
+        const mode = sort.value;
+        const pairs = rowPairs();
+        pairs.sort(function (a, b) {
+          const nameA = a.row.querySelector('.format-name').textContent.trim().toLowerCase();
+          const nameB = b.row.querySelector('.format-name').textContent.trim().toLowerCase();
+          const tiersA = parseInt(a.row.dataset.tiers, 10) || 0;
+          const tiersB = parseInt(b.row.dataset.tiers, 10) || 0;
+          if (mode === 'name-asc') return nameA.localeCompare(nameB);
+          if (mode === 'name-desc') return nameB.localeCompare(nameA);
+          if (mode === 'tiers-desc') return tiersB - tiersA || nameA.localeCompare(nameB);
+          if (mode === 'tiers-asc') return tiersA - tiersB || nameA.localeCompare(nameB);
+          return 0;
+        });
+        pairs.forEach(function (p) {
+          coverageBody.appendChild(p.row);
+          if (p.detail) coverageBody.appendChild(p.detail);
+          const metaRow = metaRowForKey(p.key);
+          if (metaRow) metaBody.appendChild(metaRow);
+        });
+      }
+
+      coverageBody.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        const cell = e.target.closest('td.format-name');
+        if (!cell) return;
+        const row = cell.closest('tr.data-row');
+        if (!row || row.style.display === 'none') return;
+        const key = row.dataset.key;
+        const detail = coverageBody.querySelector('tr.detail-row[data-detail-for="' + key + '"]');
+        if (!detail) return;
+        const open = detail.classList.toggle('hidden');
+        row.classList.toggle('expanded', !open);
+      });
+
+      metaBody.addEventListener('click', function (e) {
+        const btn = e.target.closest('.btn-copy-citation');
+        if (btn) {
+          e.stopPropagation();
+          const text = btn.dataset.citation || '';
+          if (!text) return;
+          function onCopied() {
+            hideCitationTooltip();
+            const prev = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function () {
+              btn.textContent = prev;
+              btn.classList.remove('copied');
+            }, 1500);
+          }
+          function copyFallback() {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              if (document.execCommand('copy')) onCopied();
+            } finally {
+              document.body.removeChild(ta);
+            }
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(onCopied).catch(copyFallback);
+          } else {
+            copyFallback();
+          }
+          return;
+        }
+        const td = e.target.closest('td.meta-value-cell');
+        if (!td || td.classList.contains('meta-empty')) return;
+        td.classList.toggle('expanded');
+      });
+
+      metaBody.addEventListener('mouseover', function (e) {
+        const btn = e.target.closest('.btn-copy-citation');
+        if (btn) showCitationTooltip(btn);
+      });
+      metaBody.addEventListener('mouseout', function (e) {
+        const btn = e.target.closest('.btn-copy-citation');
+        if (btn && !btn.contains(e.relatedTarget)) hideCitationTooltip();
+      });
+      metaBody.addEventListener('focusin', function (e) {
+        const btn = e.target.closest('.btn-copy-citation');
+        if (btn) showCitationTooltip(btn);
+      });
+      metaBody.addEventListener('focusout', function (e) {
+        const btn = e.target.closest('.btn-copy-citation');
+        if (btn && !btn.contains(e.relatedTarget)) hideCitationTooltip();
+      });
+
+      search.addEventListener('input', applyFilters);
+      minTiers.addEventListener('change', applyFilters);
+      sort.addEventListener('change', function () { applySort(); applyFilters(); });
+      toggleExplanations.addEventListener('click', toggleExplanationsState);
+      document.querySelectorAll('thead th.header-toggle').forEach(function (th) {
+        th.addEventListener('click', toggleExplanationsState);
+      });
+
+      try {
+        if (localStorage.getItem(STORAGE_KEY) === '1') {
+          setExplanationsHidden(true);
+        }
+      } catch (e) { /* ignore */ }
+
+      applySort();
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>

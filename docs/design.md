@@ -24,6 +24,7 @@ Contains metadata about the format specification itself:
 | `format_version` | Yes | Version identifier for the format specification |
 | `format_cite_name` | No | Name to use when citing this format |
 | `format_citation` | No | Full citation string |
+| `github_url` | No | GitHub repository root URL (`https://github.com/{owner}/{repo}`) when the software or spec has a repo; omit for docs-only sources |
 | `format_description` | No | Human-readable description of what this format represents |
 | `format_separator` | No | Field separator character (e.g., "\t" for tab, " " for space) |
 | `format_na` | No | How missing values are represented (e.g., "NA", ".", null, or an array of possible values) |
@@ -308,6 +309,7 @@ The formatbook enables:
 - All formats are aggregated into a single `formatbook.json` file
 - Each format is keyed by its format identifier (e.g., "tensorqtl_cis", "plink")
 - **Canonical headers are defined in the GWASLab package (`qc/qc_researved_header.json`)** - this file contains the authoritative list of all valid canonical field names that can be used as values in `format_dict` and `format_dict_2`
+- **Published catalog:** the interactive [Format summary](format_summary.html) heatmap and [per-format pages](formats/index.md) on this site are generated from `formats/*.json` and tier groups in `keys/key_canonical_headers.json`. Maintainer regeneration steps are in the repository README.
 
 ## Future Considerations
 

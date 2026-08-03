@@ -1,0 +1,68 @@
+{
+  "description": "Tiered canonical header groups for format coverage summaries. Each group uses mode 'any' (at least one header mapped) or 'all' (every header mapped).",
+  "groups": [
+    {
+      "id": "variant_id",
+      "label": "Variant ID",
+      "mode": "any",
+      "headers": ["SNPID", "rsID"],
+      "description": "At least one variant identifier column (SNPID or rsID)."
+    },
+    {
+      "id": "location",
+      "label": "Genomic location",
+      "mode": "all",
+      "headers": ["CHR", "POS"],
+      "description": "Both chromosome and base-pair position must be mapped."
+    },
+    {
+      "id": "alleles",
+      "label": "Effect / other allele",
+      "mode": "all",
+      "headers": ["EA", "NEA"],
+      "description": "Both effect allele and non-effect allele must be mapped."
+    },
+    {
+      "id": "effect",
+      "label": "Effect size",
+      "mode": "any",
+      "headers": ["BETA", "OR", "HR", "Z"],
+      "description": "At least one effect-size statistic (beta, odds ratio, hazard ratio, or Z-score)."
+    },
+    {
+      "id": "uncertainty",
+      "label": "Uncertainty",
+      "mode": "any",
+      "headers": ["SE"],
+      "description": "Standard error of the effect estimate."
+    },
+    {
+      "id": "significance",
+      "label": "P-value",
+      "mode": "any",
+      "headers": ["P", "MLOG10P"],
+      "description": "P-value or minus log10 p-value."
+    },
+    {
+      "id": "sample",
+      "label": "Sample size",
+      "mode": "any",
+      "headers": ["N", "N_CASE"],
+      "description": "Total sample size or case count (case-control studies may also map N_CONTROL separately)."
+    },
+    {
+      "id": "frequency",
+      "label": "Allele frequency",
+      "mode": "any",
+      "headers": ["EAF", "MAF", "NEAF"],
+      "description": "Effect, minor, or non-effect allele frequency."
+    },
+    {
+      "id": "quality",
+      "label": "Imputation / QC",
+      "mode": "any",
+      "headers": ["INFO"],
+      "description": "Imputation quality or INFO score."
+    }
+  ]
+}

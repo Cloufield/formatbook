@@ -3,7 +3,10 @@
         "format_name": "genomicSEM",
         "format_source": "https://github.com/GenomicSEM/GenomicSEM/wiki/4.-Common-Factor-GWAS",
         "format_source_2": "https://github.com/GenomicSEM/GenomicSEM/wiki/5.-Multivariate-GWAS",
-        "format_version": 20241210
+        "format_version": 20241210,
+        "format_cite_name": "genomicSEM",
+        "format_citation": "Grotzinger, A. D., Rhemtulla, M., de Vlaming, R., Ritchie, S. J., Mallard, T. T., Hill, W. D., ... & Tucker-Drob, E. M. (2019). Genomic structural equation modelling provides insights into the multivariate genetic architecture of complex traits. Nature communications, 10(1), 3402.",
+        "github_url": "https://github.com/GenomicSEM/GenomicSEM"
     },
     "format_dict": {
         "SNP": "SNPID",

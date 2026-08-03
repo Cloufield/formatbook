@@ -1,0 +1,122 @@
+# {{ page.format_name }}
+
+{% if page.format_description -%}
+{{ page.format_description }}
+{% endif -%}
+
+## Overview
+
+| Field | Value |
+| --- | --- |
+| Format key | `{{ page.key }}` |
+| Spec file | `formats/{{ page.file }}` |
+{% if page.format_cite_name -%}
+| Cite name | {{ page.format_cite_name }} |
+{% endif -%}
+{% if page.format_version -%}
+| Version | {{ page.format_version }} |
+{% endif -%}
+{% if page.last_check_date -%}
+| Last checked | {{ page.last_check_date }} |
+{% endif -%}
+{% if page.format_source -%}
+| Source | [{{ page.format_source }}]({{ page.format_source }}) |
+{% endif -%}
+{% if page.format_source_2 -%}
+| Source (2) | [{{ page.format_source_2 }}]({{ page.format_source_2 }}) |
+{% endif -%}
+{% if page.github_url -%}
+| GitHub | [{{ page.github_url }}]({{ page.github_url }}) |
+{% endif -%}
+{% if page.format_citation -%}
+| Citation | {{ page.format_citation }} |
+{% endif -%}
+
+{% if page.file_layout -%}
+## File layout
+
+| Field | Value |
+| --- | --- |
+{% for row in page.file_layout -%}
+| {{ row.label }} | {{ row.value }} |
+{% endfor -%}
+{% endif -%}
+
+## Column mapping
+
+{% if page.has_format_dict_2 -%}
+| Raw header | Canonical | Canonical (secondary) |
+| --- | --- | --- |
+{% for row in page.mapping_rows -%}
+| `{{ row.raw }}` | {{ row.canonical | md_cell }} | {{ row.canonical_2 | md_cell }} |
+{% endfor -%}
+{% else -%}
+| Raw header | Canonical |
+| --- | --- |
+{% for row in page.mapping_rows -%}
+| `{{ row.raw }}` | {{ row.canonical | md_cell }} |
+{% endfor -%}
+{% endif -%}
+
+{% if page.header_description_rows -%}
+## Header descriptions
+
+| Column | Description |
+| --- | --- |
+{% for row in page.header_description_rows -%}
+| `{{ row.column }}` | {{ row.description | md_cell }} |
+{% endfor -%}
+{% endif -%}
+
+{% if page.format_assumption -%}
+## Assumptions
+
+{{ page.format_assumption }}
+{% endif -%}
+
+{% if page.format_notes -%}
+## Notes
+
+{% for note in page.format_notes -%}
+- {{ note }}
+{% endfor -%}
+{% endif -%}
+
+{% if page.fixed_headers or page.format_format -%}
+## Fixed columns
+
+{% if page.fixed_headers -%}
+**Required columns:** {{ page.fixed_headers | join(", ") }}
+{% endif -%}
+{% if page.format_format -%}
+**FORMAT fields (VCF):** {{ page.format_format | join(", ") }}
+{% endif -%}
+{% endif -%}
+
+{% if page.long_blocks -%}
+{% for block in page.long_blocks -%}
+<details>
+<summary>{{ block.title }}</summary>
+
+```
+{{ block.text }}
+```
+</details>
+
+{% endfor -%}
+{% endif -%}
+
+## Coverage
+
+**{{ page.tiers_satisfied }}/{{ page.tiers_total }}** tier groups satisfied.
+
+| Tier | Status | Matched | Missing |
+| --- | --- | --- | --- |
+{% for tier in page.tiers -%}
+| {{ tier.label }} | {% if tier.satisfied %}yes{% elif tier.partial %}partial{% else %}no{% endif %} | {{ tier.matched_headers | join(", ") if tier.matched_headers else "—" }} | {{ tier.missing_headers | join(", ") if tier.missing_headers else "—" }} |
+{% endfor -%}
+
+## See also
+
+- [Format summary](../format_summary.html)
+- [All formats](index.md)

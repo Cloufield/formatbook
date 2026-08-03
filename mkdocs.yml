@@ -1,0 +1,92 @@
+site_name: FormatBook
+site_description: GWAS summary-statistics format specifications for GWASLab
+repo_name: formatbook
+repo_url: https://github.com/Cloufield/formatbook
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - navigation.top
+    - toc.follow
+  palette:
+    primary: blue
+    accent: blue
+
+nav:
+  - Home: index.md
+  - Format summary: format_summary.html
+  - Formats:
+    - Overview: formats/index.md
+    # BEGIN GENERATED FORMAT NAV — do not edit by hand
+    - auto: formats/auto.md
+    - auto_0: formats/auto_0.md
+    - auto_0_neaf: formats/auto_0_neaf.md
+    - auto_0_ref: formats/auto_0_ref.md
+    - auto_0_ref_neaf: formats/auto_0_ref_neaf.md
+    - auto_1_ref: formats/auto_1_ref.md
+    - auto_1_ref_neaf: formats/auto_1_ref_neaf.md
+    - auto_2: formats/auto_2.md
+    - auto_2_neaf: formats/auto_2_neaf.md
+    - auto_2_ref: formats/auto_2_ref.md
+    - auto_2_ref_neaf: formats/auto_2_ref_neaf.md
+    - auto_neaf: formats/auto_neaf.md
+    - auto_raw: formats/auto_raw.md
+    - auto_ref: formats/auto_ref.md
+    - auto_ref_neaf: formats/auto_ref_neaf.md
+    - bgen_sample: formats/bgen_sample.md
+    - bgenie: formats/bgenie.md
+    - bolt_lmm: formats/bolt_lmm.md
+    - ccgwas: formats/ccgwas.md
+    - cojo: formats/cojo.md
+    - fastgwa: formats/fastgwa.md
+    - gemma: formats/gemma.md
+    - genomicsem: formats/genomicsem.md
+    - gwascatalog: formats/gwascatalog.md
+    - gwascatalog_hm: formats/gwascatalog_hm.md
+    - gwaslab: formats/gwaslab.md
+    - ldak: formats/ldak.md
+    - ldsc: formats/ldsc.md
+    - mesusie: formats/mesusie.md
+    - metal: formats/metal.md
+    - mrmega: formats/mrmega.md
+    - mtag: formats/mtag.md
+    - pgscatalog: formats/pgscatalog.md
+    - pgscatalog_hm: formats/pgscatalog_hm.md
+    - pheweb: formats/pheweb.md
+    - plink: formats/plink.md
+    - plink2: formats/plink2.md
+    - plink2_firth: formats/plink2_firth.md
+    - plink2_linear: formats/plink2_linear.md
+    - plink2_logistic: formats/plink2_logistic.md
+    - plink_assoc: formats/plink_assoc.md
+    - plink_bim: formats/plink_bim.md
+    - plink_dosage: formats/plink_dosage.md
+    - plink_fam: formats/plink_fam.md
+    - plink_fisher: formats/plink_fisher.md
+    - plink_linear: formats/plink_linear.md
+    - plink_logistic: formats/plink_logistic.md
+    - plink_psam: formats/plink_psam.md
+    - plink_pvar: formats/plink_pvar.md
+    - popcorn: formats/popcorn.md
+    - regenie: formats/regenie.md
+    - regenie_gene: formats/regenie_gene.md
+    - saige: formats/saige.md
+    - snptest: formats/snptest.md
+    - ssf: formats/ssf.md
+    - tensorqtl_cis: formats/tensorqtl_cis.md
+    - tensorqtl_cis_independent: formats/tensorqtl_cis_independent.md
+    - tensorqtl_cis_nominal: formats/tensorqtl_cis_nominal.md
+    - tensorqtl_cis_nominal_interaction: formats/tensorqtl_cis_nominal_interaction.md
+    - tensorqtl_trans: formats/tensorqtl_trans.md
+    - vcf: formats/vcf.md
+    # END GENERATED FORMAT NAV
+  - Design: design.md
+  - Auto presets: auto.md
+
+markdown_extensions:
+  - toc:
+      permalink: true

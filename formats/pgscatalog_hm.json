@@ -1,16 +1,20 @@
 {
-"meta_data":{"format_name":"pgscatalog_hm Harmonized File",
-            "format_source":"https://www.pgscatalog.org/downloads/",  
-            "format_version":"20220726"
-            },
-"format_dict":{      "hm_rsID":"rsID",
-                "hm_chr":"CHR",
-                "hm_pos":"POS",
-                "hm_inferOtherAllele":"NEA",
-                 "other_allele":"NEA",
-                "effect_allele":"EA",
-                "allelefrequency_effect":"EAF",
-                "effect_weight":"BETA",
-                "OR":"OR"
-            }
+    "meta_data": {
+        "format_name": "pgscatalog_hm Harmonized File",
+        "format_source": "https://www.pgscatalog.org/downloads/",
+        "format_version": "20220726",
+        "format_cite_name": "PGS Catalog",
+        "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425."
+    },
+    "format_dict": {
+        "hm_rsID": "rsID",
+        "hm_chr": "CHR",
+        "hm_pos": "POS",
+        "hm_inferOtherAllele": "NEA",
+        "other_allele": "NEA",
+        "effect_allele": "EA",
+        "allelefrequency_effect": "EAF",
+        "effect_weight": "BETA",
+        "OR": "OR"
+    }
 }

@@ -9,7 +9,8 @@
         "format_na": ".",
         "format_comment": "#",
         "format_header": true,
-        "last_check_date": "20260326"
+        "last_check_date": "20260326",
+        "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
     },
     "format_dict": {
         "ID": "SNPID",

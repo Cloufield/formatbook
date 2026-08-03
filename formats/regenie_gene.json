@@ -1,28 +1,44 @@
 {
-    "meta_data":{"format_name":"regenie_gene",
-                "format_source":"https://rgcgithub.github.io/regenie/", 
-                "format_source_2":"https://github.com/rgcgithub/regenie/blob/master/example/test_bin_out_firth_Y1.regenie",
-                "format_version":"20230926",
-                "format_cite_name":"REGENIE",
-                "format_separator":" ",
-                "format_na":"NA",
-                "format_comment":"#",
-                "format_col_order":["CHROM","GENPOS","ID","ALLELE0","ALLELE1","A1FREQ","N","TEST","BETA","SE","CHISQ","LOG10P"],
-                "last_check_date":20230926
-                },
-    "format_dict":{  "ID":"SNPID",
-                     "CHROM":"CHR",
-                     "GENPOS":"POS",
-                     "ALLELE0":"NEA",
-                     "ALLELE1":"EA",
-                     "A1FREQ":"EAF",
-                     "TEST":"TEST",
-                     "N":"N",
-                     "BETA":"BETA",
-                     "SE":"SE",
-                     "CHISQ":"CHISQ",
-                     "LOG10P":"MLOG10P",
-                     "EXTRA":"DOF"
-                }
+    "meta_data": {
+        "format_name": "regenie_gene",
+        "format_source": "https://rgcgithub.github.io/regenie/",
+        "format_source_2": "https://github.com/rgcgithub/regenie/blob/master/example/test_bin_out_firth_Y1.regenie",
+        "format_version": "20230926",
+        "format_cite_name": "REGENIE",
+        "format_separator": " ",
+        "format_na": "NA",
+        "format_comment": "#",
+        "format_col_order": [
+            "CHROM",
+            "GENPOS",
+            "ID",
+            "ALLELE0",
+            "ALLELE1",
+            "A1FREQ",
+            "N",
+            "TEST",
+            "BETA",
+            "SE",
+            "CHISQ",
+            "LOG10P"
+        ],
+        "last_check_date": 20230926,
+        "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+        "github_url": "https://github.com/rgcgithub/regenie"
+    },
+    "format_dict": {
+        "ID": "SNPID",
+        "CHROM": "CHR",
+        "GENPOS": "POS",
+        "ALLELE0": "NEA",
+        "ALLELE1": "EA",
+        "A1FREQ": "EAF",
+        "TEST": "TEST",
+        "N": "N",
+        "BETA": "BETA",
+        "SE": "SE",
+        "CHISQ": "CHISQ",
+        "LOG10P": "MLOG10P",
+        "EXTRA": "DOF"
     }
-    
+}

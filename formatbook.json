@@ -469,7 +469,9 @@
                 "EZ"
             ],
             "format_contig_19": "##contig=<ID=1,length=249250621,assembly=HG19/GRCh37>\r\n##contig=<ID=2,length=243199373,assembly=HG19/GRCh37>\r\n##contig=<ID=3,length=198022430,assembly=HG19/GRCh37>\r\n##contig=<ID=4,length=191154276,assembly=HG19/GRCh37>\r\n##contig=<ID=5,length=180915260,assembly=HG19/GRCh37>\r\n##contig=<ID=6,length=171115067,assembly=HG19/GRCh37>\r\n##contig=<ID=7,length=159138663,assembly=HG19/GRCh37>\r\n##contig=<ID=8,length=146364022,assembly=HG19/GRCh37>\r\n##contig=<ID=9,length=141213431,assembly=HG19/GRCh37>\r\n##contig=<ID=10,length=135534747,assembly=HG19/GRCh37>\r\n##contig=<ID=11,length=135006516,assembly=HG19/GRCh37>\r\n##contig=<ID=12,length=133851895,assembly=HG19/GRCh37>\r\n##contig=<ID=13,length=115169878,assembly=HG19/GRCh37>\r\n##contig=<ID=14,length=107349540,assembly=HG19/GRCh37>\r\n##contig=<ID=15,length=102531392,assembly=HG19/GRCh37>\r\n##contig=<ID=16,length=90354753,assembly=HG19/GRCh37>\r\n##contig=<ID=17,length=81195210,assembly=HG19/GRCh37>\r\n##contig=<ID=18,length=78077248,assembly=HG19/GRCh37>\r\n##contig=<ID=19,length=59128983,assembly=HG19/GRCh37>\r\n##contig=<ID=20,length=63025520,assembly=HG19/GRCh37>\r\n##contig=<ID=21,length=48129895,assembly=HG19/GRCh37>\r\n##contig=<ID=22,length=51304566,assembly=HG19/GRCh37>\r\n##contig=<ID=23,length=155270560,assembly=HG19/GRCh37>\r\n##contig=<ID=24,length=59373566,assembly=HG19/GRCh37>\r\n##contig=<ID=25,length=16569,assembly=HG19/GRCh37>",
-            "format_contig_38": "##contig=<ID=1,length=248956422,assembly=HG38/GRCh38>\r\n##contig=<ID=2,length=242193529,assembly=HG38/GRCh38>\r\n##contig=<ID=3,length=198295559,assembly=HG38/GRCh38>\r\n##contig=<ID=4,length=190214555,assembly=HG38/GRCh38>\r\n##contig=<ID=5,length=181538259,assembly=HG38/GRCh38>\r\n##contig=<ID=6,length=170805979,assembly=HG38/GRCh38>\r\n##contig=<ID=7,length=159345973,assembly=HG38/GRCh38>\r\n##contig=<ID=8,length=145138636,assembly=HG38/GRCh38>\r\n##contig=<ID=9,length=138394717,assembly=HG38/GRCh38>\r\n##contig=<ID=10,length=133797422,assembly=HG38/GRCh38>\r\n##contig=<ID=11,length=135086622,assembly=HG38/GRCh38>\r\n##contig=<ID=12,length=133275309,assembly=HG38/GRCh38>\r\n##contig=<ID=13,length=114364328,assembly=HG38/GRCh38>\r\n##contig=<ID=14,length=107043718,assembly=HG38/GRCh38>\r\n##contig=<ID=15,length=101991189,assembly=HG38/GRCh38>\r\n##contig=<ID=16,length=90338345,assembly=HG38/GRCh38>\r\n##contig=<ID=17,length=83257441,assembly=HG38/GRCh38>\r\n##contig=<ID=18,length=80373285,assembly=HG38/GRCh38>\r\n##contig=<ID=19,length=58617616,assembly=HG38/GRCh38>\r\n##contig=<ID=20,length=64444167,assembly=HG38/GRCh38>\r\n##contig=<ID=21,length=46709983,assembly=HG38/GRCh38>\r\n##contig=<ID=22,length=50818468,assembly=HG38/GRCh38>\r\n##contig=<ID=23,length=156040895,assembly=HG38/GRCh38>\r\n##contig=<ID=24,length=57227415,assembly=HG38/GRCh38>\r\n##contig=<ID=25,length=16569,assembly=HG38/GRCh38>"
+            "format_contig_38": "##contig=<ID=1,length=248956422,assembly=HG38/GRCh38>\r\n##contig=<ID=2,length=242193529,assembly=HG38/GRCh38>\r\n##contig=<ID=3,length=198295559,assembly=HG38/GRCh38>\r\n##contig=<ID=4,length=190214555,assembly=HG38/GRCh38>\r\n##contig=<ID=5,length=181538259,assembly=HG38/GRCh38>\r\n##contig=<ID=6,length=170805979,assembly=HG38/GRCh38>\r\n##contig=<ID=7,length=159345973,assembly=HG38/GRCh38>\r\n##contig=<ID=8,length=145138636,assembly=HG38/GRCh38>\r\n##contig=<ID=9,length=138394717,assembly=HG38/GRCh38>\r\n##contig=<ID=10,length=133797422,assembly=HG38/GRCh38>\r\n##contig=<ID=11,length=135086622,assembly=HG38/GRCh38>\r\n##contig=<ID=12,length=133275309,assembly=HG38/GRCh38>\r\n##contig=<ID=13,length=114364328,assembly=HG38/GRCh38>\r\n##contig=<ID=14,length=107043718,assembly=HG38/GRCh38>\r\n##contig=<ID=15,length=101991189,assembly=HG38/GRCh38>\r\n##contig=<ID=16,length=90338345,assembly=HG38/GRCh38>\r\n##contig=<ID=17,length=83257441,assembly=HG38/GRCh38>\r\n##contig=<ID=18,length=80373285,assembly=HG38/GRCh38>\r\n##contig=<ID=19,length=58617616,assembly=HG38/GRCh38>\r\n##contig=<ID=20,length=64444167,assembly=HG38/GRCh38>\r\n##contig=<ID=21,length=46709983,assembly=HG38/GRCh38>\r\n##contig=<ID=22,length=50818468,assembly=HG38/GRCh38>\r\n##contig=<ID=23,length=156040895,assembly=HG38/GRCh38>\r\n##contig=<ID=24,length=57227415,assembly=HG38/GRCh38>\r\n##contig=<ID=25,length=16569,assembly=HG38/GRCh38>",
+            "format_cite_name": "GWAS-VCF",
+            "github_url": "https://github.com/MRCIEU/gwas-vcf-specification"
         },
         "format_dict": {
             "ID": "SNPID",
@@ -495,7 +497,8 @@
             "format_source": "https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html",
             "format_version": "v2.4 (July 22, 2022)",
             "software_license": "BOLT-LMM is free software under the GNU General Public License v3.0 (GPLv3).",
-            "format_citation": "Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290."
+            "format_citation": "Loh, P. R., Tucker, G., Bulik-Sullivan, B. K., Vilhjalmsson, B. J., Finucane, H. K., Salem, R. M., ... & Price, A. L. (2015). Efficient Bayesian mixed-model analysis increases association power in large cohorts. Nature genetics, 47(3), 284-290.",
+            "format_cite_name": "BOLT-LMM"
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -525,7 +528,9 @@
                 "se",
                 "p",
                 "N"
-            ]
+            ],
+            "format_cite_name": "GCTA-COJO",
+            "format_citation": "Yang, J., Ferreira, T., Morris, A. P., Medland, S. E., Madden, P. A., Heath, A. C., ... & Visscher, P. M. (2012). Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits. Nature genetics, 44(4), 369-375."
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -543,7 +548,9 @@
             "format_name": "mrmega",
             "format_source": "https://genomics.ut.ee/en/tools",
             "format_version": "ver0.2",
-            "last_check_date": 20220806
+            "last_check_date": 20220806,
+            "format_cite_name": "MR-MEGA",
+            "format_citation": "M\u00e4gi, R., Horikoshi, M., Sofer, T., Mahajan, A., Kitajima, H., Franceschini, N., ... & Morris, A. P. (2017). Trans-ethnic meta-regression of genome-wide association studies accounting for ancestry increases power for discovery and improves fine-mapping resolution. Human molecular genetics, 26(18), 3639-3650."
         },
         "format_dict": {
             "MarkerName ": "SNPID",
@@ -565,7 +572,9 @@
             "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
             "format_version": "20220726",
             "format_cite_name": "tensorQTL",
-            "format_description": "tensorQTL cis-nominal mode output format"
+            "format_description": "tensorQTL cis-nominal mode output format",
+            "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+            "github_url": "https://github.com/broadinstitute/tensorqtl"
         },
         "format_dict": {
             "variant_id": "SNPID",
@@ -858,7 +867,9 @@
         "meta_data": {
             "format_name": "gwascatalog_hm",
             "format_source": "https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",
-            "format_version": 20220806
+            "format_version": 20220806,
+            "format_cite_name": "GWAS Catalog",
+            "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012."
         },
         "format_dict": {
             "hm_variant_id": "SNPID",
@@ -972,7 +983,8 @@
                 "MAT",
                 "SEX"
             ],
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "#FID": "FID",
@@ -1085,7 +1097,8 @@
                 "sex"
             ],
             "format_description": "Sample information file (.sample) accompanying .gen, .bgen genotype dosage files, or .haps phased reference panels. Loaded with --data/--sample, and produced by --export. The file is space-delimited with two header lines followed by one line per sample.",
-            "last_check_date": "20260208"
+            "last_check_date": "20260208",
+            "format_citation": "Band, G., & Marchini, J. (2018). BGEN: a binary file format for imputed genotype and haplotype data. bioRxiv."
         },
         "format_dict": {
             "ID_1": "FID",
@@ -1331,7 +1344,9 @@
                 "CHISQ",
                 "LOG10P"
             ],
-            "last_check_date": 20230926
+            "last_check_date": 20230926,
+            "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+            "github_url": "https://github.com/rgcgithub/regenie"
         },
         "format_dict": {
             "ID": "SNPID",
@@ -1355,7 +1370,9 @@
             "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
             "format_version": "20220726",
             "format_cite_name": "tensorQTL",
-            "format_description": "tensorQTL trans mode output format"
+            "format_description": "tensorQTL trans mode output format",
+            "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+            "github_url": "https://github.com/broadinstitute/tensorqtl"
         },
         "format_dict": {
             "variant_id": "SNPID",
@@ -1380,7 +1397,9 @@
         "meta_data": {
             "format_name": "metal",
             "format_source": "https://genome.sph.umich.edu/wiki/METAL_Documentation",
-            "format_version": "20220726"
+            "format_version": "20220726",
+            "format_cite_name": "METAL",
+            "format_citation": "Willer, C. J., Li, Y., & Abecasis, G. R. (2010). METAL: fast and efficient meta-analysis of genomewide association scans. Bioinformatics, 26(17), 2190-2191."
         },
         "format_dict": {
             "MarkerName": "SNPID",
@@ -1601,7 +1620,8 @@
             "format_source": "https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest",
             "format_version": "v2.5.4-beta3",
             "format_citation": "Marchini, J., Howie, B., Myers, S., McVean, G., & Donnelly, P. (2007). A new multipoint method for genome-wide association studies via imputation of genotypes. Nature Genetics, 39(7), 906-913.",
-            "software_license": "SNPTEST is available free to use for academic use only."
+            "software_license": "SNPTEST is available free to use for academic use only.",
+            "format_cite_name": "SNPTEST"
         },
         "format_dict": {
             "alternate_ids": "SNPID",
@@ -1642,7 +1662,10 @@
             "format_name": "genomicSEM",
             "format_source": "https://github.com/GenomicSEM/GenomicSEM/wiki/4.-Common-Factor-GWAS",
             "format_source_2": "https://github.com/GenomicSEM/GenomicSEM/wiki/5.-Multivariate-GWAS",
-            "format_version": 20241210
+            "format_version": 20241210,
+            "format_cite_name": "genomicSEM",
+            "format_citation": "Grotzinger, A. D., Rhemtulla, M., de Vlaming, R., Ritchie, S. J., Mallard, T. T., Hill, W. D., ... & Tucker-Drob, E. M. (2019). Genomic structural equation modelling provides insights into the multivariate genetic architecture of complex traits. Nature communications, 10(1), 3402.",
+            "github_url": "https://github.com/GenomicSEM/GenomicSEM"
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -1734,7 +1757,9 @@
                 "pval",
                 "p_value",
                 "n"
-            ]
+            ],
+            "format_citation": "Turley, P., Walters, R. K., Maghzian, O., Okbay, A., Lee, J. J., Fontana, M. A., ... & Benjamin, D. J. (2018). Multi-trait analysis of genome-wide association summary statistics using MTAG. Nature Genetics, 50(2), 229-237.",
+            "github_url": "https://github.com/JonJala/mtag"
         },
         "format_dict": {
             "snpid": "rsID",
@@ -1757,7 +1782,9 @@
             "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
             "format_version": "20220726",
             "format_cite_name": "tensorQTL",
-            "format_description": "tensorQTL cis-independent mode output format"
+            "format_description": "tensorQTL cis-independent mode output format",
+            "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+            "github_url": "https://github.com/broadinstitute/tensorqtl"
         },
         "format_dict": {
             "phenotype_id": "TRAIT",
@@ -2204,7 +2231,9 @@
         "meta_data": {
             "format_name": "pgscatalog_hm Harmonized File",
             "format_source": "https://www.pgscatalog.org/downloads/",
-            "format_version": "20220726"
+            "format_version": "20220726",
+            "format_cite_name": "PGS Catalog",
+            "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425."
         },
         "format_dict": {
             "hm_rsID": "rsID",
@@ -2595,7 +2624,9 @@
                 "CHISQ",
                 "LOG10P"
             ],
-            "last_check_date": 20230501
+            "last_check_date": 20230501,
+            "format_citation": "Mbatchou, J., Barnard, L., Backman, J., Marcketta, A., Kosmicki, J. A., Ziyatdinov, A., ... & Marchini, J. (2021). Computationally efficient whole-genome regression for quantitative and binary traits. Nature genetics, 53(7), 1097-1103.",
+            "github_url": "https://github.com/rgcgithub/regenie"
         },
         "format_dict": {
             "ID": "SNPID",
@@ -2851,7 +2882,8 @@
                 "FORMAT",
                 "CM"
             ],
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "#CHROM": "CHR",
@@ -3094,7 +3126,8 @@
             "format_na": ".",
             "format_comment": "#",
             "format_header": true,
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "ID": "SNPID",
@@ -3330,14 +3363,15 @@
             "format_name": "gwaslab",
             "format_source": "https://cloufield.github.io/gwaslab/",
             "format_version": "v4.0.5",
-            "format_citation": null,
+            "format_citation": "Cloufield. GWASLab: a Python package for GWAS summary statistics. https://github.com/Cloufield/gwaslab",
             "format_cite_name": "GWASLab",
             "format_separator": "\t",
             "format_na": null,
             "format_comment": null,
             "format_header": true,
             "format_col_order": null,
-            "last_check_date": "20260109"
+            "last_check_date": "20260109",
+            "github_url": "https://github.com/Cloufield/gwaslab"
         },
         "format_dict": {
             "SNPID": "SNPID",
@@ -3382,7 +3416,9 @@
             "format_source": "https://jmarchini.org/bgenie/",
             "format_version": "latest",
             "format_separator": " ",
-            "format_comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele)."
+            "format_comment": "BGENIE output is space-separated and gzip compressed. Phenotype-specific columns follow the pattern {pheno_name}_beta, {pheno_name}_se, {pheno_name}_t, and optionally {pheno_name}_p (if --pvals flag is used). The beta coefficient refers to the effect of having an extra copy of a_1 (the second allele).",
+            "format_cite_name": "BGENIE",
+            "format_citation": "Bycroft, C., Freeman, C., Petkova, D., Band, G., Elliott, L. T., Sharp, K., Motyer, A., Vukcevic, D., Delaneau, O., O'Connell, J., Cortes, A., Welsh, S., McVean, G., Leslie, S., Donnelly, P., & Marchini, J. (2018). The UK Biobank resource with deep phenotyping and genomic data. Nature, 562(7726), 203-209."
         },
         "format_dict": {
             "chr": "CHR",
@@ -3614,7 +3650,10 @@
                 "p-value",
                 "Z",
                 "AF"
-            ]
+            ],
+            "format_cite_name": "Popcorn",
+            "format_citation": "Brown, B. C., Ye, C. J., Price, A. L., & Zaitlen, N. (2016). Transethnic genetic-correlation estimates from summary statistics. The American Journal of Human Genetics, 99(1), 76-88.",
+            "github_url": "https://github.com/brielin/Popcorn"
         },
         "format_dict": {
             "rsid": "rsID",
@@ -3632,9 +3671,12 @@
     "saige": {
         "meta_data": {
             "format_name": "saige",
-            "format_source": "https://saigegit.github.io//SAIGE-doc/docs/single_step2.html",
+            "format_source": "https://saigegit.github.io/SAIGE-doc/docs/single_step2.html",
             "format_version": "v1.1.3",
-            "last_check_date": 20220806
+            "last_check_date": 20220806,
+            "format_cite_name": "SAIGE",
+            "format_citation": "Zhou, W., Nielsen, J. B., Fritsche, L. G., Dey, R., Gabrielsen, M. E., Wolford, B. N., ... & Lee, S. (2018). Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies. Nature genetics, 50(9), 1335-1341.",
+            "github_url": "https://github.com/weizhouUMICH/SAIGE"
         },
         "format_dict": {
             "SNPID": "SNPID",
@@ -3658,7 +3700,9 @@
             "format_citation": "Zhou, X., & Stephens, M. (2012). Genome-wide efficient mixed-model analysis for association studies. Nature Genetics, 44(7), 821-824.",
             "software_license": "GPL-3.0 license",
             "format_separator": "\t",
-            "format_comment": "GEMMA univariate linear mixed model (LMM) output format. Columns: chr, rs, ps, n_miss, allele1, allele0, af, beta, se, l_remle, p_wald. The output is tab-separated. allele1 is the effect allele, allele0 is the non-effect allele, af is the allele frequency of allele1, and l_remle is the log-likelihood ratio test statistic."
+            "format_comment": "GEMMA univariate linear mixed model (LMM) output format. Columns: chr, rs, ps, n_miss, allele1, allele0, af, beta, se, l_remle, p_wald. The output is tab-separated. allele1 is the effect allele, allele0 is the non-effect allele, af is the allele frequency of allele1, and l_remle is the log-likelihood ratio test statistic.",
+            "format_cite_name": "GEMMA",
+            "github_url": "https://github.com/genetics-statistics/GEMMA"
         },
         "format_dict": {
             "chr": "CHR",
@@ -3680,7 +3724,9 @@
             "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
             "format_version": "20220726",
             "format_cite_name": "tensorQTL",
-            "format_description": "tensorQTL cis mode output format with permutations"
+            "format_description": "tensorQTL cis mode output format with permutations",
+            "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+            "github_url": "https://github.com/broadinstitute/tensorqtl"
         },
         "format_dict": {
             "phenotype_id": "TRAIT",
@@ -3757,7 +3803,8 @@
                 "Reference allele must match the reference genome specified in config.py (hg_build_number 19 or 38)",
                 "If pval is log10 (e.g., REGENIE output), set pval_is_neglog10 = True in config.py",
                 "Custom column names can be mapped using field_aliases in config.py"
-            ]
+            ],
+            "github_url": "https://github.com/statgen/pheweb"
         },
         "format_dict": {
             "chrom": "CHR",
@@ -3983,7 +4030,8 @@
                 "ERRCODE",
                 "LOG10_P"
             ],
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "#CHROM": "CHR",
@@ -4470,7 +4518,8 @@
                 "n",
                 "A1Freq"
             ],
-            "last_check_date": "20260801"
+            "last_check_date": "20260801",
+            "format_citation": "Speed D, Holmes J, Sumner MD, et al. (2020). Reevaluation of SNP heritability in complex human traits. Nature Genetics."
         },
         "format_dict": {
             "Predictor": "SNPID",
@@ -4498,7 +4547,10 @@
             "format_name": "ldsc",
             "format_source": "https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format",
             "format_source_2": "https://github.com/bulik/ldsc/blob/master/munge_sumstats.py",
-            "format_version": 20150306
+            "format_version": 20150306,
+            "format_cite_name": "LDSC",
+            "format_citation": "Bulik-Sullivan, B. K., Loh, P. R., Finucane, H. K., Ripke, S., Yang, J., Patterson, N., ... & Neale, B. M. (2015). LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nature genetics, 47(3), 291-295.",
+            "github_url": "https://github.com/bulik/ldsc"
         },
         "format_dict": {
             "SNP": "rsID",
@@ -4521,8 +4573,11 @@
     "mesusie": {
         "meta_data": {
             "format_name": "MESuSiE",
-            "format_source": "https://borangao.github.io/meSuSie_Analysis/installation.html",
-            "format_version": 20221109
+            "format_source": "https://borangao.github.io/meSuSie_Analysis/",
+            "format_version": 20221109,
+            "format_cite_name": "MESuSiE",
+            "format_citation": "Gao, B., & Zhou, X. (2024). MESuSiE enables scalable and powerful multi-ancestry fine-mapping of causal variants in genome-wide association studies. Nature Genetics, 56(1), 170-179.",
+            "github_url": "https://github.com/borangao/MESuSiE"
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -4570,7 +4625,8 @@
                 "ERRCODE",
                 "LOG10_P"
             ],
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "#CHROM": "CHR",
@@ -4635,7 +4691,9 @@
             "format_source": "https://raw.githubusercontent.com/broadinstitute/tensorqtl/refs/heads/master/docs/outputs.md",
             "format_version": "20220726",
             "format_cite_name": "tensorQTL",
-            "format_description": "tensorQTL cis-nominal mode with interaction term output format"
+            "format_description": "tensorQTL cis-nominal mode with interaction term output format",
+            "format_citation": "Taylor-Weiner, A., Aguet, F., Jones, M., Zaitlen, N., Daly, M., & Ardlie, K. (2019). Scaling computational genomics to millions of individuals with GPUs. Genome Biology, 20, 183.",
+            "github_url": "https://github.com/broadinstitute/tensorqtl"
         },
         "format_dict": {
             "variant_id": "SNPID",
@@ -4731,7 +4789,9 @@
         "meta_data": {
             "format_name": "pgscatalog",
             "format_source": "https://www.pgscatalog.org/downloads/",
-            "format_version": "20220726"
+            "format_version": "20220726",
+            "format_cite_name": "PGS Catalog",
+            "format_citation": "Lambert, S. A., Gil, L., Jupp, S., Ritchie, S. C., Xu, Y., Buniello, A., ... & Inouye, M. (2021). The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation. Nature Genetics, 53(4), 420-425."
         },
         "format_dict": {
             "rsID": "rsID",
@@ -4748,7 +4808,9 @@
         "meta_data": {
             "format_name": "gwascatalog",
             "format_source": "https://www.ebi.ac.uk/gwas/docs/methods/summary-statistics",
-            "format_version": "20220726"
+            "format_version": "20220726",
+            "format_cite_name": "GWAS Catalog",
+            "format_citation": "Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., ... & Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005-D1012."
         },
         "format_dict": {
             "variant_id": "SNPID",
@@ -4768,7 +4830,7 @@
     "ssf": {
         "meta_data": {
             "format_name": "ssf",
-            "format_source": "https://www.biorxiv.org/content/10.1101/2022.07.15.500230v1.full",
+            "format_source": "https://www.ebi.ac.uk/gwas/docs/summary-statistics-format",
             "format_cite_name": "GWAS-SSF v0.1",
             "format_separator": "\t",
             "format_na": "#NA",
@@ -4793,7 +4855,8 @@
                 "ref_allele",
                 "n"
             ],
-            "format_version": 20230328
+            "format_version": 20230328,
+            "format_citation": "Hayhurst, J., Buniello, A., Harris, L., Mosaku, A., Chang, C., Gignoux, C. R., ... & Barroso, I. (2022). A community driven GWAS summary statistics standard. bioRxiv."
         },
         "format_dict": {
             "variant_id": "SNPID",
@@ -4819,13 +4882,15 @@
     "ccgwas": {
         "meta_data": {
             "format_name": "CCGWAS",
-            "format_source": "https://github.com/wouterpeyrot/CCGWAS",
+            "format_source": "https://github.com/wouterpeyrot/CCGWAS#output-files",
             "format_version": "20220901",
             "last_check_date": "20250416",
             "format_separator": "\t",
             "format_citation": "Peyrot, W. J., & Price, A. L. (2021). Identifying loci with different allele frequencies among cases of eight psychiatric disorders using CC-GWAS. Nature genetics, 53(4), 445-454.",
             "format_comment": null,
-            "format_na": null
+            "format_na": null,
+            "format_cite_name": "CC-GWAS",
+            "github_url": "https://github.com/wouterpeyrot/CCGWAS"
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -4847,7 +4912,9 @@
             "format_name": "fastgwa",
             "format_source": "https://yanglab.westlake.edu.cn/software/gcta/#fastGWA",
             "format_source_2": "https://yanglab.westlake.edu.cn/software/gcta/#fastGWA-GLMM",
-            "format_version": "20220726"
+            "format_version": "20220726",
+            "format_cite_name": "fastGWA",
+            "format_citation": "Jiang, L., Zheng, Z., Qi, T., Kemper, K. E., Wray, N. R., Visscher, P. M., & Yang, J. (2019). A resource-efficient tool for mixed model association analysis of large-scale data. Nature genetics, 51(12), 1749-1755."
         },
         "format_dict": {
             "SNP": "SNPID",
@@ -4912,7 +4979,8 @@
                 "ERRCODE",
                 "LOG10_P"
             ],
-            "last_check_date": "20260326"
+            "last_check_date": "20260326",
+            "format_citation": "Chang, C. C., Chow, C. C., Tellier, L. C., Vattikuti, S., Purcell, S. M., & Lee, J. J. (2015). Second-generation PLINK: rising to the challenge of larger and richer datasets. Gigascience, 4(1), s13742-015."
         },
         "format_dict": {
             "#CHROM": "CHR",
