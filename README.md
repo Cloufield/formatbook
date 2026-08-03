@@ -51,12 +51,17 @@ python3 scripts/check_format_jsons.py --reserved-headers ../gwaslab/src/gwaslab/
 Format summary (interactive HTML coverage heatmap):
 
 ```bash
+python3 scripts/format_pages.py
 python3 scripts/format_summary.py
 pip install -r requirements-docs.txt
-mkdocs serve
+zensical serve
 ```
 
 Open **Format summary** in the nav bar, or browse `docs/format_summary.html` directly.
+
+The docs site uses [Zensical](https://zensical.org/) with the existing `mkdocs.yml` configuration.
+
+**Deployment:** pushes to `main` build and publish the site via GitHub Actions (`.github/workflows/docs.yml`) to [https://cloufield.github.io/formatbook/](https://cloufield.github.io/formatbook/). Enable **Settings → Pages → Build and deployment → GitHub Actions** once.
 
 Supported formats:
 

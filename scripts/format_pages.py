@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate MkDocs pages for each format spec and update mkdocs.yml nav."""
+"""Generate site pages for each format spec and update mkdocs.yml nav."""
 from __future__ import annotations
 
 import argparse
@@ -208,7 +208,7 @@ def update_mkdocs_nav(mkdocs_path: Path, format_keys: list[str]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Generate MkDocs pages for format specs.")
+    parser = argparse.ArgumentParser(description="Generate site pages for format specs.")
     parser.add_argument("--repo-root", default=".", help="Repository root")
     parser.add_argument("--formats-dir", default="formats", help="Formats directory")
     parser.add_argument("--keys", default=str(DEFAULT_KEYS), help="Tier groups JSON")
